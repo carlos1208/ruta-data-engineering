@@ -36,9 +36,15 @@ function buildExterior() {
   box(-160, 160, -0.6, -0.05, -160, -23, E.grama);
   box(-160, -12.2, -0.6, -0.05, -12, 14.3, E.grama);
   box(12.2, 160, -0.6, -0.05, -12, 14.3, E.grama);
-  box(-160, 160, -6.8, -6.0, 14.5, 160, E.grama);
-  quad([-160, -0.05, 14.3], [-12.2, -0.05, 14.3], [-12.2, -6.0, 24], [-160, -6.0, 24], E.grama);
-  quad([12.2, -0.05, 14.3], [160, -0.05, 14.3], [160, -6.0, 24], [12.2, -6.0, 24], E.grama);
+  // terreno bajo el borde infinito: muro de contención de 3 m, banca y talud natural hasta -6 m
+  box(-160, 160, -6.8, -6.0, 21, 160, E.grama);
+  box(-12.2, 12.2, -3.4, -3.0, 14.5, 16.0, E.grama);
+  // vértices en sentido antihorario visto desde la cara que se ve, para que la normal apunte hacia afuera
+  quad([-160, -6.0, 21], [160, -6.0, 21], [160, -3.0, 16], [-160, -3.0, 16], E.grama);
+  quad([-160, -3.0, 16], [-12.2, -3.0, 16], [-12.2, -0.05, 14.3], [-160, -0.05, 14.3], E.grama);
+  quad([12.2, -3.0, 16], [160, -3.0, 16], [160, -0.05, 14.3], [12.2, -0.05, 14.3], E.grama);
+  quad([-12.2, -0.4, 14.5], [-12.2, -0.4, 14.5], [-12.2, -3.0, 16], [-12.2, -3.0, 14.5], E.coralina);
+  quad([12.2, -3.0, 14.5], [12.2, -3.0, 16], [12.2, -0.4, 14.5], [12.2, -0.4, 14.5], E.coralina);
   // ---------------- lote
   box(-12.2, 12.2, -0.6, -0.05, -12, -5, E.grama);
   box(-12.2, -7.5, -0.6, -0.05, -5, 8.0, E.grama);
@@ -60,7 +66,7 @@ function buildExterior() {
   shrubRow(-11.4, -8.2, -11.35, -0.05, 13); shrubRow(3.2, 11.3, -11.35, -0.05, 17);
   seg(-160, -14, 160, -14, -1, 3);  // borde del andén
   // ---------------- terraza, piscina y borde infinito
-  box(-7.5, 7.5, -0.4, 0, 4.8, 8.0, E.teca);
+  box(-3.5, 7.5, -0.4, 0, 4.8, 8.0, E.teca);
   box(-12.2, 12.2, -0.4, 0, 8.0, 9.35, E.travertino);
   box(-12.2, -6.15, -0.4, 0, 9.35, 14.3, E.travertino);
   box(9.15, 12.2, -0.4, 0, 9.35, 14.3, E.travertino);
@@ -75,7 +81,7 @@ function buildExterior() {
   box(-6.15, 9.15, -0.95, -0.85, 13.65, 14.3, E.mosaico);
   box(-6.15, 9.15, -0.95, -0.45, 14.15, 14.3, E.coralina);
   hplane(-6.15, 9.15, 13.65, 14.15, -0.62, E.agua);
-  box(-12.2, 12.2, -6.2, -0.45, 14.3, 14.5, E.coralina);
+  box(-12.2, 12.2, -3.2, -0.45, 14.3, 14.5, E.coralina);
   box(-12.2, -6.15, -0.45, 0, 14.3, 14.5, E.coralina); box(9.15, 12.2, -0.45, 0, 14.3, 14.5, E.coralina);
   glassRail('x', 14.42, -11.6, -6.15, 0); glassRail('x', 14.42, 9.15, 11.6, 0);
   colRectW(-6.15, 9.15, 9.35, 14.5, -3, 1.0);
@@ -93,11 +99,14 @@ function buildExterior() {
   lounger(9.85, 0, 11.3, RS); lounger(11.0, 0, 11.3, RS); lounger(-8.0, 0, 11.3, RS); lounger(-9.2, 0, 11.3, RS);
   cyl(10.45, 0, 12.95, 0.2, 0.06, E.aceroNegro, 20); cyl(10.45, 0, 12.95, 0.025, 2.4, E.aceroNegro);
   { const g = new THREE.ConeGeometry(1.4, 0.45, 8, 1, true); g.translate(10.45, 2.35, 12.95); addGeo(g, E.telaExt); colRectW(10.3, 10.6, 12.8, 13.1, 0, 2.5); }
-  plant(-6.9, 0, 8.6, 1.2, 0.35, E.follaje, 101); plant(9.9, 0, 8.6, 1.2, 0.35, E.follaje, 103);
+  plant(-11.0, 0, 9.6, 1.2, 0.35, E.follaje, 101); plant(9.9, 0, 8.6, 1.2, 0.35, E.follaje, 103);
   for (const x of [-11.2, -9.6, 9.6, 11.2]) { box(x - 0.06, x + 0.06, 0, 0.5, 8.2, 8.32, E.aceroNegro); box(x - 0.05, x + 0.05, 0.42, 0.48, 8.31, 8.33, E.led); }
   // ---------------- patio de mascotas
-  box(-11.6, -7.5, -0.05, -0.04, 0.5, 5.5, E.grama);
-  fenceLine(-11.6, 0.5, -7.5, 0.5); fenceLine(-11.6, 5.5, -9.7, 5.5); fenceLine(-8.7, 5.5, -7.5, 5.5); fenceLine(-7.5, 4.8, -7.5, 5.5);
+  box(-11.6, -7.5, -0.05, -0.04, 0.5, 4.85, E.grama);
+  fenceLine(-11.6, 0.5, -7.5, 0.5); fenceLine(-11.6, 4.85, -9.7, 4.85); fenceLine(-8.7, 4.85, -7.5, 4.85);
+  // patio privado de la habitación de servicio
+  box(-9.6, -7.5, -0.3, 0, 5.0, 7.95, E.teca); fenceLine(-11.6, 8.0, -9.7, 8.0); fenceLine(-8.7, 8.0, -7.5, 8.0);
+  chair(-8.3, 0, 6.9, RS, E.teca, E.teca); plant(-9.25, 0, 6.0, 1.0, 0.25, E.plantaInt, 97);
   // casa de mascota en dos niveles: madriguera abajo, mirador arriba, rampa y techo verde
   {
     const x0 = -11.3, x1 = -9.9, z0 = 1.0, z1 = 2.6;
@@ -178,7 +187,7 @@ function buildVegetation() {
   const add = (x, z, y) => tm.push(M(x, y, z, 0.8 + r() * 0.9, r() * 6.28));
   for (let i = 0; i < 140; i++) {
     const zone = r();
-    if (zone < 0.55) { const x = (r() - 0.5) * 260, z = 17 + r() * 140; add(x, z, -6.0); }
+    if (zone < 0.55) { const x = (r() - 0.5) * 260, z = 22 + r() * 135; add(x, z, -6.0); }
     else if (zone < 0.75) { const x = (r() - 0.5) * 300, z = -26 - r() * 130; add(x, z, -0.05); }
     else { const s = r() < 0.5 ? -1 : 1, x = s * (16 + r() * 120), z = -12 + r() * 26; add(x, z, -0.05); }
   }

@@ -120,6 +120,8 @@ button{cursor:pointer}
 #memo h3{margin:0 0 8px;font-size:12px;font-weight:650;font-stretch:112%;letter-spacing:.08em;text-transform:uppercase;color:var(--teak)}
 #memo p, #memo li{color:var(--ink-dim);line-height:1.55;font-size:13.5px;max-width:68ch}
 #memo ul{margin:0;padding-left:18px;display:grid;gap:4px}
+#memo a{color:var(--teak);font-weight:650}
+#memo .cost{color:var(--ink);font-family:var(--f-mono);font-weight:500}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .cols > *{min-width:0}
 .tbl{overflow-x:auto}
@@ -244,8 +246,8 @@ body.intro .goto, body.intro .mapbox, body.intro .dock{visibility:hidden}
     <h2>Una casa abierta a la brisa del Caribe</h2>
     <p>Fachada al norte para recibir los vientos alisios, volumen superior flotante en estuco blanco sobre una base de piedra coralina, y una piscina de borde infinito que se funde con el horizonte del sur.</p>
     <div class="specs">
-      <div><b>249,8 m²</b><span>construidos</span></div>
-      <div><b>3 + 1</b><span>habitaciones con balcón</span></div>
+      <div><b>251,4 m²</b><span>construidos</span></div>
+      <div><b>3 + 1</b><span>habitaciones con balcón · servicio con patio</span></div>
       <div><b>15 × 4 m</b><span>piscina de borde infinito</span></div>
       <div><b>9,9 kWp</b><span>18 paneles solares</span></div>
     </div>
@@ -282,6 +284,9 @@ body.intro .goto, body.intro .mapbox, body.intro .dock{visibility:hidden}
           <h3>Cuadro de áreas</h3>
           <div class="tbl"><table id="areas"></table></div>
           <p style="font-size:12px;margin-top:10px">Áreas a ejes de muro. Balcones, terraza y piscina no suman área construida.</p>
+          <h3 style="margin-top:18px">Costo estimado</h3>
+          <p><b class="cost">$2.300 millones</b> en el escenario medio, con diseños, licencia, impuestos y AIU; rango de $1.562 a $3.450 millones según los acabados y los precios. Obra de 11 meses después de 5 de diseño y licencia.</p>
+          <p style="margin-top:6px"><a href="https://claude.ai/artifact/W6TKW7t2v22hYMBXkH6xMh" target="_blank" rel="noopener">Ver el estudio de costos, el cronograma y el flujo de caja ↗</a></p>
         </section>
       </div>
     </article>
@@ -1059,6 +1064,8 @@ function buildHouse() {
   box(-7.3, -2.1, -0.02, 0, -4.8, 0.725, E.concretoPulido);         // garaje
   box(-1.9, -0.96, -0.02, 0, -1.64, 0.725, E.microcemento);         // baño social
   box(-7.3, -3.56, -0.02, 0, 0.875, 4.6, E.microcemento);           // servicio
+  box(-7.5, -3.5, -0.45, -0.02, 4.8, 8.0, E.concreto);              // placa de la ampliación de servicio
+  box(-7.3, -3.7, -0.02, 0, 4.8, 7.8, E.microcemento);              // habitación y baño de servicio
   flat(-12, 12, -14, 14.3, 0);                                       // todo el lote y la casa a nivel 0
 
   // Fachada norte (garaje y oficina) — la doble altura va aparte
@@ -1066,13 +1073,21 @@ function buildHouse() {
     [{ a0: -7.2, a1: -4.85, y0: 0, y1: 2.4, k: 'open' }, { a0: -4.65, a1: -2.3, y0: 0, y1: 2.4, k: 'open' }], { cap0: 0.2, cap1: 0.2 });
   wall('x', -4.9, 3.1, 7.5, 0, CEIL0, 0.2, E.coralina, E.estucoInt, [{ a0: 3.7, a1: 7.0, y0: 0.9, y1: 2.7, k: 'win', mull: 1.1 }], { cap0: 0.2, cap1: 0.2 });
   // Fachada sur
-  wall('x', 4.7, -7.5, -3.44, 0, CEIL0, 0.2, E.estucoInt, E.coralina, [{ a0: -7.0, a1: -4.1, y0: 1.9, y1: 2.7, k: 'win' }], { cap0: 0.2, capMat: E.coralina });
+  wall('x', 4.7, -7.3, -3.44, 0, CEIL0, 0.2, E.estucoInt, E.estucoInt, [{ a0: -4.8, a1: -3.95, y0: 0, y1: 2.2, k: 'door' }]);
   glazing('x', 4.7, -3.44, -1.3, 0, CEIL0, 0.2, 9); seg(-3.44, 4.7, -1.3, 4.7, 0, CEIL0); planLine(0, 'glass', -3.44, 4.7, -1.3, 4.7);
   slider('x', 4.7, -1.3, 3.1, 0, CEIL0, { movEnd: true, out: 1, label: 'ventanal del comedor' });
   slider('x', 4.7, 3.1, 7.3, 0, CEIL0, { movEnd: false, out: 1, label: 'ventanal de la sala' });
   // Fachadas oeste y este
-  wall('z', -7.4, -5, 4.8, 0, CEIL0, 0.2, E.coralina, E.estucoInt,
-    [{ a0: -3.6, a1: -1.0, y0: 1.9, y1: 2.6, k: 'win' }, { a0: 1.7, a1: 3.5, y0: 0, y1: 2.4, k: 'open' }], { cap0: 0.2, cap1: 0.2 });
+  wall('z', -7.4, -5, 8.0, 0, CEIL0, 0.2, E.coralina, E.estucoInt,
+    [{ a0: -3.6, a1: -1.0, y0: 1.9, y1: 2.6, k: 'win' }, { a0: 1.7, a1: 3.5, y0: 0, y1: 2.4, k: 'open' },
+     { a0: 4.9, a1: 5.75, y0: 0, y1: 2.3, k: 'door' }, { a0: 6.2, a1: 7.55, y0: 0.9, y1: 2.4, k: 'win' }], { cap0: 0.2, cap1: 0.2 });
+  // Ampliación de servicio: habitación con baño propio y patio privado (planta baja)
+  wall('x', 7.9, -7.3, -3.7, 0, CEIL0, 0.2, E.estucoInt, E.coralina, [{ a0: -7.0, a1: -5.4, y0: 1.9, y1: 2.6, k: 'win' }, { a0: -4.6, a1: -3.95, y0: 1.9, y1: 2.5, k: 'win' }]);
+  wall('z', -3.6, 4.8, 5.93, 0, CEIL0, 0.2, E.estucoInt, E.coralina);
+  wall('z', -3.6, 5.93, 8.0, 0, CEIL0, 0.2, E.microcemento, E.coralina, [], { cap1: 0.2, capMat: E.coralina });
+  wall('z', -5.1, 4.8, 5.93, 0, CEIL0, 0.12, E.estucoInt, E.estucoInt, [{ a0: 4.95, a1: 5.8, y0: 0, y1: 2.2, k: 'door' }]);
+  wall('z', -5.1, 5.93, 7.8, 0, CEIL0, 0.12, E.estucoInt, E.microcemento);
+  wall('x', 5.93, -5.04, -3.7, 0, CEIL0, 0.12, E.estucoInt, E.microcemento, [{ a0: -4.65, a1: -3.85, y0: 0, y1: 2.2, k: 'door' }]);
   slider('z', -7.4, 1.7, 3.5, 0, 2.4, { movEnd: true, out: -1, label: 'puerta al patio de mascotas' });
   wall('z', 7.4, -5, 4.8, 0, CEIL0, 0.2, E.estucoInt, E.coralina, [{ a0: -4.4, a1: -2.2, y0: 0.9, y1: 2.7, k: 'win' }], { cap0: 0.2, cap1: 0.2, capMat: E.coralina });
 
@@ -1100,8 +1115,10 @@ function buildHouse() {
   box(-3.44, 0.0, 2.98, CEIL0, 0.875, 4.6, E.estucoInt);
   box(-0.84, 0.0, 2.98, CEIL0, -1.7, 0.875, E.estucoInt);
   box(0.0, 7.3, 2.97, CEIL0, -1.7, 4.6, E.techoMadera);
+  box(-7.3, -3.7, 2.98, CEIL0, 4.8, 7.8, E.estucoInt);
   // Losa entre pisos (el canto queda a la vista como franja de concreto)
   box(-7.5, 7.5, CEIL0, FL1 - 0.02, -1.7, 6.0, E.concreto);
+  box(-7.5, -3.5, CEIL0, FL1 - 0.02, 6.0, 8.0, E.concreto);
   box(-7.5, -2.0, CEIL0, FL1 - 0.02, -5, -1.7, E.concreto);
   box(3.2, 7.5, CEIL0, FL1 - 0.02, -5, -1.7, E.concreto);
   box(-7.3, -2.2, CEIL0 + 0.06, FL1 - 0.02, -6.4, -5, E.concreto);
@@ -1113,48 +1130,42 @@ function buildHouse() {
   box(-7.3, -2.1, F, FL1, -4.8, -1.7, E.roble);
   box(3.3, 7.3, F, FL1, -4.8, -1.7, E.roble);
   box(-7.3, 7.3, F, FL1, -1.7, -0.5, E.roble);
-  box(-6.0, -4.3, F, FL1, -0.5, 2.8, E.roble);
-  box(-7.3, -6.0, F, FL1, 1.1, 2.8, E.roble);
   box(1.2, 7.3, F, FL1, -0.5, 2.8, E.roble);
-  box(-7.3, -6.0, F, FL1, -0.5, 1.1, E.microcemento);
   box(-4.3, 1.2, F, FL1, -0.5, 2.8, E.microcemento);
   // balcones y cubierta verde
   box(-7.3, -2.2, F, FL1, -6.4, -5.0, E.teca);
   box(3.4, 7.3, F, FL1, -6.4, -5.0, E.teca);
   box(3.3, 7.45, F, FL1, 3.0, 6.0, E.teca);
-  box(-7.45, -4.4, F, FL1, 3.0, 6.0, E.teca);
-  box(-4.4, 3.3, F, FL1 + 0.1, 3.0, 5.85, E.techoVerde);
-  box(-4.4, 3.3, F, FL1 + 0.22, 5.85, 6.0, E.concreto);
-  flat(-7.3, -1.9, -4.85, -1.7, FL1); flat(3.1, 7.3, -4.85, -1.7, FL1); flat(-7.3, 7.3, -1.76, 2.85, FL1);
-  flat(-7.3, -2.2, -6.35, -4.8, FL1); flat(3.4, 7.3, -6.35, -4.8, FL1); flat(3.3, 7.45, 2.8, 5.95, FL1); flat(-7.45, -4.4, 2.8, 5.95, FL1);
+  box(-7.45, -4.36, F, FL1, -0.44, 7.95, E.teca);                    // terraza familiar
+  box(-4.36, 3.3, F, FL1 + 0.1, 3.0, 5.85, E.techoVerde);
+  box(-4.36, 3.3, F, FL1 + 0.22, 5.85, 6.0, E.concreto);
+  box(-4.36, -3.65, F, FL1 + 0.1, 6.0, 7.85, E.techoVerde);
+  box(-4.36, -3.5, F, FL1 + 0.22, 7.85, 8.0, E.concreto); box(-3.65, -3.5, F, FL1 + 0.22, 6.0, 7.85, E.concreto);
+  flat(-7.3, -1.9, -4.85, -1.7, FL1); flat(3.1, 7.3, -4.85, -1.7, FL1); flat(-7.3, 7.3, -1.76, -0.44, FL1); flat(-4.3, 7.3, -0.5, 2.85, FL1);
+  flat(-7.3, -2.2, -6.35, -4.8, FL1); flat(3.4, 7.3, -6.35, -4.8, FL1); flat(3.3, 7.45, 2.8, 5.95, FL1); flat(-7.45, -4.36, -0.56, 7.95, FL1);
 
   // Fachada norte PA: ventanales corredizos a los balcones
   slider('x', -4.9, -7.3, -2.1, FL1, CEIL1, { movEnd: true, out: -1, label: 'ventanal al balcón' });
   slider('x', -4.9, 3.3, 7.3, FL1, CEIL1, { movEnd: false, out: -1, label: 'ventanal al balcón' });
   // Fachada sur PA
-  slider('x', 2.9, -7.3, -4.36, FL1, CEIL1, { movEnd: true, out: 1, label: 'ventanal al balcón' });
-  wall('x', 2.9, -4.36, -2.3, FL1, CEIL1, 0.2, E.microcemento, E.estucoExt, [{ a0: -4.0, a1: -2.6, y0: 4.7, y1: 5.9, k: 'win' }]);
+  wall('x', 2.9, -4.24, -2.3, FL1, CEIL1, 0.2, E.microcemento, E.estucoExt, [{ a0: -4.0, a1: -2.6, y0: 4.7, y1: 5.9, k: 'win' }]);
   wall('x', 2.9, -2.3, 1.2, FL1, CEIL1, 0.2, E.microcemento, E.estucoExt, [{ a0: -1.9, a1: 0.9, y0: 3.75, y1: 5.9, k: 'win', mull: 1.4 }]);
   wall('x', 2.9, 1.2, 3.26, FL1, CEIL1, 0.2, E.estucoInt, E.estucoExt, [{ a0: 1.5, a1: 2.9, y0: 5.0, y1: 5.9, k: 'win' }]);
   slider('x', 2.9, 3.26, 7.3, FL1, CEIL1, { movEnd: false, out: 1, label: 'ventanal al balcón' });
   // Fachadas oeste y este PA
-  wall('z', -7.4, -5, -0.5, FL1 - 0.02, CEIL1, 0.2, E.estucoExt, E.estucoInt, [{ a0: -1.6, a1: -0.6, y0: FL1, y1: CEIL1 - 0.05, k: 'win' }], { cap0: 0.2 });
-  wall('z', -7.4, -0.5, 3.0, FL1 - 0.02, CEIL1, 0.2, E.estucoExt, E.microcemento, [{ a0: -0.3, a1: 0.9, y0: 5.0, y1: 5.8, k: 'win' }], { cap1: 0.2 });
+  wall('z', -7.4, -5, -0.5, FL1 - 0.02, CEIL1, 0.2, E.estucoExt, E.estucoInt, [{ a0: -1.6, a1: -0.75, y0: FL1, y1: CEIL1 - 0.05, k: 'win' }], { cap0: 0.2, cap1: 0.2, capMat: E.estucoExt });
   wall('z', 7.4, -5, 3.0, FL1 - 0.02, CEIL1, 0.2, E.estucoInt, E.estucoExt, [{ a0: -1.6, a1: -0.6, y0: FL1, y1: CEIL1 - 0.05, k: 'win' }], { cap0: 0.2, cap1: 0.2, capMat: E.estucoExt });
   // Interiores PA
   wall('x', -1.7, -7.3, -2.1, FL1, CEIL1, 0.12, E.estucoInt, E.estucoInt, [{ a0: -3.3, a1: -2.4, y0: FL1, y1: FL1 + 2.2, k: 'door' }]);
   wall('x', -1.7, 3.3, 7.3, FL1, CEIL1, 0.12, E.estucoInt, E.estucoInt, [{ a0: 3.4, a1: 4.3, y0: FL1, y1: FL1 + 2.2, k: 'door' }]);
   glassRail('x', -1.7, -0.8, 3.1, FL1);
   const D = (a0, a1) => ({ a0, a1, y0: FL1, y1: FL1 + 2.2, k: 'door' });
-  wall('x', -0.5, -7.3, -6.0, FL1, CEIL1, 0.12, E.estucoInt, E.microcemento);
-  wall('x', -0.5, -6.0, -4.3, FL1, CEIL1, 0.12, E.estucoInt, E.estucoInt, [D(-5.9, -5.05)]);
+  slider('x', -0.5, -7.3, -4.36, FL1, CEIL1, { movEnd: true, out: 1, label: 'ventanal a la terraza' });
   wall('x', -0.5, -4.3, -2.3, FL1, CEIL1, 0.12, E.estucoInt, E.microcemento, [D(-3.9, -3.1)]);
   wall('x', -0.5, -2.3, 1.2, FL1, CEIL1, 0.12, E.estucoInt, E.microcemento);
   wall('x', -0.5, 1.2, 3.2, FL1, CEIL1, 0.12, E.estucoInt, E.estucoInt);
   wall('x', -0.5, 3.2, 7.3, FL1, CEIL1, 0.12, E.estucoInt, E.estucoInt, [D(3.4, 4.3)]);
-  wall('z', -6.0, -0.44, 1.1, FL1, CEIL1, 0.12, E.microcemento, E.estucoInt, [D(0.2, 0.95)]);
-  wall('x', 1.1, -7.3, -6.06, FL1, CEIL1, 0.12, E.microcemento, E.estucoInt);
-  wall('z', -4.3, -0.44, 2.8, FL1, CEIL1, 0.12, E.estucoInt, E.microcemento);
+  wall('z', -4.3, -0.44, 3.0, FL1, CEIL1, 0.12, E.estucoExt, E.microcemento, [], { cap1: 0.2, capMat: E.estucoExt });
   wall('z', -2.3, -0.44, 2.8, FL1, CEIL1, 0.12, E.microcemento, E.microcemento);
   wall('z', 1.2, -0.44, 2.8, FL1, CEIL1, 0.12, E.microcemento, E.estucoInt, [D(0.3, 1.1)]);
   wall('z', 3.2, -0.44, 2.8, FL1, CEIL1, 0.12, E.estucoInt, E.estucoInt, [D(2.0, 2.75)]);
@@ -1162,24 +1173,27 @@ function buildHouse() {
   glassRail('x', -6.35, -7.3, -2.2, FL1); glassRail('z', -2.2, -6.35, -5.0, FL1);
   glassRail('x', -6.35, 3.4, 7.3, FL1); glassRail('z', 3.4, -6.35, -5.0, FL1);
   glassRail('x', 5.95, 3.3, 7.45, FL1); glassRail('z', 7.45, 3.0, 5.95, FL1); glassRail('z', 3.3, 3.0, 5.95, FL1);
-  glassRail('x', 5.95, -7.45, -4.4, FL1); glassRail('z', -7.45, 3.0, 5.95, FL1); glassRail('z', -4.4, 3.0, 5.95, FL1);
+  glassRail('z', -7.45, -0.5, 7.95, FL1); glassRail('x', 7.95, -7.45, -4.36, FL1); glassRail('z', -4.36, 3.0, 7.95, FL1);
   // pórtico norte: aletas laterales que enmarcan los balcones
   box(-7.5, -7.3, CEIL0, CEIL1, -6.6, -5.0, E.estucoExt); seg(-7.3, -6.6, -7.3, -5.0, FL1, CEIL1);
   box(7.3, 7.5, CEIL0, CEIL1, -6.6, -5.0, E.estucoExt); seg(7.3, -6.6, 7.3, -5.0, FL1, CEIL1);
   // celosías de teca en oriente y occidente (pasillo)
-  for (let z = -2.0; z <= -0.1; z += 0.12) { box(-7.66, -7.54, FL1 - 0.1, CEIL1 + 0.05, z - 0.02, z + 0.02, E.tecaLamas); box(7.54, 7.66, FL1 - 0.1, CEIL1 + 0.05, z - 0.02, z + 0.02, E.tecaLamas); }
-  box(-7.7, -7.5, CEIL1 + 0.05, CEIL1 + 0.12, -2.1, 0.0, E.aceroNegro); box(7.5, 7.7, CEIL1 + 0.05, CEIL1 + 0.12, -2.1, 0.0, E.aceroNegro);
+  for (let z = -2.0; z <= -0.75; z += 0.12) { box(-7.66, -7.54, FL1 - 0.1, CEIL1 + 0.05, z - 0.02, z + 0.02, E.tecaLamas); box(7.54, 7.66, FL1 - 0.1, CEIL1 + 0.05, z - 0.02, z + 0.02, E.tecaLamas); }
+  box(-7.7, -7.5, CEIL1 + 0.05, CEIL1 + 0.12, -2.1, -0.65, E.aceroNegro); box(7.5, 7.7, CEIL1 + 0.05, CEIL1 + 0.12, -2.1, 0.0, E.aceroNegro);
 
   // ------------------------------------------------------------ CUBIERTA
   setGroup('roof');
-  box(-7.3, 7.3, CEIL1 - 0.02, CEIL1, -4.8, 2.8, E.estucoInt);         // cielo raso PA (incluye vacío)
-  box(-7.5, 7.5, CEIL1, ROOF, -6.6, 4.2, E.estucoExt);                // losa de cubierta con aleros
-  box(-7.35, 7.35, ROOF, ROOF + 0.02, -6.45, 4.05, E.gravilla);
-  box(-7.5, 7.5, ROOF, ROOF + 0.35, -6.6, -6.45, E.estucoExt); box(-7.5, 7.5, ROOF, ROOF + 0.35, 4.05, 4.2, E.estucoExt);
-  box(-7.5, -7.35, ROOF, ROOF + 0.35, -6.45, 4.05, E.estucoExt); box(7.35, 7.5, ROOF, ROOF + 0.35, -6.45, 4.05, E.estucoExt);
+  box(-7.3, 7.3, CEIL1 - 0.02, CEIL1, -4.8, -0.56, E.estucoInt);       // cielo raso PA (incluye vacío)
+  box(-4.24, 7.3, CEIL1 - 0.02, CEIL1, -0.56, 2.8, E.estucoInt);
+  box(-7.5, -4.3, CEIL1, ROOF, -6.6, 0.1, E.estucoExt);               // losa de cubierta con aleros (en L)
+  box(-4.3, 7.5, CEIL1, ROOF, -6.6, 4.2, E.estucoExt);
+  box(-7.35, -4.3, ROOF, ROOF + 0.02, -6.45, -0.05, E.gravilla); box(-4.15, 7.35, ROOF, ROOF + 0.02, -0.05, 4.05, E.gravilla); box(-4.3, 7.35, ROOF, ROOF + 0.02, -6.45, -0.05, E.gravilla);
+  box(-7.5, 7.5, ROOF, ROOF + 0.35, -6.6, -6.45, E.estucoExt); box(-4.3, 7.5, ROOF, ROOF + 0.35, 4.05, 4.2, E.estucoExt);
+  box(-7.5, -7.35, ROOF, ROOF + 0.35, -6.45, 0.1, E.estucoExt); box(7.35, 7.5, ROOF, ROOF + 0.35, -6.45, 4.05, E.estucoExt);
+  box(-7.35, -4.3, ROOF, ROOF + 0.35, -0.05, 0.1, E.estucoExt); box(-4.3, -4.15, ROOF, ROOF + 0.35, -0.05, 4.05, E.estucoExt);
   // paneles solares: 2 filas x 9, inclinados 10° al sur
   for (const zc of [-3.6, -0.6]) for (let i = 0; i < 9; i++) {
-    const xc = -4.52 + i * 1.13;
+    const xc = (zc < -1 ? -4.52 : -3.42) + i * 1.13;
     inPlace(xc, ROOF + 0.42, zc, 0, () => {
       const g = new THREE.BoxGeometry(1.1, 0.04, 2.26); g.rotateX(10 * D2R); addGeo(g, E.alNegro);
       const p = new THREE.PlaneGeometry(1.06, 2.22); p.rotateX(-Math.PI / 2); p.translate(0, 0.022, 0); p.rotateX(10 * D2R); addGeo(p, E.panelSolar, true);
@@ -1187,7 +1201,7 @@ function buildHouse() {
       box(-0.5, -0.46, -0.4, 0.14, -0.94, -0.9, E.aceroNegro); box(0.46, 0.5, -0.4, 0.14, -0.94, -0.9, E.aceroNegro);
     });
   }
-  for (const x of [-5.6, -4.4]) { box(x - 0.45, x + 0.45, ROOF, ROOF + 0.8, 1.4, 2.2, E.inox); cyl(x, ROOF + 0.8, 1.8, 0.3, 0.02, E.aceroNegro, 20); }
+  for (const x of [-3.4, -2.2]) { box(x - 0.45, x + 0.45, ROOF, ROOF + 0.8, 1.4, 2.2, E.inox); cyl(x, ROOF + 0.8, 1.8, 0.3, 0.02, E.aceroNegro, 20); }
   box(4.2, 5.4, ROOF, ROOF + 0.12, 1.4, 2.6, E.concreto);
   cyl(4.8, ROOF + 0.12, 2.0, 0.55, 1.2, E.casaVecina ?? E.estucoExt, 24);
 
@@ -1512,7 +1526,20 @@ function buildFurniture() {
   colRectW(-7.3, -4.75, 0.875, 1.52, 0, 2.4);
   box(-7.3, -6.3, 0, 0.5, 3.6, 4.6, E.microcemento); box(-7.2, -6.4, 0.5, 0.505, 3.7, 4.5, E.vidrioNegro);
   cyl(-7.25, 1.2, 4.1, 0.02, 0.5, E.cromo); colRectW(-7.3, -6.3, 3.6, 4.6, 0, 0.6);
-  box(-5.6, -3.6, 0, 2.2, 4.2, 4.6, E.nogal); colRectW(-5.6, -3.6, 4.2, 4.6, 0, 2.2);
+  box(-6.2, -4.95, 0, 2.2, 4.2, 4.6, E.nogal); colRectW(-6.2, -4.95, 4.2, 4.6, 0, 2.2);
+  // ------------------------------ HABITACIÓN DE SERVICIO (planta baja, con baño y patio)
+  bed(-6.725, 0, 6.75, RN, 1.05, 1.9, E.telaGris, 0.05);
+  box(-5.76, -5.16, 0, 2.3, 6.3, 7.8, E.nogal); colRectW(-5.76, -5.16, 6.3, 7.8, 0, 2.3);   // clóset de puertas corredizas
+  box(-5.77, -5.76, 0.05, 2.25, 7.04, 7.06, E.aceroNegro);
+  box(-6.15, -5.85, 0.6, 0.63, 7.5, 7.78, E.nogal);                                            // repisa de noche
+  tvWall(-6.3, 1.3, 4.815, RS, 0.96, 0.56, 1);
+  downlight(-6.2, 2.98, 6.0); downlight(-4.35, 2.98, 5.35);
+  // baño: lavamanos y sanitario contra el muro occidental, ducha a ras de piso al sur
+  box(-5.04, -4.64, 0.78, 0.82, 6.05, 6.5, E.encimera); basin(-4.84, 0.82, 6.27); box(-5.035, -5.03, 1.1, 1.8, 6.05, 6.5, E.espejo);
+  wc(-4.92, 0, 6.85, RE);
+  box(-5.04, -3.7, 0, 0.012, 7.15, 7.8, E.vidrioNegro); cyl(-4.37, 2.2, 7.5, 0.12, 0.015, E.aceroNegro, 20); box(-4.38, -4.36, 2.2, 2.23, 7.5, 7.8, E.aceroNegro);
+  glassPane('x', 7.15, -5.04, -4.45, 0, 2.0); seg(-5.04, 7.15, -4.45, 7.15, 0, 2.0);
+  downlight(-4.37, 2.98, 6.6);
   cyl(-6.9, 0, 3.1, 0.11, 0.07, E.inox, 20); cyl(-6.6, 0, 3.1, 0.11, 0.07, E.inox, 20);
   for (const [x, z] of [[-6.6, 2.4], [-4.5, 2.4]]) downlight(x, 2.98, z);
 
@@ -1572,18 +1599,11 @@ function buildFurniture() {
   cyl(-2.93, Y + 2.3, 2.4, 0.14, 0.015, E.aceroNegro, 24);
   wc(-4.11, Y, 2.4, RE);
   downlight(-3.3, CEIL1 - 0.02, 0.9); downlight(-2.93, CEIL1 - 0.02, 2.4);
-  // Habitación de servicio
-  bed(-6.2, Y, 2.15, RE, 1.05, 2.0, E.telaGris, 0.1);
-  nightstand(-7.05, Y, 1.38, RE, false);
-  box(-4.95, -4.36, Y, Y + 2.3, -0.44, 0.75, E.nogal); colRectW(-4.95, -4.36, -0.44, 0.75, Y, Y + 2.3);
-  tvWall(-4.375, Y + 1.2, 2.15, RW, 0.96, 0.56, 1);
-  downlight(-5.4, CEIL1 - 0.02, 1.8);
-  // Baño de servicio
-  glassPane('x', 0.35, -7.3, -6.45, Y, Y + 2.0); seg(-7.3, 0.35, -6.45, 0.35, Y, Y + 2.0);
-  cyl(-6.9, Y + 2.2, -0.05, 0.11, 0.015, E.aceroNegro, 20);
-  wc(-7.18, Y, 0.75, RE);
-  box(-6.65, -6.1, Y + 0.82, Y + 0.86, 0.85, 1.04, E.encimera); basin(-6.38, Y + 0.86, 0.95);
-  downlight(-6.6, CEIL1 - 0.02, 0.4);
+  // Terraza familiar (sobre la losa de planta baja, descubierta)
+  sofa(-4.85, Y, 1.8, RW, 2.4, E.telaExt);
+  box(-6.3, -5.7, Y, Y + 0.35, 1.3, 2.3, E.travertino); colRectW(-6.3, -5.7, 1.3, 2.3, Y, Y + 0.4);
+  lounger(-6.6, Y, 6.2, RS); lounger(-5.3, Y, 6.2, RS);
+  plant(-4.8, Y, 4.0, 1.2, 0.28, E.plantaInt, 93); plant(-7.0, Y, 3.4, 1.0, 0.25, E.plantaInt, 95);
   // Pasillo y galería
   plane(0.0, Y + 1.55, -0.565, 1.3, 1.3, E.arteRayo, RN);
   plant(-6.85, Y, -1.1, 1.1, 0.22, E.plantaInt, 71);
@@ -1592,10 +1612,9 @@ function buildFurniture() {
   for (const [x, z, r] of [[-6.4, -5.75, RN], [-5.5, -5.75, RN], [5.9, -5.75, RN], [6.7, -5.75, RN]]) chair(x, Y, z, r, E.teca, E.teca);
   cyl(-5.95, Y, -5.95, 0.22, 0.5, E.travertino, 24); cyl(6.3, Y, -5.95, 0.22, 0.5, E.travertino, 24);
   lounger(4.5, Y, 4.6, RS); lounger(5.9, Y, 4.6, RS); plant(7.0, Y, 3.4, 1.0, 0.25, E.plantaInt, 81);
-  chair(-6.6, Y, 4.6, RS, E.teca, E.teca); chair(-5.6, Y, 4.6, RS, E.teca, E.teca); plant(-4.9, Y, 5.4, 0.9, 0.22, E.plantaInt, 91);
   // Luces exteriores empotradas en aleros
   setGroup('base');
-  for (let x = -6.8; x <= 7.0; x += 1.7) downlight(x, CEIL0, 5.4);
+  for (let x = -2.9; x <= 7.0; x += 1.65) downlight(x, CEIL0, 5.4);
   setGroup('roof');
   for (const x of [-6.0, -4.0, -0.5, 1.6, 3.2, 4.6, 6.4]) downlight(x, CEIL1, -5.8);
 }
@@ -1637,9 +1656,15 @@ function buildExterior() {
   box(-160, 160, -0.6, -0.05, -160, -23, E.grama);
   box(-160, -12.2, -0.6, -0.05, -12, 14.3, E.grama);
   box(12.2, 160, -0.6, -0.05, -12, 14.3, E.grama);
-  box(-160, 160, -6.8, -6.0, 14.5, 160, E.grama);
-  quad([-160, -0.05, 14.3], [-12.2, -0.05, 14.3], [-12.2, -6.0, 24], [-160, -6.0, 24], E.grama);
-  quad([12.2, -0.05, 14.3], [160, -0.05, 14.3], [160, -6.0, 24], [12.2, -6.0, 24], E.grama);
+  // terreno bajo el borde infinito: muro de contención de 3 m, banca y talud natural hasta -6 m
+  box(-160, 160, -6.8, -6.0, 21, 160, E.grama);
+  box(-12.2, 12.2, -3.4, -3.0, 14.5, 16.0, E.grama);
+  // vértices en sentido antihorario visto desde la cara que se ve, para que la normal apunte hacia afuera
+  quad([-160, -6.0, 21], [160, -6.0, 21], [160, -3.0, 16], [-160, -3.0, 16], E.grama);
+  quad([-160, -3.0, 16], [-12.2, -3.0, 16], [-12.2, -0.05, 14.3], [-160, -0.05, 14.3], E.grama);
+  quad([12.2, -3.0, 16], [160, -3.0, 16], [160, -0.05, 14.3], [12.2, -0.05, 14.3], E.grama);
+  quad([-12.2, -0.4, 14.5], [-12.2, -0.4, 14.5], [-12.2, -3.0, 16], [-12.2, -3.0, 14.5], E.coralina);
+  quad([12.2, -3.0, 14.5], [12.2, -3.0, 16], [12.2, -0.4, 14.5], [12.2, -0.4, 14.5], E.coralina);
   // ---------------- lote
   box(-12.2, 12.2, -0.6, -0.05, -12, -5, E.grama);
   box(-12.2, -7.5, -0.6, -0.05, -5, 8.0, E.grama);
@@ -1661,7 +1686,7 @@ function buildExterior() {
   shrubRow(-11.4, -8.2, -11.35, -0.05, 13); shrubRow(3.2, 11.3, -11.35, -0.05, 17);
   seg(-160, -14, 160, -14, -1, 3);  // borde del andén
   // ---------------- terraza, piscina y borde infinito
-  box(-7.5, 7.5, -0.4, 0, 4.8, 8.0, E.teca);
+  box(-3.5, 7.5, -0.4, 0, 4.8, 8.0, E.teca);
   box(-12.2, 12.2, -0.4, 0, 8.0, 9.35, E.travertino);
   box(-12.2, -6.15, -0.4, 0, 9.35, 14.3, E.travertino);
   box(9.15, 12.2, -0.4, 0, 9.35, 14.3, E.travertino);
@@ -1676,7 +1701,7 @@ function buildExterior() {
   box(-6.15, 9.15, -0.95, -0.85, 13.65, 14.3, E.mosaico);
   box(-6.15, 9.15, -0.95, -0.45, 14.15, 14.3, E.coralina);
   hplane(-6.15, 9.15, 13.65, 14.15, -0.62, E.agua);
-  box(-12.2, 12.2, -6.2, -0.45, 14.3, 14.5, E.coralina);
+  box(-12.2, 12.2, -3.2, -0.45, 14.3, 14.5, E.coralina);
   box(-12.2, -6.15, -0.45, 0, 14.3, 14.5, E.coralina); box(9.15, 12.2, -0.45, 0, 14.3, 14.5, E.coralina);
   glassRail('x', 14.42, -11.6, -6.15, 0); glassRail('x', 14.42, 9.15, 11.6, 0);
   colRectW(-6.15, 9.15, 9.35, 14.5, -3, 1.0);
@@ -1694,11 +1719,14 @@ function buildExterior() {
   lounger(9.85, 0, 11.3, RS); lounger(11.0, 0, 11.3, RS); lounger(-8.0, 0, 11.3, RS); lounger(-9.2, 0, 11.3, RS);
   cyl(10.45, 0, 12.95, 0.2, 0.06, E.aceroNegro, 20); cyl(10.45, 0, 12.95, 0.025, 2.4, E.aceroNegro);
   { const g = new THREE.ConeGeometry(1.4, 0.45, 8, 1, true); g.translate(10.45, 2.35, 12.95); addGeo(g, E.telaExt); colRectW(10.3, 10.6, 12.8, 13.1, 0, 2.5); }
-  plant(-6.9, 0, 8.6, 1.2, 0.35, E.follaje, 101); plant(9.9, 0, 8.6, 1.2, 0.35, E.follaje, 103);
+  plant(-11.0, 0, 9.6, 1.2, 0.35, E.follaje, 101); plant(9.9, 0, 8.6, 1.2, 0.35, E.follaje, 103);
   for (const x of [-11.2, -9.6, 9.6, 11.2]) { box(x - 0.06, x + 0.06, 0, 0.5, 8.2, 8.32, E.aceroNegro); box(x - 0.05, x + 0.05, 0.42, 0.48, 8.31, 8.33, E.led); }
   // ---------------- patio de mascotas
-  box(-11.6, -7.5, -0.05, -0.04, 0.5, 5.5, E.grama);
-  fenceLine(-11.6, 0.5, -7.5, 0.5); fenceLine(-11.6, 5.5, -9.7, 5.5); fenceLine(-8.7, 5.5, -7.5, 5.5); fenceLine(-7.5, 4.8, -7.5, 5.5);
+  box(-11.6, -7.5, -0.05, -0.04, 0.5, 4.85, E.grama);
+  fenceLine(-11.6, 0.5, -7.5, 0.5); fenceLine(-11.6, 4.85, -9.7, 4.85); fenceLine(-8.7, 4.85, -7.5, 4.85);
+  // patio privado de la habitación de servicio
+  box(-9.6, -7.5, -0.3, 0, 5.0, 7.95, E.teca); fenceLine(-11.6, 8.0, -9.7, 8.0); fenceLine(-8.7, 8.0, -7.5, 8.0);
+  chair(-8.3, 0, 6.9, RS, E.teca, E.teca); plant(-9.25, 0, 6.0, 1.0, 0.25, E.plantaInt, 97);
   // casa de mascota en dos niveles: madriguera abajo, mirador arriba, rampa y techo verde
   {
     const x0 = -11.3, x1 = -9.9, z0 = 1.0, z1 = 2.6;
@@ -1779,7 +1807,7 @@ function buildVegetation() {
   const add = (x, z, y) => tm.push(M(x, y, z, 0.8 + r() * 0.9, r() * 6.28));
   for (let i = 0; i < 140; i++) {
     const zone = r();
-    if (zone < 0.55) { const x = (r() - 0.5) * 260, z = 17 + r() * 140; add(x, z, -6.0); }
+    if (zone < 0.55) { const x = (r() - 0.5) * 260, z = 22 + r() * 135; add(x, z, -6.0); }
     else if (zone < 0.75) { const x = (r() - 0.5) * 300, z = -26 - r() * 130; add(x, z, -0.05); }
     else { const s = r() < 0.5 ? -1 : 1, x = s * (16 + r() * 120), z = -12 + r() * 26; add(x, z, -0.05); }
   }
@@ -1960,14 +1988,14 @@ const ROOMS = [
   ['Garaje doble', 0, -7.5, -2.0, -5.0, 0.8, 'a'], ['Vestíbulo de doble altura', 0, -2.0, 3.2, -5.0, -1.7, 'a'], ['Oficina', 0, 3.2, 7.5, -5.0, -1.7, 'a'],
   ['Baño social', 0, -2.0, -0.9, -1.7, 0.8, 'a'], ['Hall', 0, -0.9, 3.2, -1.7, 0.8, 'a'], ['Sala', 0, 3.2, 7.5, -1.7, 4.8, 'a'],
   ['Comedor', 0, 0.0, 3.2, 0.8, 4.8, 'a'], ['Cocina abierta', 0, -3.5, 0.0, 0.8, 4.8, 'a'], ['Área de servicio y lavandería', 0, -7.5, -3.5, 0.8, 4.8, 'a'],
+  ['Habitación de servicio', 0, -7.5, -5.1, 4.8, 8.0, 'a'], ['Hall de servicio', 0, -5.1, -3.5, 4.8, 5.93, 'a'], ['Baño de servicio', 0, -5.1, -3.5, 5.93, 8.0, 'a'],
   ['Habitación 2', 1, -7.5, -2.0, -5.0, -1.7, 'a'], ['Habitación 3', 1, 3.2, 7.5, -5.0, -1.7, 'a'], ['Galería y pasillo', 1, -7.5, 7.5, -1.7, -0.5, 'a'],
-  ['Baño de servicio', 1, -7.5, -6.0, -0.5, 1.1, 'a'], ['Habitación de servicio', 1, -7.5, -4.3, -0.5, 3.0, 'a', 2.4],
   ['Baño compartido', 1, -4.3, -2.3, -0.5, 3.0, 'a'], ['Baño principal con bañera', 1, -2.3, 1.2, -0.5, 3.0, 'a'], ['Vestier', 1, 1.2, 3.2, -0.5, 3.0, 'a'],
   ['Habitación principal', 1, 3.2, 7.5, -0.5, 3.0, 'a'],
   ['Balcón · habitación 2', 1, -7.3, -2.2, -6.4, -5.0, 'b'], ['Balcón · habitación 3', 1, 3.4, 7.3, -6.4, -5.0, 'b'],
-  ['Balcón · habitación principal', 1, 3.3, 7.45, 3.0, 6.0, 'b'], ['Balcón · habitación de servicio', 1, -7.45, -4.4, 3.0, 6.0, 'b'],
+  ['Balcón · habitación principal', 1, 3.3, 7.45, 3.0, 6.0, 'b'], ['Terraza familiar', 1, -7.5, -4.3, -0.5, 8.0, 'f'],
   ['Terraza cubierta', 0, -7.5, 7.5, 4.8, 8.0, 't'], ['Piscina de borde infinito', 0, -6.2, 9.2, 8.0, 14.5, 'p'],
-  ['Patio de mascotas', 0, -11.6, -7.5, 0.5, 5.5, ''], ['Deck de la piscina', 0, -12.2, 12.2, 8.0, 14.5, ''],
+  ['Patio de mascotas', 0, -11.6, -7.5, 0.5, 4.85, ''], ['Patio de servicio', 0, -11.6, -7.5, 4.85, 8.0, ''], ['Deck de la piscina', 0, -12.2, 12.2, 8.0, 14.5, ''],
   ['Espejo de agua y acceso', 0, -1.8, 7.5, -12, -5, ''], ['Acceso vehicular', 0, -7.5, -2.0, -12, -5, ''],
   ['Jardín lateral', 0, -12.2, 12.2, -5, 8, ''], ['Jardín frontal', 0, -12.2, 12.2, -12, -5, ''], ['Andén', 0, -200, 200, -14.5, -12, ''],
 ];
@@ -1991,7 +2019,8 @@ function fillAreas() {
   h += `<tr class="sum"><td>Área construida total</td><td class="n">${fmt(tot)}</td></tr>`;
   h += '<tr class="sub"><td colspan="2">No computable</td></tr>';
   let bal = 0; for (const r of ROOMS) if (r[6] === 'b') bal += roomArea(r);
-  h += `<tr><td>4 balcones</td><td class="n">${fmt(bal)}</td></tr><tr><td>Terraza cubierta y pérgola</td><td class="n">${fmt(48)}</td></tr><tr><td>Lámina de agua de la piscina</td><td class="n">${fmt(60)}</td></tr>`;
+  const fam = ROOMS.find((r) => r[6] === 'f');
+  h += `<tr><td>3 balcones</td><td class="n">${fmt(bal)}</td></tr><tr><td>Terraza familiar (planta alta)</td><td class="n">${fmt(roomArea(fam))}</td></tr><tr><td>Terraza cubierta y pérgola</td><td class="n">${fmt(35.2)}</td></tr><tr><td>Patio de servicio</td><td class="n">${fmt(12.9)}</td></tr><tr><td>Lámina de agua de la piscina</td><td class="n">${fmt(60)}</td></tr>`;
   t.innerHTML = h + '</tbody>';
 }
 const look = (fx, fz, tx, tz) => Math.atan2(-(tx - fx), -(tz - fz));
@@ -2013,7 +2042,8 @@ const PLACES = [
   ['Balcón principal', 1, 5.2, 3.4, Math.PI, -0.05],
   ['Habitación 2', 1, -2.9, -2.3, Math.PI / 2, -0.08],
   ['Habitación 3', 1, 3.85, -2.3, -Math.PI / 2, -0.08],
-  ['Habitación de servicio', 1, -5.47, -0.1, look(-5.47, -0.1, -6.3, 2.3), -0.1],
+  ['Habitación de servicio', 0, -4.35, 5.35, look(-4.35, 5.35, -7.0, 6.4), -0.1],
+  ['Terraza familiar', 1, -6.0, 0.1, Math.PI, -0.05],
 ];
 
 // =====================================================================
@@ -2170,8 +2200,8 @@ function mapSetup() {
     rect(-7.5, 7.5, 4.8, 8, 'rgba(190,130,80,.35)'); rect(-12.2, 12.2, 8, 14.3, 'rgba(225,210,180,.28)');
     rect(-6, 9, 9.5, 13.6, 'rgba(90,200,210,.55)'); rect(-1.6, 1.15, -11, -6.6, 'rgba(70,110,130,.6)'); rect(3.05, 7.3, -11, -6.6, 'rgba(70,110,130,.6)');
     rect(-7.5, -2, -12, -5, 'rgba(210,210,205,.22)');
-    rect(-7.5, 7.5, -5, lv ? 3.0 : 4.8, 'rgba(242,238,230,.16)');
-    if (lv) { rect(-7.5, 7.5, 3.0, 6.0, 'rgba(160,180,120,.25)'); rect(-7.3, -2.2, -6.4, -5, 'rgba(190,130,80,.35)'); rect(3.4, 7.3, -6.4, -5, 'rgba(190,130,80,.35)'); rect(3.3, 7.45, 3, 6, 'rgba(190,130,80,.4)'); rect(-7.45, -4.4, 3, 6, 'rgba(190,130,80,.4)'); rect(-2, 3.2, -5, -1.7, 'rgba(0,0,0,.35)'); }
+    rect(-7.5, 7.5, -5, lv ? 3.0 : 4.8, 'rgba(242,238,230,.16)'); if (!lv) rect(-7.5, -3.5, 4.8, 8.0, 'rgba(242,238,230,.16)');
+    if (lv) { rect(-7.5, 7.5, 3.0, 6.0, 'rgba(160,180,120,.25)'); rect(-7.3, -2.2, -6.4, -5, 'rgba(190,130,80,.35)'); rect(3.4, 7.3, -6.4, -5, 'rgba(190,130,80,.35)'); rect(3.3, 7.45, 3, 6, 'rgba(190,130,80,.4)'); rect(-7.45, -4.36, -0.44, 7.95, 'rgba(190,130,80,.45)'); rect(-2, 3.2, -5, -1.7, 'rgba(0,0,0,.35)'); }
     for (const p of PLAN[lv]) {
       g.beginPath(); g.moveTo(X(p.ax), Z(p.az)); g.lineTo(X(p.bx), Z(p.bz));
       if (p.kind === 'wall') { g.strokeStyle = '#f2eee6'; g.lineWidth = 2.2; }

@@ -230,7 +230,20 @@ function buildFurniture() {
   colRectW(-7.3, -4.75, 0.875, 1.52, 0, 2.4);
   box(-7.3, -6.3, 0, 0.5, 3.6, 4.6, E.microcemento); box(-7.2, -6.4, 0.5, 0.505, 3.7, 4.5, E.vidrioNegro);
   cyl(-7.25, 1.2, 4.1, 0.02, 0.5, E.cromo); colRectW(-7.3, -6.3, 3.6, 4.6, 0, 0.6);
-  box(-5.6, -3.6, 0, 2.2, 4.2, 4.6, E.nogal); colRectW(-5.6, -3.6, 4.2, 4.6, 0, 2.2);
+  box(-6.2, -4.95, 0, 2.2, 4.2, 4.6, E.nogal); colRectW(-6.2, -4.95, 4.2, 4.6, 0, 2.2);
+  // ------------------------------ HABITACIÓN DE SERVICIO (planta baja, con baño y patio)
+  bed(-6.725, 0, 6.75, RN, 1.05, 1.9, E.telaGris, 0.05);
+  box(-5.76, -5.16, 0, 2.3, 6.3, 7.8, E.nogal); colRectW(-5.76, -5.16, 6.3, 7.8, 0, 2.3);   // clóset de puertas corredizas
+  box(-5.77, -5.76, 0.05, 2.25, 7.04, 7.06, E.aceroNegro);
+  box(-6.15, -5.85, 0.6, 0.63, 7.5, 7.78, E.nogal);                                            // repisa de noche
+  tvWall(-6.3, 1.3, 4.815, RS, 0.96, 0.56, 1);
+  downlight(-6.2, 2.98, 6.0); downlight(-4.35, 2.98, 5.35);
+  // baño: lavamanos y sanitario contra el muro occidental, ducha a ras de piso al sur
+  box(-5.04, -4.64, 0.78, 0.82, 6.05, 6.5, E.encimera); basin(-4.84, 0.82, 6.27); box(-5.035, -5.03, 1.1, 1.8, 6.05, 6.5, E.espejo);
+  wc(-4.92, 0, 6.85, RE);
+  box(-5.04, -3.7, 0, 0.012, 7.15, 7.8, E.vidrioNegro); cyl(-4.37, 2.2, 7.5, 0.12, 0.015, E.aceroNegro, 20); box(-4.38, -4.36, 2.2, 2.23, 7.5, 7.8, E.aceroNegro);
+  glassPane('x', 7.15, -5.04, -4.45, 0, 2.0); seg(-5.04, 7.15, -4.45, 7.15, 0, 2.0);
+  downlight(-4.37, 2.98, 6.6);
   cyl(-6.9, 0, 3.1, 0.11, 0.07, E.inox, 20); cyl(-6.6, 0, 3.1, 0.11, 0.07, E.inox, 20);
   for (const [x, z] of [[-6.6, 2.4], [-4.5, 2.4]]) downlight(x, 2.98, z);
 
@@ -290,18 +303,11 @@ function buildFurniture() {
   cyl(-2.93, Y + 2.3, 2.4, 0.14, 0.015, E.aceroNegro, 24);
   wc(-4.11, Y, 2.4, RE);
   downlight(-3.3, CEIL1 - 0.02, 0.9); downlight(-2.93, CEIL1 - 0.02, 2.4);
-  // Habitación de servicio
-  bed(-6.2, Y, 2.15, RE, 1.05, 2.0, E.telaGris, 0.1);
-  nightstand(-7.05, Y, 1.38, RE, false);
-  box(-4.95, -4.36, Y, Y + 2.3, -0.44, 0.75, E.nogal); colRectW(-4.95, -4.36, -0.44, 0.75, Y, Y + 2.3);
-  tvWall(-4.375, Y + 1.2, 2.15, RW, 0.96, 0.56, 1);
-  downlight(-5.4, CEIL1 - 0.02, 1.8);
-  // Baño de servicio
-  glassPane('x', 0.35, -7.3, -6.45, Y, Y + 2.0); seg(-7.3, 0.35, -6.45, 0.35, Y, Y + 2.0);
-  cyl(-6.9, Y + 2.2, -0.05, 0.11, 0.015, E.aceroNegro, 20);
-  wc(-7.18, Y, 0.75, RE);
-  box(-6.65, -6.1, Y + 0.82, Y + 0.86, 0.85, 1.04, E.encimera); basin(-6.38, Y + 0.86, 0.95);
-  downlight(-6.6, CEIL1 - 0.02, 0.4);
+  // Terraza familiar (sobre la losa de planta baja, descubierta)
+  sofa(-4.85, Y, 1.8, RW, 2.4, E.telaExt);
+  box(-6.3, -5.7, Y, Y + 0.35, 1.3, 2.3, E.travertino); colRectW(-6.3, -5.7, 1.3, 2.3, Y, Y + 0.4);
+  lounger(-6.6, Y, 6.2, RS); lounger(-5.3, Y, 6.2, RS);
+  plant(-4.8, Y, 4.0, 1.2, 0.28, E.plantaInt, 93); plant(-7.0, Y, 3.4, 1.0, 0.25, E.plantaInt, 95);
   // Pasillo y galería
   plane(0.0, Y + 1.55, -0.565, 1.3, 1.3, E.arteRayo, RN);
   plant(-6.85, Y, -1.1, 1.1, 0.22, E.plantaInt, 71);
@@ -310,10 +316,9 @@ function buildFurniture() {
   for (const [x, z, r] of [[-6.4, -5.75, RN], [-5.5, -5.75, RN], [5.9, -5.75, RN], [6.7, -5.75, RN]]) chair(x, Y, z, r, E.teca, E.teca);
   cyl(-5.95, Y, -5.95, 0.22, 0.5, E.travertino, 24); cyl(6.3, Y, -5.95, 0.22, 0.5, E.travertino, 24);
   lounger(4.5, Y, 4.6, RS); lounger(5.9, Y, 4.6, RS); plant(7.0, Y, 3.4, 1.0, 0.25, E.plantaInt, 81);
-  chair(-6.6, Y, 4.6, RS, E.teca, E.teca); chair(-5.6, Y, 4.6, RS, E.teca, E.teca); plant(-4.9, Y, 5.4, 0.9, 0.22, E.plantaInt, 91);
   // Luces exteriores empotradas en aleros
   setGroup('base');
-  for (let x = -6.8; x <= 7.0; x += 1.7) downlight(x, CEIL0, 5.4);
+  for (let x = -2.9; x <= 7.0; x += 1.65) downlight(x, CEIL0, 5.4);
   setGroup('roof');
   for (const x of [-6.0, -4.0, -0.5, 1.6, 3.2, 4.6, 6.4]) downlight(x, CEIL1, -5.8);
 }

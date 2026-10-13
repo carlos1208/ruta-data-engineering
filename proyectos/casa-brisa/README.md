@@ -1,9 +1,11 @@
 # Casa Brisa · Barranquilla
 
-Recorrido 3D en el navegador de una casa moderna de 249,8 m² construidos,
-con fachada principal al norte, en Barranquilla (10°58′ N, 74°48′ O).
+Recorrido 3D en el navegador de una casa moderna de 251,4 m² construidos,
+con fachada principal al norte, en Barranquilla (10°58′ N, 74°48′ O), y su
+estudio de costos con cronograma de obra.
 
-Versión publicada: https://claude.ai/artifact/MHdBPHMvqj7Y7iE5Sbv9so
+- Recorrido 3D: https://claude.ai/artifact/MHdBPHMvqj7Y7iE5Sbv9so
+- Estudio de costos: https://claude.ai/artifact/W6TKW7t2v22hYMBXkH6xMh (fuente en [`costos/`](costos/README.md))
 
 ## Cómo verla
 
@@ -15,11 +17,12 @@ imágenes externas.
 
 | Planta | Espacios |
 |---|---|
-| Baja (147,0 m²) | Garaje doble con dos puertas, vestíbulo de doble altura con escalera en U, oficina, baño social, sala, comedor, cocina abierta con isla, área de servicio y lavandería con ducha para mascotas |
-| Alta (102,8 m²) | Habitación principal con vestier y baño con bañera exenta, habitaciones 2 y 3, habitación y baño de servicio, baño compartido, galería sobre el vestíbulo |
-| Exterior | Piscina de borde infinito de 15 × 4 m, terraza con pérgola, espejo de agua en la entrada, patio de mascotas con casa de dos niveles y rampa, cubierta verde, 18 paneles solares (9,9 kWp) |
+| Baja (159,8 m²) | Garaje doble con dos puertas, vestíbulo de doble altura con escalera en U, oficina, baño social, sala, comedor, cocina abierta con isla, área de servicio y lavandería con ducha para mascotas, habitación de servicio con baño propio y patio privado |
+| Alta (91,6 m²) | Habitación principal con vestier y baño con bañera exenta, habitaciones 2 y 3, baño compartido, galería sobre el vestíbulo, terraza familiar descubierta |
+| Exterior | Piscina de borde infinito de 15 × 4 m sobre un muro de contención de 3 m, terraza con pérgola, espejo de agua en la entrada, patio de mascotas con casa de dos niveles y rampa, cubierta verde, 18 paneles solares (9,9 kWp) |
 
-Las cuatro habitaciones tienen balcón y televisor.
+Las tres habitaciones de la planta alta tienen balcón; la de servicio, en planta
+baja, tiene su patio. Las cuatro tienen televisor.
 
 ## Controles
 
@@ -34,8 +37,8 @@ Las cuatro habitaciones tienen balcón y televisor.
 ## Verificación de circulación
 
 Se comprobó por búsqueda en cuadrícula de 5 cm, sobre las mismas colisiones del
-recorrido, que los 25 puntos de destino (todos los espacios y los cuatro
-balcones) son alcanzables desde la calle con un paso libre de al menos 0,66 m,
+recorrido, que los 27 puntos de destino (todos los espacios, los tres
+balcones, la terraza familiar y el patio de servicio) son alcanzables desde la calle con un paso libre de al menos 0,66 m,
 incluida la subida y bajada por la escalera.
 
 ## Código
@@ -53,3 +56,12 @@ incluida la subida y bajada por la escalera.
 | `06-exterior.js` | Piscina, jardín, mascotas y entorno |
 | `07-env.js` | Sol, cielo y luces |
 | `08-app.js` | Controles, plano y bucle |
+
+## Estudio de costos
+
+`costos/` calcula cuánto costaría construirla en Barranquilla: cantidades
+medidas sobre el modelo, precios unitarios en tres escenarios, mano de obra
+separada de materiales, indirectos, cronograma de Gantt con ruta crítica y flujo
+de caja. Resultado del escenario medio: **$2.300 millones** (rango de $1.562 a
+$3.450 millones), 16 meses del primer plano a la entrega. Detalle en
+[`costos/README.md`](costos/README.md).

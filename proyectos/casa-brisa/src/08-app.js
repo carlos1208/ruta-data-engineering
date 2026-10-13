@@ -38,14 +38,14 @@ const ROOMS = [
   ['Garaje doble', 0, -7.5, -2.0, -5.0, 0.8, 'a'], ['Vestíbulo de doble altura', 0, -2.0, 3.2, -5.0, -1.7, 'a'], ['Oficina', 0, 3.2, 7.5, -5.0, -1.7, 'a'],
   ['Baño social', 0, -2.0, -0.9, -1.7, 0.8, 'a'], ['Hall', 0, -0.9, 3.2, -1.7, 0.8, 'a'], ['Sala', 0, 3.2, 7.5, -1.7, 4.8, 'a'],
   ['Comedor', 0, 0.0, 3.2, 0.8, 4.8, 'a'], ['Cocina abierta', 0, -3.5, 0.0, 0.8, 4.8, 'a'], ['Área de servicio y lavandería', 0, -7.5, -3.5, 0.8, 4.8, 'a'],
+  ['Habitación de servicio', 0, -7.5, -5.1, 4.8, 8.0, 'a'], ['Hall de servicio', 0, -5.1, -3.5, 4.8, 5.93, 'a'], ['Baño de servicio', 0, -5.1, -3.5, 5.93, 8.0, 'a'],
   ['Habitación 2', 1, -7.5, -2.0, -5.0, -1.7, 'a'], ['Habitación 3', 1, 3.2, 7.5, -5.0, -1.7, 'a'], ['Galería y pasillo', 1, -7.5, 7.5, -1.7, -0.5, 'a'],
-  ['Baño de servicio', 1, -7.5, -6.0, -0.5, 1.1, 'a'], ['Habitación de servicio', 1, -7.5, -4.3, -0.5, 3.0, 'a', 2.4],
   ['Baño compartido', 1, -4.3, -2.3, -0.5, 3.0, 'a'], ['Baño principal con bañera', 1, -2.3, 1.2, -0.5, 3.0, 'a'], ['Vestier', 1, 1.2, 3.2, -0.5, 3.0, 'a'],
   ['Habitación principal', 1, 3.2, 7.5, -0.5, 3.0, 'a'],
   ['Balcón · habitación 2', 1, -7.3, -2.2, -6.4, -5.0, 'b'], ['Balcón · habitación 3', 1, 3.4, 7.3, -6.4, -5.0, 'b'],
-  ['Balcón · habitación principal', 1, 3.3, 7.45, 3.0, 6.0, 'b'], ['Balcón · habitación de servicio', 1, -7.45, -4.4, 3.0, 6.0, 'b'],
+  ['Balcón · habitación principal', 1, 3.3, 7.45, 3.0, 6.0, 'b'], ['Terraza familiar', 1, -7.5, -4.3, -0.5, 8.0, 'f'],
   ['Terraza cubierta', 0, -7.5, 7.5, 4.8, 8.0, 't'], ['Piscina de borde infinito', 0, -6.2, 9.2, 8.0, 14.5, 'p'],
-  ['Patio de mascotas', 0, -11.6, -7.5, 0.5, 5.5, ''], ['Deck de la piscina', 0, -12.2, 12.2, 8.0, 14.5, ''],
+  ['Patio de mascotas', 0, -11.6, -7.5, 0.5, 4.85, ''], ['Patio de servicio', 0, -11.6, -7.5, 4.85, 8.0, ''], ['Deck de la piscina', 0, -12.2, 12.2, 8.0, 14.5, ''],
   ['Espejo de agua y acceso', 0, -1.8, 7.5, -12, -5, ''], ['Acceso vehicular', 0, -7.5, -2.0, -12, -5, ''],
   ['Jardín lateral', 0, -12.2, 12.2, -5, 8, ''], ['Jardín frontal', 0, -12.2, 12.2, -12, -5, ''], ['Andén', 0, -200, 200, -14.5, -12, ''],
 ];
@@ -69,7 +69,8 @@ function fillAreas() {
   h += `<tr class="sum"><td>Área construida total</td><td class="n">${fmt(tot)}</td></tr>`;
   h += '<tr class="sub"><td colspan="2">No computable</td></tr>';
   let bal = 0; for (const r of ROOMS) if (r[6] === 'b') bal += roomArea(r);
-  h += `<tr><td>4 balcones</td><td class="n">${fmt(bal)}</td></tr><tr><td>Terraza cubierta y pérgola</td><td class="n">${fmt(48)}</td></tr><tr><td>Lámina de agua de la piscina</td><td class="n">${fmt(60)}</td></tr>`;
+  const fam = ROOMS.find((r) => r[6] === 'f');
+  h += `<tr><td>3 balcones</td><td class="n">${fmt(bal)}</td></tr><tr><td>Terraza familiar (planta alta)</td><td class="n">${fmt(roomArea(fam))}</td></tr><tr><td>Terraza cubierta y pérgola</td><td class="n">${fmt(35.2)}</td></tr><tr><td>Patio de servicio</td><td class="n">${fmt(12.9)}</td></tr><tr><td>Lámina de agua de la piscina</td><td class="n">${fmt(60)}</td></tr>`;
   t.innerHTML = h + '</tbody>';
 }
 const look = (fx, fz, tx, tz) => Math.atan2(-(tx - fx), -(tz - fz));
@@ -91,7 +92,8 @@ const PLACES = [
   ['Balcón principal', 1, 5.2, 3.4, Math.PI, -0.05],
   ['Habitación 2', 1, -2.9, -2.3, Math.PI / 2, -0.08],
   ['Habitación 3', 1, 3.85, -2.3, -Math.PI / 2, -0.08],
-  ['Habitación de servicio', 1, -5.47, -0.1, look(-5.47, -0.1, -6.3, 2.3), -0.1],
+  ['Habitación de servicio', 0, -4.35, 5.35, look(-4.35, 5.35, -7.0, 6.4), -0.1],
+  ['Terraza familiar', 1, -6.0, 0.1, Math.PI, -0.05],
 ];
 
 // =====================================================================
@@ -248,8 +250,8 @@ function mapSetup() {
     rect(-7.5, 7.5, 4.8, 8, 'rgba(190,130,80,.35)'); rect(-12.2, 12.2, 8, 14.3, 'rgba(225,210,180,.28)');
     rect(-6, 9, 9.5, 13.6, 'rgba(90,200,210,.55)'); rect(-1.6, 1.15, -11, -6.6, 'rgba(70,110,130,.6)'); rect(3.05, 7.3, -11, -6.6, 'rgba(70,110,130,.6)');
     rect(-7.5, -2, -12, -5, 'rgba(210,210,205,.22)');
-    rect(-7.5, 7.5, -5, lv ? 3.0 : 4.8, 'rgba(242,238,230,.16)');
-    if (lv) { rect(-7.5, 7.5, 3.0, 6.0, 'rgba(160,180,120,.25)'); rect(-7.3, -2.2, -6.4, -5, 'rgba(190,130,80,.35)'); rect(3.4, 7.3, -6.4, -5, 'rgba(190,130,80,.35)'); rect(3.3, 7.45, 3, 6, 'rgba(190,130,80,.4)'); rect(-7.45, -4.4, 3, 6, 'rgba(190,130,80,.4)'); rect(-2, 3.2, -5, -1.7, 'rgba(0,0,0,.35)'); }
+    rect(-7.5, 7.5, -5, lv ? 3.0 : 4.8, 'rgba(242,238,230,.16)'); if (!lv) rect(-7.5, -3.5, 4.8, 8.0, 'rgba(242,238,230,.16)');
+    if (lv) { rect(-7.5, 7.5, 3.0, 6.0, 'rgba(160,180,120,.25)'); rect(-7.3, -2.2, -6.4, -5, 'rgba(190,130,80,.35)'); rect(3.4, 7.3, -6.4, -5, 'rgba(190,130,80,.35)'); rect(3.3, 7.45, 3, 6, 'rgba(190,130,80,.4)'); rect(-7.45, -4.36, -0.44, 7.95, 'rgba(190,130,80,.45)'); rect(-2, 3.2, -5, -1.7, 'rgba(0,0,0,.35)'); }
     for (const p of PLAN[lv]) {
       g.beginPath(); g.moveTo(X(p.ax), Z(p.az)); g.lineTo(X(p.bx), Z(p.bz));
       if (p.kind === 'wall') { g.strokeStyle = '#f2eee6'; g.lineWidth = 2.2; }

@@ -1,0 +1,5140 @@
+{
+ "area": 251.44,
+ "partidas": [
+  {
+   "capitulo": "Preliminares y obra provisional",
+   "partida": "Cerramiento provisional del lote",
+   "unidad": "ml",
+   "cantidad": 101.4,
+   "medicion": "perímetro del lote 24,4 × 26,3 m",
+   "base": "supuesto de material + 0,1 jornal de cuadrilla por ml (L3, L4, L5)",
+   "ids": [
+    "L3",
+    "L4",
+    "L5"
+   ],
+   "pu_bajo": 38265,
+   "total_bajo": 3880071,
+   "mo_bajo": 2054871,
+   "pu_medio": 51434,
+   "total_medio": 5215408,
+   "mo_medio": 2579008,
+   "pu_alto": 72740,
+   "total_alto": 7375836,
+   "mo_alto": 3522636,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Preliminares y obra provisional",
+   "partida": "Campamento, bodega y baño de obra",
+   "unidad": "mes",
+   "cantidad": 12,
+   "medicion": "duración de obra física del cronograma",
+   "base": "supuesto de alquiler mensual",
+   "ids": [],
+   "pu_bajo": 1100000,
+   "total_bajo": 13200000,
+   "mo_bajo": 1320000,
+   "pu_medio": 1500000,
+   "total_medio": 18000000,
+   "mo_medio": 1800000,
+   "pu_alto": 2100000,
+   "total_alto": 25200000,
+   "mo_alto": 2520000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Preliminares y obra provisional",
+   "partida": "Servicios provisionales de agua y energía",
+   "unidad": "mes",
+   "cantidad": 12,
+   "medicion": "duración de obra física del cronograma",
+   "base": "supuesto de consumo mensual",
+   "ids": [],
+   "pu_bajo": 550000,
+   "total_bajo": 6600000,
+   "mo_bajo": 0,
+   "pu_medio": 850000,
+   "total_medio": 10200000,
+   "mo_medio": 0,
+   "pu_alto": 1250000,
+   "total_alto": 15000000,
+   "mo_alto": 0,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Preliminares y obra provisional",
+   "partida": "Vigilancia nocturna",
+   "unidad": "mes",
+   "cantidad": 12,
+   "medicion": "duración de obra física del cronograma",
+   "base": "un vigilante con salario mínimo 2026 y factor prestacional (L1, L2, L5)",
+   "ids": [
+    "L1",
+    "L2",
+    "L5"
+   ],
+   "pu_bajo": 2875452,
+   "total_bajo": 34505430,
+   "mo_bajo": 34505430,
+   "pu_medio": 3085561,
+   "total_medio": 37026733,
+   "mo_medio": 37026733,
+   "pu_alto": 3400724,
+   "total_alto": 40808688,
+   "mo_alto": 40808688,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Preliminares y obra provisional",
+   "partida": "Localización, replanteo y control topográfico",
+   "unidad": "m²",
+   "cantidad": 251.44,
+   "medicion": "PB 159.8 + PA 91.64",
+   "base": "60 % de un levantamiento topográfico (S7) repartido por m²",
+   "ids": [
+    "S7"
+   ],
+   "pu_bajo": 2864,
+   "total_bajo": 720000,
+   "mo_bajo": 576000,
+   "pu_medio": 4295,
+   "total_medio": 1080000,
+   "mo_medio": 864000,
+   "pu_alto": 6682,
+   "total_alto": 1680000,
+   "mo_alto": 1344000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Movimiento de tierras y cimentación",
+   "partida": "Excavación mecánica",
+   "unidad": "m³",
+   "cantidad": 334.67,
+   "medicion": "mejoramiento 0,6 m bajo huella+10 m² + 26 zapatas 1,6×1,6×0,9 + vaso de piscina y canal + zanja del muro de contención",
+   "base": "G9 (sin retiro)",
+   "ids": [
+    "G9"
+   ],
+   "pu_bajo": 15000,
+   "total_bajo": 5020050,
+   "mo_bajo": 753008,
+   "pu_medio": 26000,
+   "total_medio": 8701420,
+   "mo_medio": 1305213,
+   "pu_alto": 38000,
+   "total_alto": 12717460,
+   "mo_alto": 1907619,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Movimiento de tierras y cimentación",
+   "partida": "Retiro de sobrantes a botadero (80 % de lo excavado, con 25 % de esponjamiento)",
+   "unidad": "m³",
+   "cantidad": 334.7,
+   "medicion": "",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 28000,
+   "total_bajo": 9371600,
+   "mo_bajo": 1874320,
+   "pu_medio": 38000,
+   "total_medio": 12718600,
+   "mo_medio": 2543720,
+   "pu_alto": 55000,
+   "total_alto": 18408500,
+   "mo_alto": 3681700,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Movimiento de tierras y cimentación",
+   "partida": "Relleno con material seleccionado compactado (mejoramiento de suelo expansivo)",
+   "unidad": "m³",
+   "cantidad": 101.88,
+   "medicion": "reemplazo de 0,6 m de arcilla expansiva por material granular compactado",
+   "base": "G10",
+   "ids": [
+    "G10"
+   ],
+   "pu_bajo": 80000,
+   "total_bajo": 8150400,
+   "mo_bajo": 2037600,
+   "pu_medio": 115000,
+   "total_medio": 11716200,
+   "mo_medio": 2929050,
+   "pu_alto": 150000,
+   "total_alto": 15282000,
+   "mo_alto": 3820500,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Movimiento de tierras y cimentación",
+   "partida": "Zapatas y vigas de cimentación, concreto 28 MPa con acero",
+   "unidad": "m³",
+   "cantidad": 34.56,
+   "medicion": "26 zapatas 1,4×1,4×0,4 + 105 ml de vigas de cimentación 0,30×0,45",
+   "base": "concreto G2 + vaciado L14 + 90 kg/m³ de acero instalado G3 + 4,4 m² de formaleta por m³",
+   "ids": [
+    "G2",
+    "L14",
+    "G3"
+   ],
+   "pu_bajo": 1166200,
+   "total_bajo": 40303872,
+   "mo_bajo": 8153395,
+   "pu_medio": 1414200,
+   "total_medio": 48874752,
+   "mo_medio": 11476339,
+   "pu_alto": 1778800,
+   "total_alto": 61475328,
+   "mo_alto": 16494797,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Movimiento de tierras y cimentación",
+   "partida": "Placa de contrapiso de 10 cm con malla",
+   "unidad": "m²",
+   "cantidad": 159.8,
+   "medicion": "placa de 10 cm con malla electrosoldada bajo toda la planta baja",
+   "base": "0,105 m³ de concreto G1 + 3,2 kg de malla instalada (G3) + afinado",
+   "ids": [
+    "G1",
+    "L14",
+    "G3"
+   ],
+   "pu_bajo": 78821,
+   "total_bajo": 12595596,
+   "mo_bajo": 2715162,
+   "pu_medio": 95434,
+   "total_medio": 15250289,
+   "mo_medio": 3941243,
+   "pu_alto": 119296,
+   "total_alto": 19063501,
+   "mo_alto": 5927941,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Estructura en concreto",
+   "partida": "Columnas en concreto 28 MPa",
+   "unidad": "m³",
+   "cantidad": 18.89,
+   "medicion": "26 columnas de 0,35×0,35 en PB, 20 en PA y 4 prolongadas en la doble altura",
+   "base": "G2 + L14 + 160 kg/m³ de acero instalado (G3) + 11,4 m² de formaleta por m³",
+   "ids": [
+    "G2",
+    "L14",
+    "G3"
+   ],
+   "pu_bajo": 1726200,
+   "total_bajo": 32607918,
+   "mo_bajo": 8396983,
+   "pu_medio": 2121200,
+   "total_medio": 40069468,
+   "mo_medio": 11370269,
+   "pu_alto": 2702800,
+   "total_alto": 51055892,
+   "mo_alto": 15785995,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Estructura en concreto",
+   "partida": "Losa de entrepiso de 30 cm con vigas, voladizos y balcones",
+   "unidad": "m²",
+   "cantidad": 168.44,
+   "medicion": "losa sobre PB con alero sur de 1,2 m, losas de habitaciones 2 y 3, balcones norte en voladizo y techo de la ampliación",
+   "base": "G7",
+   "ids": [
+    "G7"
+   ],
+   "pu_bajo": 300000,
+   "total_bajo": 50532000,
+   "mo_bajo": 12633000,
+   "pu_medio": 390000,
+   "total_medio": 65691600,
+   "mo_medio": 16422900,
+   "pu_alto": 520000,
+   "total_alto": 87588800,
+   "mo_alto": 21897200,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Estructura en concreto",
+   "partida": "Losa de cubierta con pórtico norte y aleros",
+   "unidad": "m²",
+   "cantidad": 148.88,
+   "medicion": "cubierta en L: 3,2×6,7 + 11,8×10,8 (con pórtico norte y alero sur)",
+   "base": "G7",
+   "ids": [
+    "G7"
+   ],
+   "pu_bajo": 300000,
+   "total_bajo": 44664000,
+   "mo_bajo": 11166000,
+   "pu_medio": 390000,
+   "total_medio": 58063200,
+   "mo_medio": 14515800,
+   "pu_alto": 520000,
+   "total_alto": 77417600,
+   "mo_alto": 19354400,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Estructura en concreto",
+   "partida": "Escalera en U: tramo macizo, descanso y espina de concreto",
+   "unidad": "m³",
+   "cantidad": 3.5,
+   "medicion": "",
+   "base": "3,5 m³ con 110 kg/m³ de acero y 7 m² de formaleta por m³",
+   "ids": [
+    "G2",
+    "L14",
+    "G3"
+   ],
+   "pu_bajo": 1343000,
+   "total_bajo": 4700500,
+   "mo_bajo": 1069600,
+   "pu_medio": 1639000,
+   "total_medio": 5736500,
+   "mo_medio": 1479975,
+   "pu_alto": 2074000,
+   "total_alto": 7259000,
+   "mo_alto": 2094400,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Estructura en concreto",
+   "partida": "Muro de contención de 3 m bajo el borde infinito",
+   "unidad": "m³",
+   "cantidad": 39.6,
+   "medicion": "",
+   "base": "73 m² de muro de 30 cm + zapata de 24,4 × 1,8 × 0,4 m = 39,6 m³ de concreto G1 con 110 kg/m³ de acero",
+   "ids": [
+    "G1",
+    "L14",
+    "G3"
+   ],
+   "pu_bajo": 1204600,
+   "total_bajo": 47702160,
+   "mo_bajo": 10238976,
+   "pu_medio": 1472600,
+   "total_medio": 58314960,
+   "mo_medio": 14216796,
+   "pu_alto": 1858400,
+   "total_alto": 73592640,
+   "mo_alto": 20237184,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Estructura en concreto",
+   "partida": "Sobrecosto de concreto a la vista con formaleta de tabla",
+   "unidad": "m²",
+   "cantidad": 25.6,
+   "medicion": "cantos de losa vistos (52 ml × 0,3 m) + espina de la escalera",
+   "base": "G13",
+   "ids": [
+    "G13"
+   ],
+   "pu_bajo": 70000,
+   "total_bajo": 1792000,
+   "mo_bajo": 896000,
+   "pu_medio": 120000,
+   "total_medio": 3072000,
+   "mo_medio": 1536000,
+   "pu_alto": 200000,
+   "total_alto": 5120000,
+   "mo_alto": 2560000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Mampostería",
+   "partida": "Muros en bloque con mortero, dovelas y vigas de amarre",
+   "unidad": "m²",
+   "cantidad": 342.78,
+   "medicion": "muros exteriores PB 87 + interiores PB 90 + exteriores PA 52 + interiores PA 93 + antepechos de cubierta 21 (vanos descontados)",
+   "base": "bloque G4 + 0,02 m³ de mortero (G5, G6) + mano de obra L10, +12 % por refuerzo y amarres",
+   "ids": [
+    "G4",
+    "G5",
+    "G6",
+    "L10"
+   ],
+   "pu_bajo": 54981,
+   "total_bajo": 18846319,
+   "mo_bajo": 5758704,
+   "pu_medio": 81833,
+   "total_medio": 28050647,
+   "mo_medio": 8830013,
+   "pu_alto": 113725,
+   "total_alto": 38982587,
+   "mo_alto": 11517408,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Pañetes, estucos y pinturas",
+   "partida": "Pañete de muros",
+   "unidad": "m²",
+   "cantidad": 673.56,
+   "medicion": "ambas caras de todos los muros + antepechos",
+   "base": "F11",
+   "ids": [
+    "F11"
+   ],
+   "pu_bajo": 27000,
+   "total_bajo": 18186120,
+   "mo_bajo": 8183754,
+   "pu_medio": 36500,
+   "total_medio": 24584940,
+   "mo_medio": 11063223,
+   "pu_alto": 46000,
+   "total_alto": 30983760,
+   "mo_alto": 13942692,
+   "confianza": "alta"
+  },
+  {
+   "capitulo": "Pañetes, estucos y pinturas",
+   "partida": "Estuco y pintura interior",
+   "unidad": "m²",
+   "cantidad": 422.78,
+   "medicion": "caras interiores menos 82 m² de muros de baño en microcemento",
+   "base": "F5",
+   "ids": [
+    "F5"
+   ],
+   "pu_bajo": 22000,
+   "total_bajo": 9301160,
+   "mo_bajo": 5115638,
+   "pu_medio": 28000,
+   "total_medio": 11837840,
+   "mo_medio": 6510812,
+   "pu_alto": 38000,
+   "total_alto": 16065640,
+   "mo_alto": 8836102,
+   "confianza": "alta"
+  },
+  {
+   "capitulo": "Pañetes, estucos y pinturas",
+   "partida": "Cielo raso en drywall con pintura",
+   "unidad": "m²",
+   "cantidad": 202,
+   "medicion": "cielos de PB (sin la zona de listones) y de PA incluido el vacío",
+   "base": "F7",
+   "ids": [
+    "F7"
+   ],
+   "pu_bajo": 58000,
+   "total_bajo": 11716000,
+   "mo_bajo": 5272200,
+   "pu_medio": 80000,
+   "total_medio": 16160000,
+   "mo_medio": 7272000,
+   "pu_alto": 110000,
+   "total_alto": 22220000,
+   "mo_alto": 9999000,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Pañetes, estucos y pinturas",
+   "partida": "Pintura elastomérica de fachada y aleros",
+   "unidad": "m²",
+   "cantidad": 166.6,
+   "medicion": "muros de la caja superior + aletas del pórtico + antepechos y cantos + aleros",
+   "base": "F6",
+   "ids": [
+    "F6"
+   ],
+   "pu_bajo": 32000,
+   "total_bajo": 5331200,
+   "mo_bajo": 2932160,
+   "pu_medio": 45000,
+   "total_medio": 7497000,
+   "mo_medio": 4123350,
+   "pu_alto": 65000,
+   "total_alto": 10829000,
+   "mo_alto": 5955950,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Pisos y enchapes",
+   "partida": "Alistado de pisos bajo porcelanato, madera y microcemento",
+   "unidad": "m²",
+   "cantidad": 200.75,
+   "medicion": "",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 24000,
+   "total_bajo": 4818000,
+   "mo_bajo": 2649900,
+   "pu_medio": 32000,
+   "total_medio": 6424000,
+   "mo_medio": 3533200,
+   "pu_alto": 42000,
+   "total_alto": 8431500,
+   "mo_alto": 4637325,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Pisos y enchapes",
+   "partida": "Porcelanato símil mármol 120×120 instalado (8 % de desperdicio)",
+   "unidad": "m²",
+   "cantidad": 89.65,
+   "medicion": "vestíbulo y oficina 9,2×3,1 + hall 8,14×2,5 + cocina, comedor y sala 10,74×3,8",
+   "base": "material F1 × 1,08 + instalación L13 + pegante y niveladores (supuesto)",
+   "ids": [
+    "F1",
+    "L13"
+   ],
+   "pu_bajo": 129600,
+   "total_bajo": 11618640,
+   "mo_bajo": 3586000,
+   "pu_medio": 246400,
+   "total_medio": 22089760,
+   "mo_medio": 5379000,
+   "pu_alto": 456600,
+   "total_alto": 40934190,
+   "mo_alto": 7620250,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Pisos y enchapes",
+   "partida": "Piso de roble de ingeniería instalado",
+   "unidad": "m²",
+   "cantidad": 66.1,
+   "medicion": "habitaciones 2 y 3, pasillo y galería, vestier y habitación principal",
+   "base": "F2",
+   "ids": [
+    "F2"
+   ],
+   "pu_bajo": 235000,
+   "total_bajo": 15533500,
+   "mo_bajo": 2019355,
+   "pu_medio": 320000,
+   "total_medio": 21152000,
+   "mo_medio": 2749760,
+   "pu_alto": 480000,
+   "total_alto": 31728000,
+   "mo_alto": 4124640,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Pisos y enchapes",
+   "partida": "Microcemento en pisos y muros de baño",
+   "unidad": "m²",
+   "cantidad": 127.1,
+   "medicion": "pisos: baño social, servicio, suite de servicio y baños de PA (45 m²) + muros de los 4 baños (82 m²)",
+   "base": "F3",
+   "ids": [
+    "F3"
+   ],
+   "pu_bajo": 125000,
+   "total_bajo": 15887500,
+   "mo_bajo": 7943750,
+   "pu_medio": 175000,
+   "total_medio": 22242500,
+   "mo_medio": 11121250,
+   "pu_alto": 270000,
+   "total_alto": 34317000,
+   "mo_alto": 17158500,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Pisos y enchapes",
+   "partida": "Concreto pulido y sellado en garaje",
+   "unidad": "m²",
+   "cantidad": 28.73,
+   "medicion": "garaje",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 45000,
+   "total_bajo": 1292850,
+   "mo_bajo": 646425,
+   "pu_medio": 65000,
+   "total_medio": 1867450,
+   "mo_medio": 933725,
+   "pu_alto": 90000,
+   "total_alto": 2585700,
+   "mo_alto": 1292850,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Fachadas y madera",
+   "partida": "Enchape de piedra coralina (fachadas, muro de contención y jardineras)",
+   "unidad": "m²",
+   "cantidad": 177.7,
+   "medicion": "muros exteriores de PB + cara del muro de contención + jardineras y muro bajo frontal",
+   "base": "F4",
+   "ids": [
+    "F4"
+   ],
+   "pu_bajo": 215000,
+   "total_bajo": 38205500,
+   "mo_bajo": 11461650,
+   "pu_medio": 270000,
+   "total_medio": 47979000,
+   "mo_medio": 14393700,
+   "pu_alto": 370000,
+   "total_alto": 65749000,
+   "mo_alto": 19724700,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Fachadas y madera",
+   "partida": "Listones de madera: cielo de sala, celosías, pérgola y muro de TV",
+   "unidad": "m²",
+   "cantidad": 84.9,
+   "medicion": "cielo de sala y comedor + celosías oriente/occidente + pérgola + muro de TV",
+   "base": "F10",
+   "ids": [
+    "F10"
+   ],
+   "pu_bajo": 230000,
+   "total_bajo": 19527000,
+   "mo_bajo": 6834450,
+   "pu_medio": 340000,
+   "total_medio": 28866000,
+   "mo_medio": 10103100,
+   "pu_alto": 520000,
+   "total_alto": 44148000,
+   "mo_alto": 15451800,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Fachadas y madera",
+   "partida": "Estructura metálica de pérgola y celosías",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 7000000,
+   "total_bajo": 7000000,
+   "mo_bajo": 2800000,
+   "pu_medio": 9500000,
+   "total_medio": 9500000,
+   "mo_medio": 3800000,
+   "pu_alto": 13000000,
+   "total_alto": 13000000,
+   "mo_alto": 5200000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Cubiertas, impermeabilización y decks",
+   "partida": "Impermeabilización de cubierta, terrazas y balcones",
+   "unidad": "m²",
+   "cantidad": 228.83,
+   "medicion": "cubierta + cubierta verde + terrazas y balcones sobre losa",
+   "base": "G12",
+   "ids": [
+    "G12"
+   ],
+   "pu_bajo": 60000,
+   "total_bajo": 13729800,
+   "mo_bajo": 4805430,
+   "pu_medio": 110000,
+   "total_medio": 25171300,
+   "mo_medio": 8809955,
+   "pu_alto": 165000,
+   "total_alto": 37756950,
+   "mo_alto": 13214932,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Cubiertas, impermeabilización y decks",
+   "partida": "Cubierta verde extensiva",
+   "unidad": "m²",
+   "cantidad": 23.1,
+   "medicion": "franja sobre la sala y techo de la ampliación",
+   "base": "F12",
+   "ids": [
+    "F12"
+   ],
+   "pu_bajo": 170000,
+   "total_bajo": 3927000,
+   "mo_bajo": 1178100,
+   "pu_medio": 240000,
+   "total_medio": 5544000,
+   "mo_medio": 1663200,
+   "pu_alto": 350000,
+   "total_alto": 8085000,
+   "mo_alto": 2425500,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Cubiertas, impermeabilización y decks",
+   "partida": "Gravilla de protección en cubierta",
+   "unidad": "m²",
+   "cantidad": 145,
+   "medicion": "cubierta superior",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 12000,
+   "total_bajo": 1740000,
+   "mo_bajo": 696000,
+   "pu_medio": 18000,
+   "total_medio": 2610000,
+   "mo_medio": 1044000,
+   "pu_alto": 26000,
+   "total_alto": 3770000,
+   "mo_alto": 1508000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Cubiertas, impermeabilización y decks",
+   "partida": "Deck de teca en terraza, balcones y patio de servicio",
+   "unidad": "m²",
+   "cantidad": 92.35,
+   "medicion": "terraza 11×3,2 + 2 balcones norte + balcón principal + terraza familiar + patio de servicio",
+   "base": "F8",
+   "ids": [
+    "F8"
+   ],
+   "pu_bajo": 350000,
+   "total_bajo": 32322500,
+   "mo_bajo": 9696750,
+   "pu_medio": 480000,
+   "total_medio": 44328000,
+   "mo_medio": 13298400,
+   "pu_alto": 680000,
+   "total_alto": 62798000,
+   "mo_alto": 18839400,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Instalaciones hidrosanitarias y gas",
+   "partida": "Red hidrosanitaria completa (fría, caliente, desagües y aguas lluvias)",
+   "unidad": "m²",
+   "cantidad": 251.44,
+   "medicion": "PB 159.8 + PA 91.64",
+   "base": "M3",
+   "ids": [
+    "M3"
+   ],
+   "pu_bajo": 150000,
+   "total_bajo": 37716000,
+   "mo_bajo": 16972200,
+   "pu_medio": 210000,
+   "total_medio": 52802400,
+   "mo_medio": 23761080,
+   "pu_alto": 290000,
+   "total_alto": 72917600,
+   "mo_alto": 32812920,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Instalaciones hidrosanitarias y gas",
+   "partida": "Red interna de gas natural",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "M4",
+   "ids": [
+    "M4"
+   ],
+   "pu_bajo": 2500000,
+   "total_bajo": 2500000,
+   "mo_bajo": 1250000,
+   "pu_medio": 3500000,
+   "total_medio": 3500000,
+   "mo_medio": 1750000,
+   "pu_alto": 5000000,
+   "total_alto": 5000000,
+   "mo_alto": 2500000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Instalaciones hidrosanitarias y gas",
+   "partida": "Calentador de agua",
+   "unidad": "und",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "W15",
+   "ids": [
+    "W15"
+   ],
+   "pu_bajo": 2500000,
+   "total_bajo": 2500000,
+   "mo_bajo": 250000,
+   "pu_medio": 4000000,
+   "total_medio": 4000000,
+   "mo_medio": 400000,
+   "pu_alto": 7000000,
+   "total_alto": 7000000,
+   "mo_alto": 700000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Instalaciones eléctricas y datos",
+   "partida": "Instalación eléctrica con tableros y certificación RETIE",
+   "unidad": "m²",
+   "cantidad": 251.44,
+   "medicion": "PB 159.8 + PA 91.64",
+   "base": "M1",
+   "ids": [
+    "M1"
+   ],
+   "pu_bajo": 170000,
+   "total_bajo": 42744800,
+   "mo_bajo": 19235160,
+   "pu_medio": 230000,
+   "total_medio": 57831200,
+   "mo_medio": 26024040,
+   "pu_alto": 320000,
+   "total_alto": 80460800,
+   "mo_alto": 36207360,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Instalaciones eléctricas y datos",
+   "partida": "Iluminación LED interior y exterior",
+   "unidad": "m²",
+   "cantidad": 251.44,
+   "medicion": "PB 159.8 + PA 91.64",
+   "base": "M2",
+   "ids": [
+    "M2"
+   ],
+   "pu_bajo": 60000,
+   "total_bajo": 15086400,
+   "mo_bajo": 3017280,
+   "pu_medio": 95000,
+   "total_medio": 23886800,
+   "mo_medio": 4777360,
+   "pu_alto": 150000,
+   "total_alto": 37716000,
+   "mo_alto": 7543200,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Instalaciones eléctricas y datos",
+   "partida": "Domótica básica de iluminación y escenas",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "M15",
+   "ids": [
+    "M15"
+   ],
+   "pu_bajo": 6000000,
+   "total_bajo": 6000000,
+   "mo_bajo": 1800000,
+   "pu_medio": 12000000,
+   "total_medio": 12000000,
+   "mo_medio": 3600000,
+   "pu_alto": 25000000,
+   "total_alto": 25000000,
+   "mo_alto": 7500000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Instalaciones eléctricas y datos",
+   "partida": "Red de datos, CCTV y citofonía",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "M16",
+   "ids": [
+    "M16"
+   ],
+   "pu_bajo": 4000000,
+   "total_bajo": 4000000,
+   "mo_bajo": 1200000,
+   "pu_medio": 7000000,
+   "total_medio": 7000000,
+   "mo_medio": 2100000,
+   "pu_alto": 12000000,
+   "total_alto": 12000000,
+   "mo_alto": 3600000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Aire acondicionado",
+   "partida": "Mini split inverter de 12.000 BTU instalado",
+   "unidad": "und",
+   "cantidad": 5,
+   "medicion": "habitaciones 2, 3, principal, servicio y oficina",
+   "base": "M5",
+   "ids": [
+    "M5"
+   ],
+   "pu_bajo": 2800000,
+   "total_bajo": 14000000,
+   "mo_bajo": 2800000,
+   "pu_medio": 3600000,
+   "total_medio": 18000000,
+   "mo_medio": 3600000,
+   "pu_alto": 4800000,
+   "total_alto": 24000000,
+   "mo_alto": 4800000,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Aire acondicionado",
+   "partida": "Mini split inverter de 24.000 BTU instalado",
+   "unidad": "und",
+   "cantidad": 2,
+   "medicion": "sala-comedor-cocina abierta (≈70 m² ligados a la doble altura)",
+   "base": "M7",
+   "ids": [
+    "M7"
+   ],
+   "pu_bajo": 4600000,
+   "total_bajo": 9200000,
+   "mo_bajo": 1840000,
+   "pu_medio": 6000000,
+   "total_medio": 12000000,
+   "mo_medio": 2400000,
+   "pu_alto": 8000000,
+   "total_alto": 16000000,
+   "mo_alto": 3200000,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Carpintería en madera",
+   "partida": "Cocina integral de alta gama con isla",
+   "unidad": "ml",
+   "cantidad": 6.3,
+   "medicion": "mueble posterior 2,5 ml + torre de 1,2 ml + isla 2,6 ml",
+   "base": "W6",
+   "ids": [
+    "W6"
+   ],
+   "pu_bajo": 2200000,
+   "total_bajo": 13860000,
+   "mo_bajo": 3465000,
+   "pu_medio": 3200000,
+   "total_medio": 20160000,
+   "mo_medio": 5040000,
+   "pu_alto": 5000000,
+   "total_alto": 31500000,
+   "mo_alto": 7875000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Carpintería en madera",
+   "partida": "Muebles de lavandería y despensa",
+   "unidad": "ml",
+   "cantidad": 4.0,
+   "medicion": "lavandería y despensa",
+   "base": "45 % del ml de cocina W6 (carpintería estándar)",
+   "ids": [
+    "W6"
+   ],
+   "pu_bajo": 990000,
+   "total_bajo": 3960000,
+   "mo_bajo": 990000,
+   "pu_medio": 1440000,
+   "total_medio": 5760000,
+   "mo_medio": 1440000,
+   "pu_alto": 2250000,
+   "total_alto": 9000000,
+   "mo_alto": 2250000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Carpintería en madera",
+   "partida": "Closets y vestier",
+   "unidad": "ml",
+   "cantidad": 7.6,
+   "medicion": "habitaciones 2, 3, servicio y vestier",
+   "base": "W7",
+   "ids": [
+    "W7"
+   ],
+   "pu_bajo": 1100000,
+   "total_bajo": 8360000,
+   "mo_bajo": 2090000,
+   "pu_medio": 1600000,
+   "total_medio": 12160000,
+   "mo_medio": 3040000,
+   "pu_alto": 2400000,
+   "total_alto": 18240000,
+   "mo_alto": 4560000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Carpintería en madera",
+   "partida": "Puertas interiores con marco y herrajes",
+   "unidad": "und",
+   "cantidad": 14,
+   "medicion": "8 en PB (oficina, baños, servicio, suite, patio) + 6 en PA",
+   "base": "W8",
+   "ids": [
+    "W8"
+   ],
+   "pu_bajo": 900000,
+   "total_bajo": 12600000,
+   "mo_bajo": 2520000,
+   "pu_medio": 1300000,
+   "total_medio": 18200000,
+   "mo_medio": 3640000,
+   "pu_alto": 2000000,
+   "total_alto": 28000000,
+   "mo_alto": 5600000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Carpintería en madera",
+   "partida": "Puerta principal pivotante en teca de 1,40 × 3,00 m",
+   "unidad": "und",
+   "cantidad": 1,
+   "medicion": "1,40 × 3,00 m en teca",
+   "base": "W4",
+   "ids": [
+    "W4"
+   ],
+   "pu_bajo": 9000000,
+   "total_bajo": 9000000,
+   "mo_bajo": 1350000,
+   "pu_medio": 14000000,
+   "total_medio": 14000000,
+   "mo_medio": 2100000,
+   "pu_alto": 22000000,
+   "total_alto": 22000000,
+   "mo_alto": 3300000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Carpintería en madera",
+   "partida": "Muebles de baño flotantes",
+   "unidad": "und",
+   "cantidad": 4,
+   "medicion": "vanity doble del principal, compartido, social y servicio",
+   "base": "W14",
+   "ids": [
+    "W14"
+   ],
+   "pu_bajo": 1400000,
+   "total_bajo": 5600000,
+   "mo_bajo": 840000,
+   "pu_medio": 2200000,
+   "total_medio": 8800000,
+   "mo_medio": 1320000,
+   "pu_alto": 3500000,
+   "total_alto": 14000000,
+   "mo_alto": 2100000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Carpintería en madera",
+   "partida": "Mesones en porcelánico o cuarzo",
+   "unidad": "ml",
+   "cantidad": 7.7,
+   "medicion": "cocina (isla y posterior) y lavandería",
+   "base": "W16",
+   "ids": [
+    "W16"
+   ],
+   "pu_bajo": 900000,
+   "total_bajo": 6930000,
+   "mo_bajo": 1386000,
+   "pu_medio": 1300000,
+   "total_medio": 10010000,
+   "mo_medio": 2002000,
+   "pu_alto": 2000000,
+   "total_alto": 15400000,
+   "mo_alto": 3080000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Ventanería, vidrios y barandas",
+   "partida": "Ventanería de aluminio negro con vidrio de control solar",
+   "unidad": "m²",
+   "cantidad": 111.05,
+   "medicion": "ventanales corredizos de piso a techo y ventanas fijas de ambas plantas",
+   "base": "W1",
+   "ids": [
+    "W1"
+   ],
+   "pu_bajo": 650000,
+   "total_bajo": 72182500,
+   "mo_bajo": 14436500,
+   "pu_medio": 900000,
+   "total_medio": 99945000,
+   "mo_medio": 19989000,
+   "pu_alto": 1300000,
+   "total_alto": 144365000,
+   "mo_alto": 28873000,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Ventanería, vidrios y barandas",
+   "partida": "Muro cortina de doble altura en el vestíbulo",
+   "unidad": "m²",
+   "cantidad": 26.3,
+   "medicion": "doble altura del vestíbulo 5,0×6,1 menos la puerta pivotante",
+   "base": "W2",
+   "ids": [
+    "W2"
+   ],
+   "pu_bajo": 900000,
+   "total_bajo": 23670000,
+   "mo_bajo": 4734000,
+   "pu_medio": 1250000,
+   "total_medio": 32875000,
+   "mo_medio": 6575000,
+   "pu_alto": 1800000,
+   "total_alto": 47340000,
+   "mo_alto": 9468000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Ventanería, vidrios y barandas",
+   "partida": "Barandas de vidrio laminado templado",
+   "unidad": "ml",
+   "cantidad": 52.55,
+   "medicion": "galería, escalera, balcones, terraza familiar y deck de la piscina",
+   "base": "W3",
+   "ids": [
+    "W3"
+   ],
+   "pu_bajo": 900000,
+   "total_bajo": 47295000,
+   "mo_bajo": 9459000,
+   "pu_medio": 1300000,
+   "total_medio": 68315000,
+   "mo_medio": 13663000,
+   "pu_alto": 1900000,
+   "total_alto": 99845000,
+   "mo_alto": 19969000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Ventanería, vidrios y barandas",
+   "partida": "Divisiones de ducha en vidrio templado",
+   "unidad": "m²",
+   "cantidad": 5.2,
+   "medicion": "vidrio templado de duchas",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 380000,
+   "total_bajo": 1976000,
+   "mo_bajo": 395200,
+   "pu_medio": 520000,
+   "total_medio": 2704000,
+   "mo_medio": 540800,
+   "pu_alto": 750000,
+   "total_alto": 3900000,
+   "mo_alto": 780000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Ventanería, vidrios y barandas",
+   "partida": "Espejos",
+   "unidad": "m²",
+   "cantidad": 6,
+   "medicion": "baños y vestier",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 160000,
+   "total_bajo": 960000,
+   "mo_bajo": 240000,
+   "pu_medio": 230000,
+   "total_medio": 1380000,
+   "mo_medio": 345000,
+   "pu_alto": 340000,
+   "total_alto": 2040000,
+   "mo_alto": 510000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Ventanería, vidrios y barandas",
+   "partida": "Puertas de garaje seccionales motorizadas",
+   "unidad": "und",
+   "cantidad": 2,
+   "medicion": "seccionales motorizadas 2,35 × 2,40",
+   "base": "W5",
+   "ids": [
+    "W5"
+   ],
+   "pu_bajo": 7000000,
+   "total_bajo": 14000000,
+   "mo_bajo": 2100000,
+   "pu_medio": 9500000,
+   "total_medio": 19000000,
+   "mo_medio": 2850000,
+   "pu_alto": 13000000,
+   "total_alto": 26000000,
+   "mo_alto": 3900000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Aparatos sanitarios y griferías",
+   "partida": "Sanitarios suspendidos con tanque empotrado",
+   "unidad": "und",
+   "cantidad": 4,
+   "medicion": "4 baños",
+   "base": "W9",
+   "ids": [
+    "W9"
+   ],
+   "pu_bajo": 1600000,
+   "total_bajo": 6400000,
+   "mo_bajo": 960000,
+   "pu_medio": 2400000,
+   "total_medio": 9600000,
+   "mo_medio": 1440000,
+   "pu_alto": 3600000,
+   "total_alto": 14400000,
+   "mo_alto": 2160000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Aparatos sanitarios y griferías",
+   "partida": "Lavamanos de sobreponer",
+   "unidad": "und",
+   "cantidad": 5,
+   "medicion": "2 en el principal + compartido + social + servicio",
+   "base": "W13",
+   "ids": [
+    "W13"
+   ],
+   "pu_bajo": 350000,
+   "total_bajo": 1750000,
+   "mo_bajo": 175000,
+   "pu_medio": 600000,
+   "total_medio": 3000000,
+   "mo_medio": 300000,
+   "pu_alto": 1100000,
+   "total_alto": 5500000,
+   "mo_alto": 550000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Aparatos sanitarios y griferías",
+   "partida": "Griferías de lavamanos",
+   "unidad": "und",
+   "cantidad": 5,
+   "medicion": "2 en el principal + compartido + social + servicio",
+   "base": "W10",
+   "ids": [
+    "W10"
+   ],
+   "pu_bajo": 400000,
+   "total_bajo": 2000000,
+   "mo_bajo": 200000,
+   "pu_medio": 750000,
+   "total_medio": 3750000,
+   "mo_medio": 375000,
+   "pu_alto": 1400000,
+   "total_alto": 7000000,
+   "mo_alto": 700000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Aparatos sanitarios y griferías",
+   "partida": "Duchas completas con regadera tipo lluvia",
+   "unidad": "und",
+   "cantidad": 3,
+   "medicion": "principal, compartido y servicio",
+   "base": "W11",
+   "ids": [
+    "W11"
+   ],
+   "pu_bajo": 1200000,
+   "total_bajo": 3600000,
+   "mo_bajo": 360000,
+   "pu_medio": 2000000,
+   "total_medio": 6000000,
+   "mo_medio": 600000,
+   "pu_alto": 3500000,
+   "total_alto": 10500000,
+   "mo_alto": 1050000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Aparatos sanitarios y griferías",
+   "partida": "Bañera exenta con grifería de piso",
+   "unidad": "und",
+   "cantidad": 1,
+   "medicion": "exenta 1,70 m con grifería de piso",
+   "base": "W12 + grifería de piso (2,5 × W10)",
+   "ids": [
+    "W12",
+    "W10"
+   ],
+   "pu_bajo": 5500000,
+   "total_bajo": 5500000,
+   "mo_bajo": 440000,
+   "pu_medio": 8875000,
+   "total_medio": 8875000,
+   "mo_medio": 710000,
+   "pu_alto": 15500000,
+   "total_alto": 15500000,
+   "mo_alto": 1240000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Aparatos sanitarios y griferías",
+   "partida": "Lavaplatos, lavadero y ducha de mascotas con griferías",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 2200000,
+   "total_bajo": 2200000,
+   "mo_bajo": 220000,
+   "pu_medio": 3600000,
+   "total_medio": 3600000,
+   "mo_medio": 360000,
+   "pu_alto": 6000000,
+   "total_alto": 6000000,
+   "mo_alto": 600000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Aparatos sanitarios y griferías",
+   "partida": "Accesorios de baño",
+   "unidad": "baño",
+   "cantidad": 4,
+   "medicion": "",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 450000,
+   "total_bajo": 1800000,
+   "mo_bajo": 180000,
+   "pu_medio": 800000,
+   "total_medio": 3200000,
+   "mo_medio": 320000,
+   "pu_alto": 1400000,
+   "total_alto": 5600000,
+   "mo_alto": 560000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Piscina y espejos de agua",
+   "partida": "Piscina de borde infinito: vaso, impermeabilización, mosaico y canal de rebose",
+   "unidad": "m²",
+   "cantidad": 60,
+   "medicion": "lámina de agua 15 × 4 m, profundidad 1,40 m, borde infinito al sur",
+   "base": "P1",
+   "ids": [
+    "P1"
+   ],
+   "pu_bajo": 2200000,
+   "total_bajo": 132000000,
+   "mo_bajo": 46200000,
+   "pu_medio": 3000000,
+   "total_medio": 180000000,
+   "mo_medio": 63000000,
+   "pu_alto": 4200000,
+   "total_alto": 252000000,
+   "mo_alto": 88200000,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Piscina y espejos de agua",
+   "partida": "Equipo de filtración y bombeo",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "P2",
+   "ids": [
+    "P2"
+   ],
+   "pu_bajo": 12000000,
+   "total_bajo": 12000000,
+   "mo_bajo": 1800000,
+   "pu_medio": 18000000,
+   "total_medio": 18000000,
+   "mo_medio": 2700000,
+   "pu_alto": 28000000,
+   "total_alto": 28000000,
+   "mo_alto": 4200000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Piscina y espejos de agua",
+   "partida": "Iluminación LED subacuática",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "P3",
+   "ids": [
+    "P3"
+   ],
+   "pu_bajo": 3000000,
+   "total_bajo": 3000000,
+   "mo_bajo": 450000,
+   "pu_medio": 5000000,
+   "total_medio": 5000000,
+   "mo_medio": 750000,
+   "pu_alto": 8000000,
+   "total_alto": 8000000,
+   "mo_alto": 1200000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Piscina y espejos de agua",
+   "partida": "Espejos de agua de la entrada",
+   "unidad": "m²",
+   "cantidad": 30.8,
+   "medicion": "dos espejos de agua de la entrada",
+   "base": "P5",
+   "ids": [
+    "P5"
+   ],
+   "pu_bajo": 900000,
+   "total_bajo": 27720000,
+   "mo_bajo": 9702000,
+   "pu_medio": 1300000,
+   "total_medio": 40040000,
+   "mo_medio": 14014000,
+   "pu_alto": 1900000,
+   "total_alto": 58520000,
+   "mo_alto": 20482000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Energía solar",
+   "partida": "Sistema fotovoltaico de 9,9 kWp conectado a red",
+   "unidad": "kWp",
+   "cantidad": 9.9,
+   "medicion": "18 paneles de 550 W",
+   "base": "M9",
+   "ids": [
+    "M9"
+   ],
+   "pu_bajo": 3400000,
+   "total_bajo": 33660000,
+   "mo_bajo": 5049000,
+   "pu_medio": 4000000,
+   "total_medio": 39600000,
+   "mo_medio": 5940000,
+   "pu_alto": 4700000,
+   "total_alto": 46530000,
+   "mo_alto": 6979500,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Energía solar",
+   "partida": "Batería de litio de respaldo",
+   "unidad": "kWh",
+   "cantidad": 10,
+   "medicion": "respaldo de nevera, internet y luces",
+   "base": "M10",
+   "ids": [
+    "M10"
+   ],
+   "pu_bajo": 1600000,
+   "total_bajo": 16000000,
+   "mo_bajo": 800000,
+   "pu_medio": 2200000,
+   "total_medio": 22000000,
+   "mo_medio": 1100000,
+   "pu_alto": 3000000,
+   "total_alto": 30000000,
+   "mo_alto": 1500000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Energía solar",
+   "partida": "Mayor valor del inversor híbrido frente al de red",
+   "unidad": "und",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "50 % de M11",
+   "ids": [
+    "M11"
+   ],
+   "pu_bajo": 4500000,
+   "total_bajo": 4500000,
+   "mo_bajo": 225000,
+   "pu_medio": 6000000,
+   "total_medio": 6000000,
+   "mo_medio": 300000,
+   "pu_alto": 8000000,
+   "total_alto": 8000000,
+   "mo_alto": 400000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Travertino en el deck de la piscina",
+   "unidad": "m²",
+   "cantidad": 81.5,
+   "medicion": "deck norte, oeste y este de la piscina + remates del vaso",
+   "base": "F9",
+   "ids": [
+    "F9"
+   ],
+   "pu_bajo": 210000,
+   "total_bajo": 17115000,
+   "mo_bajo": 5134500,
+   "pu_medio": 285000,
+   "total_medio": 23227500,
+   "mo_medio": 6968250,
+   "pu_alto": 420000,
+   "total_alto": 34230000,
+   "mo_alto": 10269000,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Losetas de concreto con junta verde en el acceso vehicular",
+   "unidad": "m²",
+   "cantidad": 38.5,
+   "medicion": "acceso vehicular 5,5 × 7 m",
+   "base": "P10",
+   "ids": [
+    "P10"
+   ],
+   "pu_bajo": 60000,
+   "total_bajo": 2310000,
+   "mo_bajo": 808500,
+   "pu_medio": 85000,
+   "total_medio": 3272500,
+   "mo_medio": 1145375,
+   "pu_alto": 120000,
+   "total_alto": 4620000,
+   "mo_alto": 1617000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Sendero flotante en concreto con LED",
+   "unidad": "m²",
+   "cantidad": 10.5,
+   "medicion": "sendero peatonal flotante sobre el espejo de agua",
+   "base": "0,15 m³ de concreto G1 + 12 kg de acero instalado + formaleta + $60.000 de LED por m² (supuesto)",
+   "ids": [
+    "G1",
+    "L14",
+    "G3"
+   ],
+   "pu_bajo": 255650,
+   "total_bajo": 2684325,
+   "mo_bajo": 939514,
+   "pu_medio": 304600,
+   "total_medio": 3198300,
+   "mo_medio": 1119405,
+   "pu_alto": 374000,
+   "total_alto": 3927000,
+   "mo_alto": 1374450,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Grama",
+   "unidad": "m²",
+   "cantidad": 210,
+   "medicion": "lote 641,7 m² menos huella, decks, piscina, accesos, espejos de agua y jardineras",
+   "base": "P6",
+   "ids": [
+    "P6"
+   ],
+   "pu_bajo": 20000,
+   "total_bajo": 4200000,
+   "mo_bajo": 1680000,
+   "pu_medio": 28000,
+   "total_medio": 5880000,
+   "mo_medio": 2352000,
+   "pu_alto": 40000,
+   "total_alto": 8400000,
+   "mo_alto": 3360000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Palmas sembradas de 6 a 7 m",
+   "unidad": "und",
+   "cantidad": 8,
+   "medicion": "",
+   "base": "P7",
+   "ids": [
+    "P7"
+   ],
+   "pu_bajo": 1200000,
+   "total_bajo": 9600000,
+   "mo_bajo": 2880000,
+   "pu_medio": 2000000,
+   "total_medio": 16000000,
+   "mo_medio": 4800000,
+   "pu_alto": 3500000,
+   "total_alto": 28000000,
+   "mo_alto": 8400000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Guayacanes sembrados",
+   "unidad": "und",
+   "cantidad": 2,
+   "medicion": "guayacanes amarillos dentro del lote",
+   "base": "P8",
+   "ids": [
+    "P8"
+   ],
+   "pu_bajo": 800000,
+   "total_bajo": 1600000,
+   "mo_bajo": 480000,
+   "pu_medio": 1500000,
+   "total_medio": 3000000,
+   "mo_medio": 900000,
+   "pu_alto": 2500000,
+   "total_alto": 5000000,
+   "mo_alto": 1500000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Setos de lindero",
+   "unidad": "ml",
+   "cantidad": 67,
+   "medicion": "linderos laterales y frente",
+   "base": "P9",
+   "ids": [
+    "P9"
+   ],
+   "pu_bajo": 35000,
+   "total_bajo": 2345000,
+   "mo_bajo": 703500,
+   "pu_medio": 55000,
+   "total_medio": 3685000,
+   "mo_medio": 1105500,
+   "pu_alto": 80000,
+   "total_alto": 5360000,
+   "mo_alto": 1608000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Muro bajo frontal en coralina",
+   "unidad": "ml",
+   "cantidad": 16.7,
+   "medicion": "muro bajo en coralina, h = 0,45 m",
+   "base": "dos caras de 0,45 m de coralina (F4) sobre núcleo de bloque",
+   "ids": [
+    "F4",
+    "G4"
+   ],
+   "pu_bajo": 218241,
+   "total_bajo": 3644631,
+   "mo_bajo": 1457852,
+   "pu_medio": 279825,
+   "total_medio": 4673073,
+   "mo_medio": 1869229,
+   "pu_alto": 384176,
+   "total_alto": 6415742,
+   "mo_alto": 2566297,
+   "confianza": "media"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Patio de mascotas: casa de dos niveles, rampa y cerca",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 6500000,
+   "total_bajo": 6500000,
+   "mo_bajo": 2925000,
+   "pu_medio": 9500000,
+   "total_medio": 9500000,
+   "mo_medio": 4275000,
+   "pu_alto": 14000000,
+   "total_alto": 14000000,
+   "mo_alto": 6300000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "partida": "Portones de los patios",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "supuesto",
+   "ids": [],
+   "pu_bajo": 1800000,
+   "total_bajo": 1800000,
+   "mo_bajo": 540000,
+   "pu_medio": 2800000,
+   "total_medio": 2800000,
+   "mo_medio": 840000,
+   "pu_alto": 4200000,
+   "total_alto": 4200000,
+   "mo_alto": 1260000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Acometidas y aseo final",
+   "partida": "Acometida y conexión eléctrica con Air-e",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "M13",
+   "ids": [
+    "M13"
+   ],
+   "pu_bajo": 4000000,
+   "total_bajo": 4000000,
+   "mo_bajo": 1600000,
+   "pu_medio": 6000000,
+   "total_medio": 6000000,
+   "mo_medio": 2400000,
+   "pu_alto": 9000000,
+   "total_alto": 9000000,
+   "mo_alto": 3600000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Acometidas y aseo final",
+   "partida": "Acometida de acueducto y alcantarillado con Triple A",
+   "unidad": "global",
+   "cantidad": 1,
+   "medicion": "",
+   "base": "M14",
+   "ids": [
+    "M14"
+   ],
+   "pu_bajo": 2500000,
+   "total_bajo": 2500000,
+   "mo_bajo": 1000000,
+   "pu_medio": 4000000,
+   "total_medio": 4000000,
+   "mo_medio": 1600000,
+   "pu_alto": 6000000,
+   "total_alto": 6000000,
+   "mo_alto": 2400000,
+   "confianza": "baja"
+  },
+  {
+   "capitulo": "Acometidas y aseo final",
+   "partida": "Aseo final y entrega",
+   "unidad": "m²",
+   "cantidad": 251.44,
+   "medicion": "PB 159.8 + PA 91.64",
+   "base": "0,03 jornales de cuadrilla por m² (L3, L4, L5)",
+   "ids": [
+    "L3",
+    "L4",
+    "L5"
+   ],
+   "pu_bajo": 6080,
+   "total_bajo": 1528629,
+   "mo_bajo": 1375767,
+   "pu_medio": 7630,
+   "total_medio": 1918537,
+   "mo_medio": 1726684,
+   "pu_alto": 10422,
+   "total_alto": 2620508,
+   "mo_alto": 2358457,
+   "confianza": "media"
+  }
+ ],
+ "capitulos": [
+  {
+   "capitulo": "Preliminares y obra provisional",
+   "total_bajo": 58905501,
+   "mo_bajo": 38456301,
+   "total_medio": 71522141,
+   "mo_medio": 42269741,
+   "total_alto": 90064524,
+   "mo_alto": 48195324
+  },
+  {
+   "capitulo": "Movimiento de tierras y cimentación",
+   "total_bajo": 75441518,
+   "mo_bajo": 15533485,
+   "total_medio": 97261261,
+   "mo_medio": 22195565,
+   "total_alto": 126946789,
+   "mo_alto": 31832557
+  },
+  {
+   "capitulo": "Estructura en concreto",
+   "total_bajo": 181998578,
+   "mo_bajo": 44400559,
+   "total_medio": 230947728,
+   "mo_medio": 59541740,
+   "total_alto": 302033932,
+   "mo_alto": 81929179
+  },
+  {
+   "capitulo": "Mampostería",
+   "total_bajo": 18846319,
+   "mo_bajo": 5758704,
+   "total_medio": 28050647,
+   "mo_medio": 8830013,
+   "total_alto": 38982587,
+   "mo_alto": 11517408
+  },
+  {
+   "capitulo": "Pañetes, estucos y pinturas",
+   "total_bajo": 44534480,
+   "mo_bajo": 21503752,
+   "total_medio": 60079780,
+   "mo_medio": 28969385,
+   "total_alto": 80098400,
+   "mo_alto": 38733744
+  },
+  {
+   "capitulo": "Pisos y enchapes",
+   "total_bajo": 49150490,
+   "mo_bajo": 16845430,
+   "total_medio": 73775710,
+   "mo_medio": 23716935,
+   "total_alto": 117996390,
+   "mo_alto": 34833565
+  },
+  {
+   "capitulo": "Fachadas y madera",
+   "total_bajo": 64732500,
+   "mo_bajo": 21096100,
+   "total_medio": 86345000,
+   "mo_medio": 28296800,
+   "total_alto": 122897000,
+   "mo_alto": 40376500
+  },
+  {
+   "capitulo": "Cubiertas, impermeabilización y decks",
+   "total_bajo": 51719300,
+   "mo_bajo": 16376280,
+   "total_medio": 77653300,
+   "mo_medio": 24815555,
+   "total_alto": 112409950,
+   "mo_alto": 35987832
+  },
+  {
+   "capitulo": "Instalaciones hidrosanitarias y gas",
+   "total_bajo": 42716000,
+   "mo_bajo": 18472200,
+   "total_medio": 60302400,
+   "mo_medio": 25911080,
+   "total_alto": 84917600,
+   "mo_alto": 36012920
+  },
+  {
+   "capitulo": "Instalaciones eléctricas y datos",
+   "total_bajo": 67831200,
+   "mo_bajo": 25252440,
+   "total_medio": 100718000,
+   "mo_medio": 36501400,
+   "total_alto": 155176800,
+   "mo_alto": 54850560
+  },
+  {
+   "capitulo": "Aire acondicionado",
+   "total_bajo": 23200000,
+   "mo_bajo": 4640000,
+   "total_medio": 30000000,
+   "mo_medio": 6000000,
+   "total_alto": 40000000,
+   "mo_alto": 8000000
+  },
+  {
+   "capitulo": "Carpintería en madera",
+   "total_bajo": 60310000,
+   "mo_bajo": 12641000,
+   "total_medio": 89090000,
+   "mo_medio": 18582000,
+   "total_alto": 138140000,
+   "mo_alto": 28765000
+  },
+  {
+   "capitulo": "Ventanería, vidrios y barandas",
+   "total_bajo": 160083500,
+   "mo_bajo": 31364700,
+   "total_medio": 224219000,
+   "mo_medio": 43962800,
+   "total_alto": 323490000,
+   "mo_alto": 63500000
+  },
+  {
+   "capitulo": "Aparatos sanitarios y griferías",
+   "total_bajo": 23250000,
+   "mo_bajo": 2535000,
+   "total_medio": 38025000,
+   "mo_medio": 4105000,
+   "total_alto": 64500000,
+   "mo_alto": 6860000
+  },
+  {
+   "capitulo": "Piscina y espejos de agua",
+   "total_bajo": 174720000,
+   "mo_bajo": 58152000,
+   "total_medio": 243040000,
+   "mo_medio": 80464000,
+   "total_alto": 346520000,
+   "mo_alto": 114082000
+  },
+  {
+   "capitulo": "Energía solar",
+   "total_bajo": 54160000,
+   "mo_bajo": 6074000,
+   "total_medio": 67600000,
+   "mo_medio": 7340000,
+   "total_alto": 84530000,
+   "mo_alto": 8879500
+  },
+  {
+   "capitulo": "Exteriores y paisajismo",
+   "total_bajo": 51798956,
+   "mo_bajo": 17548866,
+   "total_medio": 75236373,
+   "mo_medio": 25374759,
+   "total_alto": 114152742,
+   "mo_alto": 38254747
+  },
+  {
+   "capitulo": "Acometidas y aseo final",
+   "total_bajo": 8028629,
+   "mo_bajo": 3975767,
+   "total_medio": 11918537,
+   "mo_medio": 5726684,
+   "total_alto": 17620508,
+   "mo_alto": 8358457
+  }
+ ],
+ "resumen": {
+  "bajo": {
+   "costo_directo": 1211426971,
+   "mano_obra": 360626584,
+   "materiales": 850800387,
+   "indirectos": [
+    {
+     "concepto": "Diseño arquitectónico",
+     "valor": 11314800,
+     "base": "S2 (COP/m²)",
+     "ids": [
+      "S2"
+     ]
+    },
+    {
+     "concepto": "Diseño estructural NSR-10",
+     "valor": 3017280,
+     "base": "S3 × m²",
+     "ids": [
+      "S3"
+     ]
+    },
+    {
+     "concepto": "Diseños eléctrico RETIE e hidrosanitario",
+     "valor": 5000000,
+     "base": "S4",
+     "ids": [
+      "S4"
+     ]
+    },
+    {
+     "concepto": "Estudio de suelos",
+     "valor": 3000000,
+     "base": "S1",
+     "ids": [
+      "S1"
+     ]
+    },
+    {
+     "concepto": "Levantamiento topográfico",
+     "valor": 1200000,
+     "base": "S7",
+     "ids": [
+      "S7"
+     ]
+    },
+    {
+     "concepto": "Expensas de licencia de construcción (curaduría)",
+     "valor": 9000000,
+     "base": "S5",
+     "ids": [
+      "S5"
+     ]
+    },
+    {
+     "concepto": "Impuesto de delineación urbana (3 %)",
+     "valor": 42884515,
+     "base": "B6 sobre el mayor entre el valor de la obra y el mínimo B7 × m²",
+     "ids": [
+      "B6",
+      "B7"
+     ]
+    },
+    {
+     "concepto": "Interventoría o supervisión técnica",
+     "valor": 36342809,
+     "base": "S6 × costo directo",
+     "ids": [
+      "S6"
+     ]
+    },
+    {
+     "concepto": "AIU del constructor (administración, imprevistos y utilidad)",
+     "valor": 218056855,
+     "base": "B4 × costo directo",
+     "ids": [
+      "B4"
+     ]
+    },
+    {
+     "concepto": "IVA del 19 % sobre la utilidad",
+     "valor": 12429241,
+     "base": "B8 × utilidad (≈30 % del AIU)",
+     "ids": [
+      "B8"
+     ]
+    },
+    {
+     "concepto": "Pólizas de cumplimiento y responsabilidad civil",
+     "valor": 8576903,
+     "base": "S8 × valor del contrato",
+     "ids": [
+      "S8"
+     ]
+    }
+   ],
+   "total": 1562249374,
+   "por_m2_directo": 4817956.454820235,
+   "por_m2_total": 6213209.409799554
+  },
+  "medio": {
+   "costo_directo": 1665784877,
+   "mano_obra": 492603457,
+   "materiales": 1173181420,
+   "indirectos": [
+    {
+     "concepto": "Diseño arquitectónico",
+     "valor": 17600800,
+     "base": "S2 (COP/m²)",
+     "ids": [
+      "S2"
+     ]
+    },
+    {
+     "concepto": "Diseño estructural NSR-10",
+     "valor": 4525920,
+     "base": "S3 × m²",
+     "ids": [
+      "S3"
+     ]
+    },
+    {
+     "concepto": "Diseños eléctrico RETIE e hidrosanitario",
+     "valor": 8000000,
+     "base": "S4",
+     "ids": [
+      "S4"
+     ]
+    },
+    {
+     "concepto": "Estudio de suelos",
+     "valor": 4500000,
+     "base": "S1",
+     "ids": [
+      "S1"
+     ]
+    },
+    {
+     "concepto": "Levantamiento topográfico",
+     "valor": 1800000,
+     "base": "S7",
+     "ids": [
+      "S7"
+     ]
+    },
+    {
+     "concepto": "Expensas de licencia de construcción (curaduría)",
+     "valor": 9900000,
+     "base": "S5",
+     "ids": [
+      "S5"
+     ]
+    },
+    {
+     "concepto": "Impuesto de delineación urbana (3 %)",
+     "valor": 62466933,
+     "base": "B6 sobre el mayor entre el valor de la obra y el mínimo B7 × m²",
+     "ids": [
+      "B6",
+      "B7"
+     ]
+    },
+    {
+     "concepto": "Interventoría o supervisión técnica",
+     "valor": 66631395,
+     "base": "S6 × costo directo",
+     "ids": [
+      "S6"
+     ]
+    },
+    {
+     "concepto": "AIU del constructor (administración, imprevistos y utilidad)",
+     "valor": 416446219,
+     "base": "B4 × costo directo",
+     "ids": [
+      "B4"
+     ]
+    },
+    {
+     "concepto": "IVA del 19 % sobre la utilidad",
+     "valor": 23737434,
+     "base": "B8 × utilidad (≈30 % del AIU)",
+     "ids": [
+      "B8"
+     ]
+    },
+    {
+     "concepto": "Pólizas de cumplimiento y responsabilidad civil",
+     "valor": 18740080,
+     "base": "S8 × valor del contrato",
+     "ids": [
+      "S8"
+     ]
+    }
+   ],
+   "total": 2300133658,
+   "por_m2_directo": 6624979.625357938,
+   "por_m2_total": 9147843.055997455
+  },
+  "alto": {
+   "costo_directo": 2360477222,
+   "mano_obra": 690969293,
+   "materiales": 1669507929,
+   "indirectos": [
+    {
+     "concepto": "Diseño arquitectónico",
+     "valor": 27658400,
+     "base": "S2 (COP/m²)",
+     "ids": [
+      "S2"
+     ]
+    },
+    {
+     "concepto": "Diseño estructural NSR-10",
+     "valor": 7040320,
+     "base": "S3 × m²",
+     "ids": [
+      "S3"
+     ]
+    },
+    {
+     "concepto": "Diseños eléctrico RETIE e hidrosanitario",
+     "valor": 12000000,
+     "base": "S4",
+     "ids": [
+      "S4"
+     ]
+    },
+    {
+     "concepto": "Estudio de suelos",
+     "valor": 7000000,
+     "base": "S1",
+     "ids": [
+      "S1"
+     ]
+    },
+    {
+     "concepto": "Levantamiento topográfico",
+     "valor": 2800000,
+     "base": "S7",
+     "ids": [
+      "S7"
+     ]
+    },
+    {
+     "concepto": "Expensas de licencia de construcción (curaduría)",
+     "valor": 11000000,
+     "base": "S5",
+     "ids": [
+      "S5"
+     ]
+    },
+    {
+     "concepto": "Impuesto de delineación urbana (3 %)",
+     "valor": 92058612,
+     "base": "B6 sobre el mayor entre el valor de la obra y el mínimo B7 × m²",
+     "ids": [
+      "B6",
+      "B7"
+     ]
+    },
+    {
+     "concepto": "Interventoría o supervisión técnica",
+     "valor": 141628633,
+     "base": "S6 × costo directo",
+     "ids": [
+      "S6"
+     ]
+    },
+    {
+     "concepto": "AIU del constructor (administración, imprevistos y utilidad)",
+     "valor": 708143167,
+     "base": "B4 × costo directo",
+     "ids": [
+      "B4"
+     ]
+    },
+    {
+     "concepto": "IVA del 19 % sobre la utilidad",
+     "valor": 40364160,
+     "base": "B8 × utilidad (≈30 % del AIU)",
+     "ids": [
+      "B8"
+     ]
+    },
+    {
+     "concepto": "Pólizas de cumplimiento y responsabilidad civil",
+     "valor": 39892065,
+     "base": "S8 × valor del contrato",
+     "ids": [
+      "S8"
+     ]
+    }
+   ],
+   "total": 3450062579,
+   "por_m2_directo": 9387834.958638243,
+   "por_m2_total": 13721216.11119949
+  }
+ },
+ "supuestos": [
+  {
+   "clave": "cerramiento",
+   "texto": "Cerramiento provisional con postes y polisombra: material por ml",
+   "bajo": 18000,
+   "medio": 26000,
+   "alto": 38000
+  },
+  {
+   "clave": "campamento",
+   "texto": "Contenedor-bodega y baño portátil: alquiler mensual",
+   "bajo": 1100000,
+   "medio": 1500000,
+   "alto": 2100000
+  },
+  {
+   "clave": "servicios_prov",
+   "texto": "Agua y energía provisionales de obra: consumo mensual",
+   "bajo": 550000,
+   "medio": 850000,
+   "alto": 1250000
+  },
+  {
+   "clave": "retiro",
+   "texto": "Cargue, transporte y disposición de sobrantes en botadero autorizado, por m³ suelto",
+   "bajo": 28000,
+   "medio": 38000,
+   "alto": 55000
+  },
+  {
+   "clave": "formaleta",
+   "texto": "Formaleta (alquiler + armado y desarme) por m² de contacto",
+   "bajo": 28000,
+   "medio": 38000,
+   "alto": 52000
+  },
+  {
+   "clave": "alistado",
+   "texto": "Alistado de piso en mortero de nivelación (material + mano de obra)",
+   "bajo": 24000,
+   "medio": 32000,
+   "alto": 42000
+  },
+  {
+   "clave": "pegante_gf",
+   "texto": "Pegante flexible y sistema de nivelación para gran formato, por m²",
+   "bajo": 14000,
+   "medio": 19000,
+   "alto": 26000
+  },
+  {
+   "clave": "concreto_pulido",
+   "texto": "Endurecedor, pulido y sellado de placa de garaje",
+   "bajo": 45000,
+   "medio": 65000,
+   "alto": 90000
+  },
+  {
+   "clave": "pergola_metal",
+   "texto": "Estructura metálica de pérgola y celosías (≈350 kg) suministrada, pintada e instalada",
+   "bajo": 7000000,
+   "medio": 9500000,
+   "alto": 13000000
+  },
+  {
+   "clave": "gravilla",
+   "texto": "Gravilla blanca de 3 cm sobre cubierta, por m²",
+   "bajo": 12000,
+   "medio": 18000,
+   "alto": 26000
+  },
+  {
+   "clave": "division_bano",
+   "texto": "Vidrio templado de 10 mm para ducha con herrajes, por m²",
+   "bajo": 380000,
+   "medio": 520000,
+   "alto": 750000
+  },
+  {
+   "clave": "espejo",
+   "texto": "Espejo plata de 6 mm instalado, por m²",
+   "bajo": 160000,
+   "medio": 230000,
+   "alto": 340000
+  },
+  {
+   "clave": "lavaplatos",
+   "texto": "Lavaplatos de submontar, grifería de cocina, lavadero y ducha de mascotas",
+   "bajo": 2200000,
+   "medio": 3600000,
+   "alto": 6000000
+  },
+  {
+   "clave": "accesorios",
+   "texto": "Accesorios de baño (toallero, papelera, ganchos) por baño",
+   "bajo": 450000,
+   "medio": 800000,
+   "alto": 1400000
+  },
+  {
+   "clave": "mascotas",
+   "texto": "Casa de mascotas de dos niveles en teca, rampa, cerca de 15 ml y bebederos",
+   "bajo": 6500000,
+   "medio": 9500000,
+   "alto": 14000000
+  },
+  {
+   "clave": "muebles_fijos_ext",
+   "texto": "Barandas y portones de los patios de servicio y mascotas",
+   "bajo": 1800000,
+   "medio": 2800000,
+   "alto": 4200000
+  }
+ ],
+ "precios": {
+  "B1": {
+   "id": "B1",
+   "concepto": "Costo directo por m² de vivienda unifamiliar de acabados altos (estrato 5-6) en Barranquilla / Costa Caribe, sin lote",
+   "unidad": "COP/m² construido",
+   "bajo": 2900000,
+   "medio": 3500000,
+   "alto": 4300000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.25,
+   "confianza": "media",
+   "nota": "No hay índice oficial de costo por m² por estrato; todas las cifras vienen de cotizadores, blogs y arquitectos, y se cruzaron entre sí. Varias incluyen AIU, así que el costo directo se obtuvo dividiendo por 1,25 (AIU típico de B4). El rango de OneEstimate para Barranquilla (3,4–5,5 M con AIU, tabla rotulada 2025) da 2,7–4,4 M de costo directo; actualizado con el ICOCED 2026 (alrededor de +6,6 %) queda en 2,9–4,7 M. El de Hubservice (3,5–5,8 M, no VIS Barranquilla) da 2,8–4,6 M. Mestre da 2,9–3,6 M para medio-alto. El IVA de los materiales va incluido porque para el constructor es costo no descontable; el IVA sobre la utilidad no va incluido. La fracción de mano de obra (~25 %) sale de lo que dice Camacol: la mano de obra pesa cerca del 25 % del costo directo, y en el ICOCED pesa 20,4 %. El valor cubre la edificación (estructura, mampostería, instalaciones, acabados), no piscina, paisajismo, solar ni obras exteriores; para esta casa sirve como contraste del presupuesto detallado.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate – Costos de construcción por m² en Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/costos-construccion-por-m2-colombia-2026",
+     "valor_reportado": "Barranquilla, No VIS alto (estrato 5-6): $3,400,000 – $5,500,000+ por m²; incluye costos directos + AIU (encabezado de tabla: 'Costo promedio por m² de construcción (2025)')",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Hubservice – Costo de construcción por m² en Colombia 2026 por ciudad",
+     "url": "https://hubservice.io/en/blog/costo-construccion-m2-colombia-2026-precios-reales",
+     "valor_reportado": "Barranquilla no VIS: $3.500.000-5.800.000 COP por m²",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Mestre Arquitectura – Cuánto cuesta construir una casa campestre en Colombia (2026)",
+     "url": "https://eduardomestre.com/3-pasos-para-calcular-el-precio-que-tendra-la-casa-que-deseas-construir/",
+     "valor_reportado": "medio-alto (porcelanato, cocina con isla) $2.900.000 – $3.600.000 por m²; formato medio-alto de buena calidad aprox. $3.500.000 por m²",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate – Costos de construir vivienda en Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/costos-construccion-vivienda-colombia-2024",
+     "valor_reportado": "Unifamiliar un piso, acabado alto: $2.500.000 – $3.500.000 COP/m²; incluye materiales, mano de obra y costos indirectos básicos; excluye terreno, diseños, licencias y conexiones",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "B2": {
+   "id": "B2",
+   "concepto": "Costo directo por m² de vivienda de lujo / premium, sin lote",
+   "unidad": "COP/m² construido",
+   "bajo": 4000000,
+   "medio": 4800000,
+   "alto": 6000000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.25,
+   "confianza": "baja",
+   "nota": "No hay dato publicado específico de lujo en Barranquilla. Las fuentes son nacionales y comerciales: vivienda.com.co da 4,5–7,0 M para alta gama, Presucosto 4,0–6,0+ M con AIU incluido y Mestre más de 4,8 M para lujo. Como no todas aclaran si incluyen AIU, el costo directo se estimó en 4,0–6,0 M, con 4,8 M como valor típico; si a 4,5–7,0 se le quita un AIU del 20–25 %, queda en 3,6–5,8 M. Esta casa tiene muro cortina, teca, piscina de borde infinito, unos 140 m² de ventanería de piso a techo y concreto a la vista de formaleta de tabla, así que debería caer en este rango y no en B1. Con estas cifras, 251 m² × 4,8 M dan unos 1.205 M de costo directo de la edificación, antes de piscina, exteriores y AIU.",
+   "fuentes": [
+    {
+     "nombre": "vivienda.com.co – Construcción en Colombia: precio por metro cuadrado en 2026",
+     "url": "https://vivienda.com.co/precio-metro-cuadrado-construccion-colombia-2026/",
+     "valor_reportado": "desde $4.500.000 hasta $7.000.000 para proyectos de alta gama",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Presucosto – Precios de construcción Colombia 2026 por m²",
+     "url": "https://presucosto.com/blog/precios-construccion-colombia-2026-por-m2",
+     "valor_reportado": "$4.000.000-$6.000.000+/m² para construcción de alta gama (incluye materiales, mano de obra, equipos y AIU)",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Mestre Arquitectura – Cuánto cuesta construir una casa campestre en Colombia (2026)",
+     "url": "https://eduardomestre.com/3-pasos-para-calcular-el-precio-que-tendra-la-casa-que-deseas-construir/",
+     "valor_reportado": "más de $4.800.000 (formato de lujo) por m²",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate – Costos de construcción por m² en Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/costos-construccion-por-m2-colombia-2026",
+     "valor_reportado": "Barranquilla, No VIS alto (estrato 5-6): $3,400,000 – $5,500,000+ (directos + AIU)",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "B3": {
+   "id": "B3",
+   "concepto": "Variación anual del ICOCED (Colombia), la más reciente encontrada",
+   "unidad": "% anual",
+   "bajo": 6.6,
+   "medio": 6.6,
+   "alto": 6.6,
+   "alcance": "porcentaje",
+   "confianza": "media",
+   "nota": "El dato anual más reciente encontrado es 6,6 % a junio de 2026 (total nacional, citado por Bancolombia el 25-sep-2026); no se pudo abrir el boletín de agosto de 2026. Serie: diciembre de 2025, 3,61 % anual (DANE); febrero de 2026, 6,31 % anual y 5,67 % en el año corrido (DANE). En 2026 el índice saltó por el alza del salario mínimo: el componente de mano de obra subió 13,9 % en el primer semestre. Para Barranquilla, el último dato publicado es 2,97 % (oct-2025 contra oct-2024), que la Secretaría de Hacienda usó para actualizar la tabla de delineación de 2026. Recomendación: para llevar precios de 2025 a 2026 usar cerca del 6,5 % en general y del 12–14 % en partidas que son casi solo mano de obra, no el 3 % del rango sugerido.",
+   "fuentes": [
+    {
+     "nombre": "Bancolombia Capital Inteligente – El nuevo mapa de los costos de construcción en Colombia",
+     "url": "https://www.bancolombia.com/empresas/capital-inteligente/actualidad-economica-sectorial/costos-construccion-colombia-mano-obra",
+     "valor_reportado": "el ICOCED registró una variación anual de 6,6 % [junio 2026]... el componente laboral del ICOCED aumentó 13,9 % [primer semestre]",
+     "fecha": "2026-09-25"
+    },
+    {
+     "nombre": "DANE – Boletín técnico ICOCED febrero 2026",
+     "url": "https://www.dane.gov.co/files/operaciones/ICOCED/bol-ICOCED-feb2026.pdf",
+     "valor_reportado": "En febrero de 2026, la variación anual del ICOCED fue 6,31%; año corrido 5,67% frente a diciembre de 2025",
+     "fecha": "2026-03-31"
+    },
+    {
+     "nombre": "DANE – Boletín técnico ICOCED diciembre 2025",
+     "url": "https://www.dane.gov.co/files/operaciones/ICOCED/bol-ICOCED-dic2025.pdf",
+     "valor_reportado": "variación anual 3,61% (diciembre 2025)",
+     "fecha": "2026-01-30"
+    },
+    {
+     "nombre": "Gaceta Distrital 1252-2 Barranquilla (Res. DSH 002 de 2025)",
+     "url": "https://barranquilla.gov.co/documento/gaceta-no-1252-2/?version=1",
+     "valor_reportado": "variación anual del ICOCED para el Distrito de Barranquilla de 2,97% (octubre 2025 vs octubre 2024)",
+     "fecha": "2025-12-30"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "B4": {
+   "id": "B4",
+   "concepto": "AIU total típico de contratista a precio global en vivienda",
+   "unidad": "% sobre costo directo",
+   "bajo": 18,
+   "medio": 25,
+   "alto": 30,
+   "alcance": "porcentaje",
+   "confianza": "media",
+   "nota": "Desglose típico 2026: Administración 10–15 % (algunas guías de vivienda dan 12–18 %), Imprevistos 3–5 %, Utilidad 5–10 %. Ninguna norma fija el AIU de obra privada; las cifras son de práctica de mercado. vivienda.com.co, citando a DANE y Camacol, da 25–35 % adicional sobre el costo directo, sin IVA, terreno ni licencias. Para una casa unifamiliar a la medida, con obra pequeña y muchos acabados especiales, lo razonable es 22–28 %. El IVA del 19 % se suma aparte, sobre la U (ver B8).",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate – AIU en Colombia: qué es y cómo calcularlo (Guía 2026)",
+     "url": "https://oneestimate.ai/es/blog/aiu-colombia-guia-completa",
+     "valor_reportado": "Administración: 10 %–15 % sobre costos directos; Imprevistos: 3 %–5 %; Utilidad: 5 %–10 %; AIU total típico: 18 %–30 %",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate – Costos de construir vivienda en Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/costos-construccion-vivienda-colombia-2024",
+     "valor_reportado": "Administración 12 %–18 %, Imprevistos 3 %–5 %, Utilidad 5 %–8 %; AIU total 20 %–30 %",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "vivienda.com.co – Precio por metro cuadrado 2026",
+     "url": "https://vivienda.com.co/precio-metro-cuadrado-construccion-colombia-2026/",
+     "valor_reportado": "el AIU representa entre 25% y 35% adicional sobre los costos directos, y no incluye IVA, terreno ni licencias",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "B5": {
+   "id": "B5",
+   "concepto": "Honorarios de administración delegada en vivienda",
+   "unidad": "% sobre costo directo real",
+   "bajo": 8,
+   "medio": 10,
+   "alto": 15,
+   "alcance": "porcentaje",
+   "confianza": "media",
+   "nota": "Referencia normativa: el reglamento de honorarios de arquitectura (Decreto 2090 de 1989) fija para la construcción por administración delegada el 10 % del costo base real (CBT-real) en las categorías A a G, y el 17 % en restauración (categoría H). Los gastos reembolsables se pagan aparte. La Corte Suprema (SL1486-2024) lo aplicó como 10 % a un caso de casas de categoría E. Una de las transcripciones del texto de Función Pública muestra '0.9%', lo que parece un error. En el mercado se negocian 8–15 %, según el tamaño y si el constructor asume personal de obra y equipos. Sobre los honorarios se cobra IVA del 19 %. En este modelo el propietario asume el riesgo de imprevistos y compra los materiales.",
+   "fuentes": [
+    {
+     "nombre": "Corte Suprema de Justicia, Sala Laboral, SL1486-2024 (Rad. 98982)",
+     "url": "https://www.ambitojuridico.com/sites/default/files/2024-08/Sent-SL-14862024%2898982%29-24.pdf",
+     "valor_reportado": "la obra clasificaba en la categoría E, por manera que los honorarios serían iguales al 10% del costo base real para cobro de tarifas (CBT-real)",
+     "fecha": "2024"
+    },
+    {
+     "nombre": "Decreto 2090 de 1989 – Gestor Normativo Función Pública",
+     "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=27983",
+     "valor_reportado": "a) Para las Categorías de la A hasta la G inclusive, serán el 10% del costo base; Para la categoría H, proyectos de restauración será el 17% del costo base real (CBTreal); más los gastos reembolsables",
+     "fecha": "1989"
+    },
+    {
+     "nombre": "Colombia Compra Eficiente – Concepto C-885 (administración delegada)",
+     "url": "https://relatoria.colombiacompra.gov.co/wp-content/uploads/2025/07/C-885.docx",
+     "valor_reportado": "el contratante paga el costo real más un porcentaje de administración y utilidad",
+     "fecha": "2025-07"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "B6": {
+   "id": "B6",
+   "concepto": "Tarifa del impuesto de delineación urbana en Barranquilla",
+   "unidad": "% del valor de la obra",
+   "bajo": 3,
+   "medio": 3,
+   "alto": 3,
+   "alcance": "porcentaje",
+   "confianza": "alta",
+   "nota": "Estatuto Tributario Distrital (Decreto 0119 de 2019, arts. 95–97): la tarifa es 3 % del valor final de la obra. Al expedirse la licencia se paga un anticipo del 2,5 % sobre el presupuesto de obra, que no puede ser inferior a los precios mínimos por m² de B7. Dentro de los 5 días siguientes al fin de la obra o al vencimiento de la licencia se presenta la declaración por el 100 % y se descuenta el anticipo. Para 251 m² con el mínimo de estrato 6: anticipo de unos $12,67 M. Si el valor real de la obra es de unos $1.300 M, el impuesto total es de unos $39 M.",
+   "fuentes": [
+    {
+     "nombre": "Resolución DSH No. 002 de 2024 – Barranquilla",
+     "url": "https://barranquilla.gov.co/documento/resolucion-dsh-no-002-de-2024-18-de-diciembre-de-2024-delineacion-urbana/?version=1",
+     "valor_reportado": "La tarifa del impuesto de delineación urbana es del tres por ciento (3%) del valor final de la obra o construcción, y se liquida al dos coma cinco por ciento (2,5%) como anticipo sobre el presupuesto",
+     "fecha": "2024-12-18"
+    },
+    {
+     "nombre": "Gaceta Distrital 1252-2 (Res. DSH 002 de 2025)",
+     "url": "https://barranquilla.gov.co/documento/gaceta-no-1252-2/?version=1",
+     "valor_reportado": "el artículo 97 del Estatuto Tributario Distrital fija la tarifa del impuesto en 3%, con un anticipo de 2,5% al expedir la licencia",
+     "fecha": "2025-12-30"
+    },
+    {
+     "nombre": "Alcaldía de Barranquilla – Manual detallado impuesto de delineación urbana",
+     "url": "https://barranquilla.gov.co/documento/manual-detallado-impuesto-de-delineacion-urbana/?version=1",
+     "valor_reportado": "dentro de los cinco días siguientes a la terminación de la obra o al vencimiento de la licencia... declaración por el 100% del impuesto, imputando el anticipo"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "B7": {
+   "id": "B7",
+   "concepto": "Costo mínimo por m², uso residencial estrato 6, unifamiliar-bifamiliar (Res. DSH 002 de 2025, vigencia 2026)",
+   "unidad": "COP/m²",
+   "bajo": 2019139,
+   "medio": 2019139,
+   "alto": 2019139,
+   "alcance": "otro",
+   "confianza": "alta",
+   "nota": "Tabla residencial de estrato 6 en la Res. DSH 002 de 2025 (26-dic-2025, Gaceta 1252-2): unifamiliar-bifamiliar $2.019.139; multifamiliar hasta 6 pisos $1.725.751; multifamiliar de más de 6 pisos $2.557.707. El orden de las columnas se confirmó con la Res. DSH 002 de 2023 (2024: 1.889.114 / 1.614.620 / 2.393.000) y la Res. DSH 002 de 2024 (2025: 1.960.900 / 1.675.975 / 2.483.934). Las cuentas cuadran exactas: 1.960.900 × 1,0297 = 2.019.139, y en estrato 1, 594.900 × 1,0297 = 612.569. WebFetch no pudo abrir el PDF por un error de DNS; los valores salen de extractos del índice de búsqueda de la gaceta oficial y de la copia de PwC. Es un valor mínimo fiscal, no un costo real de obra. Para 251 m²: base mínima $506.803.889 y anticipo del 2,5 % de $12.670.097.",
+   "fuentes": [
+    {
+     "nombre": "Gaceta Distrital 1252-2 – Resolución DSH No 002 de 2025 (vigencia 2026)",
+     "url": "https://barranquilla.gov.co/documento/gaceta-no-1252-2/?version=1",
+     "valor_reportado": "Estrato 6: 2.019.139 / 1.725.751 / 2.557.707 (unifamiliar-bifamiliar / multifamiliar hasta 6 pisos / más de 6 pisos); estrato 1: 612.569 / 514.747 / 810.383",
+     "fecha": "2025-12-26"
+    },
+    {
+     "nombre": "Copia PwC de la Gaceta 1252-2",
+     "url": "https://legalytributarioenlinea.co.pwc.com/Repositorio%20PwC/PDF/Normas%20Territoriales/Municipales/Resoluciones/Barranquilla/2025/RES-001252-25.pdf",
+     "valor_reportado": "tabla de uso residencial por estrato ajustada con variación anual de 2,97% sobre la Res. DSH 002 de 2024",
+     "fecha": "2025-12-30"
+    },
+    {
+     "nombre": "Resolución DSH No. 002 de 2024 (vigencia 2025)",
+     "url": "https://barranquilla.gov.co/documento/resolucion-dsh-no-002-de-2024-18-de-diciembre-de-2024-delineacion-urbana/?version=1",
+     "valor_reportado": "Estrato 6: $1.960.900 / $1.675.975 / $2.483.934 por m²; estrato 5 unifamiliar $1.287.919",
+     "fecha": "2024-12-18"
+    },
+    {
+     "nombre": "Resolución DSH No. 002 de 2023 (vigencia 2024)",
+     "url": "https://barranquilla.gov.co/documento/resolucion-dsh-no-002-de-2023-21-de-diciembre-de-2023/?version=1",
+     "valor_reportado": "estrato 6 $1.889.114 por m² unifamiliar-bifamiliar, $1.614.620 multifamiliar hasta 6 pisos y $2.393.000 multifamiliar de más de 6 pisos",
+     "fecha": "2023-12-21"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "B8": {
+   "id": "B8",
+   "concepto": "IVA sobre la utilidad en contratos de obra con AIU",
+   "unidad": "% sobre la utilidad (o sobre los honorarios)",
+   "bajo": 19,
+   "medio": 19,
+   "alto": 19,
+   "alcance": "porcentaje",
+   "confianza": "alta",
+   "nota": "Art. 3 del Decreto 1372 de 1992, compilado en el art. 1.3.1.7.9 del DUR 1625 de 2016: en la construcción de un inmueble, el IVA se causa sobre los honorarios o, si no se pactan honorarios, sobre la utilidad. Se aplica la tarifa general del 19 %. La utilidad pactada no puede ser menor que la comercial de contratos similares. El IVA pagado en materiales no es descontable para el constructor y por eso va dentro del costo directo. Efecto: con una U de 5–10 %, el IVA equivale a 0,95–1,9 % del costo directo. En administración delegada se aplica el 19 % sobre los honorarios. La DIAN aclara que la regla cubre obras inherentes a la construcción; lo que se puede retirar sin dañar el inmueble (por ejemplo equipos) se factura con IVA pleno.",
+   "fuentes": [
+    {
+     "nombre": "Gerencie – IVA en contratos de construcción de bienes inmuebles",
+     "url": "https://www.gerencie.com/iva-en-contratos-de-construccion-de-bienes-inmuebles.html",
+     "valor_reportado": "el impuesto sobre las ventas se genera sobre la parte de los ingresos correspondiente a los honorarios... Cuando no se pacten honorarios el impuesto se causará sobre... la utilidad del constructor; se aplica la tarifa general del IVA, que hoy día es del 19%"
+    },
+    {
+     "nombre": "Actualícese – AIU",
+     "url": "https://actualicese.com/aiu/",
+     "valor_reportado": "artículo 3 del Decreto 1372 de 1992, compilado en el artículo 1.3.1.7.9 del DUT 1625 de 2016"
+    },
+    {
+     "nombre": "DIAN Concepto 4761 de 2019 (CIJUF)",
+     "url": "https://cijuf.org.co/sites/cijuf.org.co/files/normatividad/2019/ConDIAN04761_19.pdf",
+     "valor_reportado": "aplica solo respecto de los contratos de construcción de inmueble y en general a las obras inherentes a la construcción en sí",
+     "fecha": "2019"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "B9": {
+   "id": "B9",
+   "concepto": "Precio de venta por m² de casas nuevas de lujo en el norte de Barranquilla (Villa Campestre, Altos del Prado, Riomar), como contraste",
+   "unidad": "COP/m² construido (precio de oferta, incluye lote)",
+   "bajo": 4500000,
+   "medio": 6000000,
+   "alto": 8000000,
+   "alcance": "otro",
+   "confianza": "media",
+   "nota": "No hay índice oficial de casas nuevas de lujo; se usan precios de oferta de portales, que incluyen el lote y suelen estar 10–20 % por encima del precio de cierre. Algunos avisos, con el m² calculado: Villa Campestre, 251 m² por $1.100 M (≈ 4,4 M/m²); Villa Campestre, 310 m² por $2.500 M (≈ 8 M/m²); Villa Campestre, 620 m² por $3.300 M (≈ 5,3 M/m²). Ukucela ubica Riomar y Alto Prado en 4,5–6,5 M/m². Terraes da una mediana de 4,0 M/m² para toda la ciudad (P25–P75: 3,1–5,2; máximo ≈ 6,8). Los apartamentos nuevos de Riomar se anuncian en 9–12 M/m², pero esa cifra es la de un vendedor. Contraste: el costo directo de B2 más AIU (≈ 6,0 M/m²) ya iguala o supera el precio de venta típico de casas del sector, sin contar lote.",
+   "fuentes": [
+    {
+     "nombre": "Ukucela – Precio m² en Barranquilla 2026",
+     "url": "https://ukucela.com/blog/precio-metro-cuadrado-barranquilla-2026",
+     "valor_reportado": "zonas premium (Riomar, Alto Prado, Buenavista, Villa Santos): COP $4.5 millones – $6.5 millones por m²",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Terraes – Avalúo en Barranquilla: precio del m² 2026",
+     "url": "https://terraes.com/avaluo/barranquilla",
+     "valor_reportado": "$4,0 M/m² (venta); la mitad del mercado está entre $3,1 M/m² y $5,2 M/m² (actualización agosto 2026, 8.540 inmuebles)",
+     "fecha": "2026-08"
+    },
+    {
+     "nombre": "Metrocuadrado – Casas en Villa Campestre",
+     "url": "https://www.metrocuadrado.com/casas/barranquilla/villa-campestre/",
+     "valor_reportado": "3 habitaciones, 3 baños, área 251 m2 por $1.100.000.000; 4 habitaciones, 5 baños, área 620 m2 por $3.300.000.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Fincaraíz – Casas en venta en Villa Campestre",
+     "url": "https://www.fincaraiz.com.co/venta/casas/villa-campestre/riomar/barranquilla",
+     "valor_reportado": "310,32 m² en $2.500.000.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Ciencuadras – Lote en venta Altos de Riomar",
+     "url": "https://www.ciencuadras.com/inmueble/lote-en-venta-en-altos-de-riomar-barranquilla-3272247",
+     "valor_reportado": "precios de venta de apartamentos en la zona entre $9M y $12M por metro cuadrado (afirmación del vendedor)",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "referencias"
+  },
+  "L1": {
+   "id": "L1",
+   "concepto": "Salario mínimo mensual legal vigente 2026 (SMMLV)",
+   "unidad": "COP/mes",
+   "bajo": 1750905,
+   "medio": 1750905,
+   "alto": 1750905,
+   "alcance": "mano_de_obra",
+   "incluye_iva": false,
+   "confianza": "alta",
+   "nota": "Valor oficial: +23% sobre 2025. El Consejo de Estado suspendió provisionalmente el Decreto 1469/2025 el 12-feb-2026. El Decreto 0159 del 19-feb-2026 fijó transitoriamente el mismo valor, que sigue vigente hasta la sentencia de fondo. Es salario básico, sin prestaciones ni auxilio de transporte.",
+   "fuentes": [
+    {
+     "nombre": "ConsultorSalud - Decretos 1469 y 1470 de 2025",
+     "url": "https://consultorsalud.com/aumento-del-salario-minimo-en-colombia-2026/",
+     "valor_reportado": "$1.750.905 mensuales, incremento del 23%, Decreto 1469 de 2025",
+     "fecha": "2025-12-30"
+    },
+    {
+     "nombre": "AllAbogados - Decreto 0159 de 2026",
+     "url": "https://allabogados.com/en/noticias/decreto-0159-de-2026-salario-minimo-2026/",
+     "valor_reportado": "Fija transitoriamente el salario mínimo 2026; mantiene $1.750.905 (23%)",
+     "fecha": "2026-02-19"
+    },
+    {
+     "nombre": "Portafolio - Consejo de Estado mantiene suspensión del decreto",
+     "url": "https://www.portafolio.co/economia/consejo-de-estado-dejo-en-firme-decision-de-mantener-suspendido-el-decreto-con-el-que-petro-fijo-el-salario-minimo-491955",
+     "valor_reportado": "Decreto 159 sigue vigente hasta la sentencia; salario vital en firme",
+     "fecha": "2026-04-14"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L2": {
+   "id": "L2",
+   "concepto": "Auxilio de transporte 2026",
+   "unidad": "COP/mes",
+   "bajo": 249095,
+   "medio": 249095,
+   "alto": 249095,
+   "alcance": "mano_de_obra",
+   "incluye_iva": false,
+   "confianza": "alta",
+   "nota": "Decreto 1470/2025: +24,5% sobre los $200.000 de 2025. Se paga a quien devenga hasta 2 SMMLV ($3.501.810), es decir, a ayudantes y oficiales. Entra en la base de cesantías y prima, no en la de vacaciones ni en la de aportes. SMMLV + auxilio = $2.000.000.",
+   "fuentes": [
+    {
+     "nombre": "Colpensiones - Decreto 1470 de 2025",
+     "url": "https://normativa.colpensiones.gov.co/compilacion/docs/decreto_1470_2025.htm",
+     "valor_reportado": "Auxilio de transporte $249.095 (incremento 24,5%)",
+     "fecha": "2025-12-29"
+    },
+    {
+     "nombre": "ConsultorSalud",
+     "url": "https://consultorsalud.com/aumento-del-salario-minimo-en-colombia-2026/",
+     "valor_reportado": "Auxilio de transporte $249.095; total $2.000.000 con el SMMLV",
+     "fecha": "2025-12-30"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L3": {
+   "id": "L3",
+   "concepto": "Jornal básico de oficial de construcción en Barranquilla (sin prestaciones)",
+   "unidad": "COP/día",
+   "bajo": 76700,
+   "medio": 90000,
+   "alto": 118000,
+   "alcance": "mano_de_obra",
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Jornal = pago al trabajador SIN prestaciones; L5 se aplica encima. Bajo: oferta formal real en Barranquilla de $2.300.000/mes entre 30 días. Medio: el mismo salario por día efectivamente trabajado (2,3 M / 26 días = $88.500 en semana de 6 días; esa oferta trabaja de lunes a viernes, lo que da unos $106.000 por día trabajado). Coincide con el pago diario informal típico. Alto: techo del rango de OneEstimate para Barranquilla y piso del de PresuCosto (este no aclara si incluye prestaciones). Los blogs comerciales dicen usar un SMMLV 2026 de $1.423.500, que en realidad es el de 2025, así que sus rangos probablemente subestiman 2026.",
+   "fuentes": [
+    {
+     "nombre": "Elempleo - Oficial de estructura y acabados (Atiempo), Barranquilla",
+     "url": "https://www.elempleo.com/co/ofertas-trabajo/oficial-de-obra-vivienda-barranquilla-1886774152",
+     "valor_reportado": "Salario base $2.300.000 + $250.000 auxilio de transporte + prestaciones de ley; lun-jue 7:00-4:30, vie 7:00-4:00",
+     "fecha": "2026-09-30"
+    },
+    {
+     "nombre": "OneEstimate - Precios mano de obra construcción Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/precios-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Barranquilla jornal 88.000 - 118.000, factor 0,90 vs Bogotá",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "PresuCosto - Lista de salarios mano de obra construcción Colombia 2026",
+     "url": "https://presucosto.com/blog/salarios-construccion-colombia-2026",
+     "valor_reportado": "Barranquilla: -10% a -15% vs Bogotá; Jornal Oficial Típico $118.000 - $143.000",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L4": {
+   "id": "L4",
+   "concepto": "Jornal básico de ayudante de construcción en Barranquilla (sin prestaciones)",
+   "unidad": "COP/día",
+   "bajo": 58400,
+   "medio": 67000,
+   "alto": 75000,
+   "alcance": "mano_de_obra",
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Las vacantes formales de ayudante en Barranquilla y en el país pagan exactamente el SMMLV. Bajo: SMMLV/30 = $58.364 por día calendario. Medio: SMMLV/26 = $67.342 por día trabajado en semana de 6 días, en línea con el pago diario informal. Alto: ayudante con experiencia o pago diario informal alto; los blogs dan $60.000-85.000 a nivel nacional con base 2025. L5 se aplica encima.",
+   "fuentes": [
+    {
+     "nombre": "Cazvid - Ayudante de obra civil, DISANORTE SAS, Barranquilla",
+     "url": "https://cazvid.com/empleo/ayudante-de-obra-civil-11761c",
+     "valor_reportado": "COP 1,750,905 por mes, tiempo completo",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Elempleo - Ayudante de obra Soacha (referencia nacional)",
+     "url": "https://www.elempleo.com/co/ofertas-trabajo/ayudante-de-obra-soacha-empresa-de-construccion-1886710509",
+     "valor_reportado": "$1.750.905 + $249.095 Aux. de transporte",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "PresuCosto - Lista de precios albañilería 2026",
+     "url": "https://presucosto.com/blog/lista-precios-albanileria-2026-colombia",
+     "valor_reportado": "Ayudante ~$58.000-65.000 por día (8 horas), referencia de mercado",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Lista precios mano de obra Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/lista-precios-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Ayudante de construcción $60.000 - $75.000 diarios (otra tabla: $55.000-70.000)",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L5": {
+   "id": "L5",
+   "concepto": "Factor prestacional de la construcción (carga sobre el salario básico)",
+   "unidad": "fracción sobre salario básico",
+   "bajo": 0.5,
+   "medio": 0.62,
+   "alto": 0.8,
+   "alcance": "porcentaje",
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Cálculo propio con tasas legales 2026. Prestaciones: cesantías 8,33% + intereses 1% + prima 8,33%, todas sobre salario más auxilio, y vacaciones 4,17% sobre salario: unos 22-24%. Seguridad social del empleador: pensión 12% + ARL clase V 6,96% + caja 4% = 22,96%. Dotación: unos 2%. Auxilio de transporte: 14,2% del SMMLV o 10,8% sobre $2,3 M. Medio (0,62): empleador exonerado de salud, SENA e ICBF (art. 114-1 ET, persona jurídica o persona natural con 2 o más trabajadores), promedio de oficial (0,59) y ayudante (0,64). Alto (0,80): sin exoneración (+8,5% salud +2% SENA +3% ICBF) más el aporte FIC (~2,5%). Bajo (0,50): trabajador sin auxilio ni dotación, típico de las APU de blogs (0,52). OJO: el factor va sobre el salario mensual o sobre el jornal de 30 días. Para el costo por día efectivamente trabajado hay que multiplicar además por unos 1,22 (semana de 6 días) o unos 1,43 (semana de 5 días con festivos), salvo que el jornal ya sea por día trabajado.",
+   "fuentes": [
+    {
+     "nombre": "Gerencie - Porcentajes de prestaciones sociales",
+     "url": "https://www.gerencie.com/porcentajes-prestaciones-sociales.html",
+     "valor_reportado": "Prima 8,33%, cesantías 8,33%, intereses sobre cesantías 12%",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Buk - Tarifas ARL por clase de riesgo",
+     "url": "https://www.buk.co/blog/tarifas-arl-tabla-riesgos-calculo",
+     "valor_reportado": "Clase V: mínimo 3,219%, inicial 6,960%, máximo 8,700%",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Listado precios mano de obra 2026",
+     "url": "https://oneestimate.ai/es/blog/listado-precios-mano-obra-construccion-2026",
+     "valor_reportado": "Total factor prestacional ~53,77% (otra página usa 52% con ARL riesgo V 6,96%)",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Accounter - Oficio DIAN 012990 de 2026 (exoneración art. 114-1 ET)",
+     "url": "https://accounter.co/normatividad/trabajadora-domestica-cuenta-para-acceder-a-la-exoneracion-de-aportes-de-personas-naturales-empleadoras-oficio-dian-12990-de-2026",
+     "valor_reportado": "Exoneración de SENA, ICBF y salud procede si se emplean dos o más trabajadores que devenguen menos de 10 SMMLV",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L6": {
+   "id": "L6",
+   "concepto": "Salario de ingeniero o arquitecto residente de obra en Barranquilla",
+   "unidad": "COP/mes",
+   "bajo": 3500000,
+   "medio": 4500000,
+   "alto": 5500000,
+   "alcance": "mano_de_obra",
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Salario básico de vacantes publicadas en Barranquilla en 2026, sin prestaciones; con contrato laboral se aplica L5, sin auxilio de transporte. Bajo: residente administrativo o junior ($3,5-4 M; en Cartagena hay ofertas de $2,8-3,0 M). Alto: residente técnico de vivienda con 3 años de experiencia ($5,0-5,5 M). Para una casa de 251 m² suele contratarse a medio tiempo o por honorarios de interventoría o dirección.",
+   "fuentes": [
+    {
+     "nombre": "Elempleo - Residente técnico de obra vivienda multifamiliar, Barranquilla",
+     "url": "https://www.elempleo.com/co/ofertas-trabajo/barranquilla-residente-tecnico-de-obra-vivienda-multifamiliar-1886695903",
+     "valor_reportado": "Salario $5.000.000 a $5.500.000 y todas las prestaciones de ley; 3 años de experiencia",
+     "fecha": "2026-04-14"
+    },
+    {
+     "nombre": "Elempleo - Residente administrativo de obra, Barranquilla",
+     "url": "https://www.elempleo.com/co/ofertas-trabajo/residente-administrativo-obra-barranquilla-1886778527",
+     "valor_reportado": "$3,5 a $4 millones COP",
+     "fecha": "2026-10-08"
+    },
+    {
+     "nombre": "Computrabajo - Ingeniero residente de obra, Cartagena",
+     "url": "https://co.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-ingeniero-residente-de-obra-en-cartagena-de-indias-0D4215CB90CAB96761373E686DCF3405",
+     "valor_reportado": "$2.800.000 a $3.000.000",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L7": {
+   "id": "L7",
+   "concepto": "Salario de maestro general de obra en Barranquilla",
+   "unidad": "COP/mes",
+   "bajo": 3500000,
+   "medio": 4000000,
+   "alto": 5000000,
+   "alcance": "mano_de_obra",
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Salario básico de vacantes de Barranquilla en 2026, sin prestaciones; se aplica L5 sin auxilio de transporte. Medio: unos $4,0 M (Conconcreto ofrece $4.020.990 y Adecco $3,5-4 M). Alto: maestro con experiencia en acabados de lujo; Portafolio reporta $5,17 M CON prestaciones, sin fecha. En obras privadas pequeñas el maestro a veces cobra por contrato a destajo o por m² en lugar de salario.",
+   "fuentes": [
+    {
+     "nombre": "Elempleo - Maestro de obra bodegas (Conconcreto), Barranquilla",
+     "url": "https://www.elempleo.com/co/ofertas-trabajo/maestro-de-obra-bodegas-barranquilla-1886712301",
+     "valor_reportado": "Salario 4.020.990 + prestaciones de ley; término fijo 6 meses",
+     "fecha": "2026-05-14"
+    },
+    {
+     "nombre": "Elempleo - Maestro de obra urbanismo y estructura (Adecco), Barranquilla",
+     "url": "https://www.elempleo.com/co/ofertas-trabajo/maestro-de-obra-urbanismo-y-estructura-1886697206",
+     "valor_reportado": "$3,5 a $4 millones COP",
+     "fecha": "2026-04-16"
+    },
+    {
+     "nombre": "Portafolio - Cuánto gana una persona en el sector constructor",
+     "url": "https://www.portafolio.co/mis-finanzas/cuanto-gana-una-persona-que-trabaja-en-el-sector-constructor-568339",
+     "valor_reportado": "Maestro general de obra: sueldo mensual con prestaciones $5.173.997 (sin fecha ni ciudad)"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L10": {
+   "id": "L10",
+   "concepto": "Mano de obra mampostería en bloque de concreto o arcilla (12-15 cm)",
+   "unidad": "COP/m²",
+   "bajo": 15000,
+   "medio": 23000,
+   "alto": 30000,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Solo mano de obra (sin bloque, mortero ni andamio). Cálculo de control: una cuadrilla de 1 oficial + 1 ayudante formal con L5 medio cuesta unos $266.000-310.000 por día trabajado; con 10-12 m²/día da $23.000-28.000/m². La misma cuadrilla informal ($155.000/día) da unos $14.000/m². La tabla de OneEstimate para Barranquilla ($13.500-17.500) parece usar salarios de 2025; ajustada un 13,9% (alza de la mano de obra en el ICOCED del 1er semestre de 2026) queda en $15.400-19.900. Alto: bloque a la vista o muros altos en doble altura.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate - Valor m² mano de obra Colombia 2026 (tabla por ciudad)",
+     "url": "https://oneestimate.ai/es/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Mampostería bloque 15 cm: Barranquilla $13.500-17.500; Bogotá $16.000-21.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "PresuCosto - Valor m² mano de obra 2026 sin materiales",
+     "url": "https://presucosto.com/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Mampostería bloque #4: $18.000 - $24.000/m², 8-12 m²/día, exclusivamente mano de obra",
+     "fecha": "2026-02-20"
+    },
+    {
+     "nombre": "OneEstimate - Lista precios mano de obra a destajo 2026",
+     "url": "https://oneestimate.ai/es/blog/lista-precios-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Mampostería bloque 15 cm: $28.000 - $52.000, promedio $38.000",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L11": {
+   "id": "L11",
+   "concepto": "Mano de obra pañete (revoque) en muros",
+   "unidad": "COP/m²",
+   "bajo": 11000,
+   "medio": 18000,
+   "alto": 25000,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Solo mano de obra. Bajo: pañete liso interior al precio de Barranquilla ajustado a 2026. Medio: cuadrilla formal 1+1 (~$280.000/día) con 15 m²/día da unos $18.700. Alto: pañete de fachada, bajo placa o con filos y dilataciones, necesario para el estuco blanco de fachada. Las fuentes difieren hasta el doble.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate - Valor m² mano de obra Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Pañete liso interior Barranquilla $9.800 - $12.000/m²; Bogotá $11.500-14.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "PresuCosto - Valor m² mano de obra 2026",
+     "url": "https://presucosto.com/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Pañete corriente 1:4: $12.000 - $18.000/m², 12-20 m²/día",
+     "fecha": "2026-02-20"
+    },
+    {
+     "nombre": "OneEstimate - Tabulador albañilería Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/tabulador-precios-albanileria-colombia-2026",
+     "valor_reportado": "Pañete liso en muros 1,5 cm $18.500 - $22.000; pañete bajo placa $24.500 - $29.000",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L12": {
+   "id": "L12",
+   "concepto": "Mano de obra estuco y pintura interior (estuco + 2-3 manos de vinilo)",
+   "unidad": "COP/m²",
+   "bajo": 13000,
+   "medio": 19000,
+   "alto": 28000,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Solo mano de obra. Bajo: combo de estuco y pintura en Barranquilla (OneEstimate) ajustado a 2026. Medio: tabulador de estuco + pintura a 3 manos. Alto: acabado de lujo con estuco plástico, lijado fino y 3 manos, en alturas mayores de 3 m (doble altura); OneEstimate indica +20-40% por altura o alta precisión.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate - Valor m² mano de obra Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Estuco y pintura combo Barranquilla $12.000-16.000; pintura interior 2 manos $6.500-9.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Tabulador albañilería Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/tabulador-precios-albanileria-colombia-2026",
+     "valor_reportado": "Estuco con pintura en tres manos $16.500 - $21.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Lista a destajo 2026",
+     "url": "https://oneestimate.ai/es/blog/lista-precios-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Estuco con pintura dos manos $20.000 - $38.000",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L13": {
+   "id": "L13",
+   "concepto": "Mano de obra instalación porcelanato gran formato 120x120 (piso)",
+   "unidad": "COP/m²",
+   "bajo": 40000,
+   "medio": 60000,
+   "alto": 85000,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "baja",
+   "nota": "No se encontró una tarifa publicada para 120x120 en Colombia. Homecenter cobra $44.900/m² para formato de 60-80 cm (con IVA, unos $37.700 sin IVA) y tiene una línea aparte para formato mayor de 80 cm cuyo precio no aparece. La pieza de 120x120 exige 2 instaladores, doble encolado, niveladores tipo clip, ventosas y una placa nivelada, lo que suele costar un 30-60% más que el 60x60. Cálculo: cuadrilla de 2 oficiales + 1 ayudante formal (~$415.000/día) con 6-10 m²/día da $41.000-69.000. No incluye nivelación ni mortero autonivelante, pegante, boquilla ni guardaescoba.",
+   "fuentes": [
+    {
+     "nombre": "Homecenter - Instal. cerámico piso + guarda m² de 60 a 80 cm",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/701381/instal-ceramico-pisoguarda-m2-de-60-cm-a-80-int/701381/",
+     "valor_reportado": "$44.900 por unidad (m²); no incluye pegante, boquilla, nivelación ni preparación",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Homecenter - Instalación porcelanato piso + guardaescoba m²",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/514480/instalacion-porcelanato-piso-guardaesc-m2-int/514480/",
+     "valor_reportado": "$30.900 und; no incluye preparación de superficie",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Tabulador albañilería Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/tabulador-precios-albanileria-colombia-2026",
+     "valor_reportado": "Instalación de porcelanato (formato 60x60 o sup) $32.000 - $45.000/m²",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Lista a destajo 2026",
+     "url": "https://oneestimate.ai/es/blog/lista-precios-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Porcelanato piso (60×60) $38.000 - $70.000/m², promedio $52.000",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L14": {
+   "id": "L14",
+   "concepto": "Mano de obra vaciado, vibrado y curado de concreto estructural",
+   "unidad": "COP/m³",
+   "bajo": 45000,
+   "medio": 90000,
+   "alto": 160000,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "baja",
+   "nota": "Solo mano de obra, sin formaleta ni acero. Bajo: concreto premezclado bombeado en losa (PresuCosto $45.000-70.000/m³). Cálculo: cuadrilla de 1 oficial + 3 ayudantes formal (~$500.000-580.000/día) con 12-20 m³/día da $25.000-48.000. Medio: mezcla de losas, vigas y columnas; columnas y vigas rinden 3-6 m³/día. Alto: concreto mezclado en obra para columnas o concreto a la vista con formaleta de tabla y vibrado cuidadoso (el APU de OneEstimate da $203.200/m³ de mano de obra incluyendo la mezcla). El rango de OneEstimate a destajo ($85.000-120.000 en losa) no especifica la unidad.",
+   "fuentes": [
+    {
+     "nombre": "PresuCosto - Costos mano de obra construcción Colombia 2026",
+     "url": "https://presucosto.com/blog/mano-obra-construccion-colombia-2026-precios",
+     "valor_reportado": "Concreto en losa $45.000 - $70.000 por m³ (cifra leída en resumen de búsqueda; página exacta no verificada)",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Precios mano de obra Colombia 2026 (destajo)",
+     "url": "https://oneestimate.ai/es/blog/precios-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Concreto vaciado en losa $85.000 - $120.000 (sin materiales ni AIU)",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - APU Colombia 2026 guía completa",
+     "url": "https://oneestimate.ai/es/blog/apu-colombia-2026-guia-completa",
+     "valor_reportado": "APU concreto por m³: mano de obra $203.200, equipo $40.000, costo directo $604.200/m³",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L15": {
+   "id": "L15",
+   "concepto": "Mano de obra figurado, armado e instalación de acero de refuerzo",
+   "unidad": "COP/kg",
+   "bajo": 450,
+   "medio": 850,
+   "alto": 1200,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "baja",
+   "nota": "Los blogs dan $350-550/kg con salarios de 2025, valor que sirve para acero ya figurado en planta y que solo se arma en obra. Cálculo: cuadrilla de 1 oficial + 1 ayudante formal (~$266.000-310.000/día) con 250-350 kg/día da $760-1.240/kg; la cuadrilla informal ($155.000/día) a 300 kg/día da unos $520/kg. Alto: diámetros pequeños, muchos estribos y voladizos de 1,2-1,6 m, con bajo rendimiento.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate - Precios mano de obra Colombia 2026 (destajo)",
+     "url": "https://oneestimate.ai/es/blog/precios-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Figurado y armado de acero: kg, 350 - 550; armador de acero jornal 100.000 - 145.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "PresuCosto - Costos mano de obra construcción Colombia 2026",
+     "url": "https://presucosto.com/blog/mano-obra-construccion-colombia-2026-precios",
+     "valor_reportado": "Figurado y armado de acero $350 - $550 por kg (resumen de búsqueda)",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L16": {
+   "id": "L16",
+   "concepto": "Mano de obra instalación piso de madera de ingeniería (roble)",
+   "unidad": "COP/m²",
+   "bajo": 22000,
+   "medio": 38000,
+   "alto": 60000,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "baja",
+   "nota": "No hay tarifa publicada para Barranquilla. Starhouse da $25.000-50.000/m² para instalación flotante y $40.000-80.000/m² para flotante o pegada; son precios de retail con margen. Cálculo: cuadrilla 1+1 formal con 12-20 m²/día flotante da $14.000-23.000, y pegada con adhesivo (8-12 m²/día) da $23.000-35.000. Por el clima húmedo de Barranquilla conviene pegar con adhesivo MS o poner barrera de vapor, lo que acerca el precio al medio-alto. No incluye zócalo, nivelación ni adhesivo.",
+   "fuentes": [
+    {
+     "nombre": "Starhouse - Instalación piso de madera precio Colombia",
+     "url": "https://starhouse.com.co/instalacion-piso-madera-precio/",
+     "valor_reportado": "Instalación entre $40.000 y $80.000 COP por m² (flotante o pegada)",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Starhouse - Instalar piso laminado precio m² Colombia",
+     "url": "https://starhouse.com.co/instalar-piso-laminado-precio-m2/",
+     "valor_reportado": "Instalación flotante entre COP $25.000 y COP $50.000/m²",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Valor m² mano de obra Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Piso laminado mano de obra $12.000 - $20.000/m²; instalador de laminado jornal 85.000-125.000",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L17": {
+   "id": "L17",
+   "concepto": "Mano de obra cielo raso en drywall (estructura, placa y masillado)",
+   "unidad": "COP/m²",
+   "bajo": 20000,
+   "medio": 27000,
+   "alto": 36000,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Solo mano de obra, sin pintura. Bajo: tabla de OneEstimate para Barranquilla. Medio: cuadrilla 1+1 formal (~$280.000/día) con 10-12 m²/día da unos $23.000-28.000. Alto: cielo con dilataciones, cortineros, nichos de luz o en doble altura. Para el clima de la costa se recomienda placa RH, lo que no cambia la mano de obra.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate - Valor m² mano de obra Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Cielo raso drywall MO: Barranquilla ~$19.000-25.500; Bogotá $22.000-30.000; Cali $20.000-27.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Precio m² drywall mano de obra Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/precio-m2-drywall-mano-obra-colombia-2026",
+     "valor_reportado": "Cielo raso plano $25.000 - $35.000; muro 2 caras Barranquilla 19.000-31.000, promedio 24.000",
+     "fecha": "2026-07"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L18": {
+   "id": "L18",
+   "concepto": "Mano de obra excavación manual en material común",
+   "unidad": "COP/m³",
+   "bajo": 25000,
+   "medio": 45000,
+   "alto": 60000,
+   "alcance": "mano_de_obra",
+   "pct_mano_obra": 1,
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Solo mano de obra, sin retiro ni botada del material. Bajo: destajo informal (blogs $25.000-40.000). Medio: ayudante formal (~$117.000-137.000/día) + 0,1 oficial, con 2,5-3,5 m³/día, da $38.000-55.000. Alto: material duro (caliche o arcilla compacta, frecuente en el norte de Barranquilla), zanjas profundas o con agua. El APU publicado de Cali ($226.489/m³ con AIU) es un valor atípico y no se usó.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate - Precios mano de obra Colombia 2026 (destajo)",
+     "url": "https://oneestimate.ai/es/blog/precios-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Excavación manual: m³, 25.000 - 40.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - Rendimientos mano de obra Colombia 2026",
+     "url": "https://oneestimate.ai/blog/rendimientos-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "Excavación manual (suelo común) 2,50 - 3,50 m³/jornal",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "OneEstimate - APU Colombia 2026 guía completa (ejemplo Cali)",
+     "url": "https://oneestimate.ai/es/blog/apu-colombia-2026-guia-completa",
+     "valor_reportado": "Excavación manual: costo directo 191.940; AIU 18% 34.549; precio unitario 226.489/m³; 2 m³/jornada con 1 of + 2 ay",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "L19": {
+   "id": "L19",
+   "concepto": "Participación de la mano de obra en el costo directo de una vivienda",
+   "unidad": "fracción del costo directo",
+   "bajo": 0.2,
+   "medio": 0.25,
+   "alto": 0.32,
+   "alcance": "porcentaje",
+   "incluye_iva": false,
+   "confianza": "media",
+   "nota": "Camacol estima la mano de obra en cerca del 25% de los costos directos, y el Decreto 2375/1974 (FIC) presume el mismo 25% en jornales y subcontratos. En el ICOCED de Bogotá-Cundinamarca pesa 20,48%, y Bancolombia la ubica en 20,4% del costo total en 2024. Con el alza salarial de 2026 (mano de obra +13,9% contra un ICOCED total de +6,6%) la participación sube. En esta casa, los acabados importados de alto valor (aluminio y vidrio, porcelanato, solar, equipos) bajan la fracción, mientras los oficios artesanales (teca, microcemento, piedra coralina, concreto a la vista, piscina) la suben. Por eso medio = 0,25 y alto = 0,32.",
+   "fuentes": [
+    {
+     "nombre": "Valora Analitik - Constructores prevén alza de hasta 11% en costos 2026 (Camacol)",
+     "url": "https://www.valoraanalitik.com/?p=548373",
+     "valor_reportado": "Guillermo Herrera (Camacol): la mano de obra representa el 25% de los costos totales de la industria de la vivienda",
+     "fecha": "2026-01"
+    },
+    {
+     "nombre": "Camacol Bogotá y Cundinamarca - Perspectiva económica marzo 2026",
+     "url": "https://camacolbyc.co/documentos/Perspectiva/eco-marzo26.pdf",
+     "valor_reportado": "ICOCED enero 2026: Mano de obra peso 20,48%, variación anual 15,26%, aporte 3,31 pp; total 6,05%",
+     "fecha": "2026-03"
+    },
+    {
+     "nombre": "Bancolombia - Perspectivas sector construcción cierre 2024",
+     "url": "https://www.bancolombia.com/empresas/capital-inteligente/actualidad-economica-sectorial/perspectivas-sector-construccion-colombia",
+     "valor_reportado": "Mano de obra 20,4% de los costos totales de construcción en 2024; materiales 50,7%",
+     "fecha": "2025"
+    },
+    {
+     "nombre": "Gerencie - Pago de aportes al FIC",
+     "url": "https://www.gerencie.com/pago-de-los-aportes-al-fic.html",
+     "valor_reportado": "Se presume que la industria destina un 25% de sus costos al pago de jornales y subcontratos (liquidación presuntiva 0,25% del valor de la obra)"
+    }
+   ],
+   "tema": "mano_obra"
+  },
+  "G1": {
+   "id": "G1",
+   "concepto": "Concreto premezclado 3000 psi (21 MPa) puesto en obra en Barranquilla, sin bombeo",
+   "unidad": "COP/m3",
+   "bajo": 470000,
+   "medio": 530000,
+   "alto": 600000,
+   "alcance": "material",
+   "incluye_iva": false,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Presucosto - Lista precios materiales construccion Colombia 2026",
+     "url": "https://presucosto.com/blog/precios-materiales-construccion-colombia-2026",
+     "fecha": "2026-02",
+     "valor_reportado": "Concreto premezclado 3000 psi | m³ | $480.000 | $580.000 | Argos Ready Mix, Holcim; Barranquilla -5% a +8% en cemento y áridos"
+    },
+    {
+     "nombre": "EMCALI - Lista de precios oficial 2025 (Cali)",
+     "url": "https://www.emcali.com.co/documents/d/guest/lista-de-precios-emcali-2025-oficial",
+     "fecha": "2025",
+     "valor_reportado": "Concreto común F'c=21 MPa (3000 PSI) premezclado con instalación: $533.720/m³"
+    },
+    {
+     "nombre": "Concremack - ¿Cuánto vale el metro cúbico de concreto en Colombia?",
+     "url": "https://concremack.com/sector-infraestructura/cuanto/",
+     "valor_reportado": "precio promedio del m3 de concreto aprox. $537.917 COP"
+    },
+    {
+     "nombre": "Concretos SAS (atiende Barranquilla) - condiciones de bombeo",
+     "url": "https://concretos-sas.com/concreto-premezclado-y-cemento/",
+     "valor_reportado": "Tarifa base de bombeo $1.650.000 COP: posicionamiento, hasta 50 m de tubería y primeros 20,0 m³; despacho mínimo 4 m³ por mixer"
+    },
+    {
+     "nombre": "Edubar (Barranquilla) presupuesto SA-21-2021",
+     "url": "https://admin.edubar.com.co/vistas/docs/SA-21-2021/6.pdf",
+     "fecha": "2021",
+     "valor_reportado": "Concreto premezclado 3000 PSI aprox. $381.752/m³"
+    }
+   ],
+   "nota": "No se halló lista de precios publicada de planta en Barranquilla (Argos/Cemex) para 2026; rango construido con Presucosto feb-2026 (nacional, sin IVA, sin bombeo) y ajuste Barranquilla -5%/+8%, contrastado con EMCALI 2025 (+6% ICOCED a 2026 = ~565.000) y Edubar 2021 (381.752 x ~1,30 = ~495.000). Bombeo aparte: con tarifa base de $1.650.000 por servicio que cubre 20 m³, para vaciados de vivienda de 10-25 m³ el bombeo suma aprox. 65.000-110.000 COP/m³ (cálculo propio). Agregar IVA 19% si la cotización es sin IVA. Datos leídos de extractos de búsqueda (WebFetch no disponible).",
+   "tema": "obra_gris"
+  },
+  "G2": {
+   "id": "G2",
+   "concepto": "Concreto premezclado 4000 psi (28 MPa) puesto en obra en Barranquilla, sin bombeo",
+   "unidad": "COP/m3",
+   "bajo": 530000,
+   "medio": 590000,
+   "alto": 670000,
+   "alcance": "material",
+   "incluye_iva": false,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Presucosto - Lista precios materiales construccion Colombia 2026",
+     "url": "https://presucosto.com/blog/precios-materiales-construccion-colombia-2026",
+     "fecha": "2026-02",
+     "valor_reportado": "Concreto 4000 psi entre $540.000 y $650.000 por m³"
+    },
+    {
+     "nombre": "DataCauca - Análisis de precios unitarios",
+     "url": "https://datacauca.gov.co/apu/apu/apu/query?page=8&sort=asc&order=Nombre",
+     "valor_reportado": "Concreto 4000 PSI $549.949; concreto 3000 PSI $453.143 (dosificado en obra)"
+    },
+    {
+     "nombre": "Concretos SAS (atiende Barranquilla) - bombeo",
+     "url": "https://concretos-sas.com/concreto-premezclado-y-cemento/",
+     "valor_reportado": "Tarifa base de bombeo $1.650.000 COP que ampara posicionamiento, tubería hasta 50 m y bombeo de los primeros 20.0 m³"
+    }
+   ],
+   "nota": "Diferencial típico 4000 vs 3000 psi de +10% a +12%. Recomendado para losas con voladizos de 1,2-1,6 m, piscina y concreto a la vista. Bombeo aparte (ver G1: ~65.000-110.000 COP/m³ según tamaño del vaciado). Sin IVA.",
+   "tema": "obra_gris"
+  },
+  "G3": {
+   "id": "G3",
+   "concepto": "Acero de refuerzo 60.000 psi (420 MPa), suministro, figurado, amarre e instalación",
+   "unidad": "COP/kg",
+   "bajo": 5200,
+   "medio": 6300,
+   "alto": 8000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.25,
+   "incluye_iva": true,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Homecenter - Varilla G-60 W 1/2 pulg x 6 m corrugada (Ferrasa)",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/73637/varilla-g-60-w-1-2pulg-x6m-corrugada/73637/",
+     "fecha": "2026",
+     "valor_reportado": "$23.990 und (otras fichas $23.650 y $25.640; precio sujeto a cambios según ubicación)"
+    },
+    {
+     "nombre": "Homecenter - Varilla corrugada G60 #4 x 6 m paquete x 50 und",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/452407/varilla-corrugada-g60-w-4-1-2-pulg-x-6m-paq-x-50-und/452407/",
+     "valor_reportado": "$797.500 (sin stock)"
+    },
+    {
+     "nombre": "OneEstimate - Precios materiales construcción Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/precios-materiales-construccion-colombia-2026",
+     "fecha": "2026",
+     "valor_reportado": "Varilla 60 grados 3/8\": $3.200-3.600/kg; 1/2\": $3.100-3.500/kg (Bogotá, sin IVA)"
+    },
+    {
+     "nombre": "Edubar (Barranquilla) presupuesto SA-02-2022",
+     "url": "https://admin.edubar.com.co/vistas/docs/SA-02-2022/13.pdf",
+     "fecha": "2022",
+     "valor_reportado": "Acero de refuerzo aprox. $5.231/kg"
+    },
+    {
+     "nombre": "ICCU - Lista de precios 2025 (Cundinamarca)",
+     "url": "https://www.iccu.gov.co/wcm/connect/ICCU/8455ae14-62a2-4597-842a-57d66960e5df/LISTA+DE+PRECIOS+ICCU+2025.pdf?MOD=AJPERES&CVID=piU1ELe",
+     "fecha": "2025",
+     "valor_reportado": "Acero figurado 60000 PSI $7.950/kg"
+    },
+    {
+     "nombre": "Findeter - Lista de precios fijos PAF-FNGRD-O-015-2022",
+     "url": "https://www.findeter.gov.co/system/files/convocatorias/PAF-FNGRD-O-015-2022/7_lista_de_precios_fijo.pdf",
+     "fecha": "2022",
+     "valor_reportado": "Acero fy 420 MPa $7.541,00/kg"
+    }
+   ],
+   "nota": "Precio s&i (costo directo, sin AIU). Solo material: la varilla 1/2\" (0,994 kg/m, ~5,96 kg) a $23.990 equivale a ~4.025 COP/kg con IVA al detal; paquete x50 ~2.680 COP/kg (sin stock); referencia mayorista 3.100-3.600 COP/kg sin IVA. Bajo: Edubar 2022 Barranquilla 5.231 ajustado por ICOCED (~+20% supuesto 2022-2026, ~5%/año; dic-2025 3,61%, feb-2026 6,31%) da ~6.300 = medio. Alto: ICCU 2025 Cundinamarca 7.950 (+6% = ~8.400) recortado a 8.000. La mano de obra subió más que los materiales por el alza del SMMLV 2026 (+23%).",
+   "tema": "obra_gris"
+  },
+  "G4": {
+   "id": "G4",
+   "concepto": "Mampostería en bloque No. 4-5 (arcilla) o bloque de concreto No. 15, material por m² de muro (bloque + mortero de pega)",
+   "unidad": "COP/m2",
+   "bajo": 27000,
+   "medio": 42000,
+   "alto": 62000,
+   "alcance": "material",
+   "incluye_iva": true,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Homecenter - Bloque N5 Estándar 12x20x30 cm (Ardesa)",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/63172/bloque-n5-estandar-12x20x30cm-6k-15u-m2/63172/",
+     "valor_reportado": "$1.400 und; 15 u/m2"
+    },
+    {
+     "nombre": "Homecenter - Bloque N5 Estándar 12x20x30 cm 5.2k (Ceranova)",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/116435/bloque-n5-estandar-12x20x30cm-52k-155u-m2/116435/",
+     "valor_reportado": "$1.950 und; 15,5 u/m2"
+    },
+    {
+     "nombre": "Homecenter - Bloque cemento 10x20x40 cm 12,5 u/m2 10 MPa",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/47735/bloque-cemento-10-x-20-x-40-cm-3h-125u-m2-10-mpa/47735/",
+     "valor_reportado": "$3.000 por unidad (sin stock; precio sujeto a cambios)"
+    },
+    {
+     "nombre": "Central de Prefabricados SAS (Barranquilla) - tienda",
+     "url": "https://www.centraldeprefabricados.com/tienda",
+     "valor_reportado": "Bloque abujardado H10 9x19x39 $3.200; H15 14x19x39 $4.250"
+    }
+   ],
+   "nota": "Cálculo propio: bajo = bloque No.5 arcilla 15 u x $1.400 = 21.000 + mortero de pega ~6.000 (≈0,018 m³/m² a ~350.000 COP/m³). Medio = bloque de concreto gris No.15 de bloquera local ~2.700-3.000/u x 12,5 u = ~35.000 + mortero ~8.000. Alto = bloque H15 abujardado/estructural $4.250 x 12,5 = 53.000 + mortero ~9.000. En Barranquilla domina el bloque de concreto. No incluye mano de obra (mampostería: ~18.000-30.000 COP/m² según presucosto/oneestimate 2026).",
+   "tema": "obra_gris"
+  },
+  "G5": {
+   "id": "G5",
+   "concepto": "Cemento gris uso general, bulto 50 kg",
+   "unidad": "COP/bulto",
+   "bajo": 32000,
+   "medio": 34500,
+   "alto": 38000,
+   "alcance": "material",
+   "incluye_iva": true,
+   "confianza": "alta",
+   "fuentes": [
+    {
+     "nombre": "Ferretería Metrópolis Center (Barranquilla) - Cemento gris x 50 kg Argos",
+     "url": "https://www.metropoliscenter.com.co/p/cemento-gris-x-50-kg-argos/",
+     "valor_reportado": "Precio por unidad: $36,250"
+    },
+    {
+     "nombre": "Homecenter - Cemento Argos Gris 50 kg",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/13846/cemento-argos-gris-50kg/13846/",
+     "fecha": "2026",
+     "valor_reportado": "$32.500 und (categoría: $32.900)"
+    },
+    {
+     "nombre": "Construmole - Cemento gris x 50 kg Argos",
+     "url": "https://www.construmole.com/producto/cemento-gris-x-50kg-argos/",
+     "valor_reportado": "$34.296 IVA incluido"
+    },
+    {
+     "nombre": "Ferretería La Casita Roja - Cemento gris uso general Argos 50 kg",
+     "url": "https://ferreterialacasitaroja.com/product/cemento-gris-uso-general-argos-50kg/",
+     "valor_reportado": "$38.000,00"
+    },
+    {
+     "nombre": "Presucosto - precios materiales 2026",
+     "url": "https://presucosto.com/blog/precios-materiales-construccion-colombia-2026",
+     "fecha": "2026-02",
+     "valor_reportado": "bulto de cemento gris entre $38.000 y $42.000"
+    }
+   ],
+   "nota": "Varias fuentes concordantes en 32.000-38.000 con IVA; la única tienda ubicada en Barranquilla (Metrópolis Center) publica $36.250. Hay marcas más económicas en Homecenter (Alion, Topex uso general) sin precio visible en la búsqueda. Fechas exactas de captura no verificadas.",
+   "tema": "obra_gris"
+  },
+  "G6": {
+   "id": "G6",
+   "concepto": "Arena de pega / arena de peña puesta en obra (volqueta)",
+   "unidad": "COP/m3",
+   "bajo": 75000,
+   "medio": 100000,
+   "alto": 140000,
+   "alcance": "material",
+   "incluye_iva": true,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Construrama Colombia - Arena de peña x m3",
+     "url": "https://www.construramacolombia.com/CENTRALDEMATERIALES/catalogo/materiales-de-construccion/arenas/arena-de-pena-x-m3/p/100000947",
+     "valor_reportado": "$ 85.000 El precio incluye IVA, por m3"
+    },
+    {
+     "nombre": "Ferresmart - Arena de peña por m3",
+     "url": "https://ferresmart.com.co/producto/arena-de-pena-por-metro-cubicom%C2%B3/",
+     "valor_reportado": "$120,000 por m3"
+    },
+    {
+     "nombre": "LoEncuentras (Bogotá) - Arena de peña",
+     "url": "https://www.loencuentras.com.co/agregados-y-material-de-cantera/67-arena-de-pena.html",
+     "valor_reportado": "$145,000 por m3, pedido mínimo 6 m3"
+    },
+    {
+     "nombre": "Presucosto - precios materiales 2026",
+     "url": "https://presucosto.com/blog/precios-materiales-construccion-colombia-2026",
+     "fecha": "2026-02",
+     "valor_reportado": "Arena de río lavada $85.000-$120.000 por m³; con flete +$40K-$70K; Barranquilla -5% a +8% en áridos"
+    },
+    {
+     "nombre": "Homecenter - Arena de peña 3 m3",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/297071/arena-de-pena-3m3/297071/",
+     "valor_reportado": "$752.900 por 3 m3 (= $250.966,67 por m3), sin stock"
+    }
+   ],
+   "nota": "No se encontró precio publicado de arena en Barranquilla (solo una lista de 2015 de canteras locales, obsoleta). Barranquilla está cerca de canteras (Tubará, Puerto Colombia, Baranoa), por eso bajo = volqueta completa de cantera local; medio incluye flete típico; alto = pedidos pequeños o arena lavada. El precio de Homecenter (~251.000/m³) es formato detal y no es representativo para obra.",
+   "tema": "obra_gris"
+  },
+  "G7": {
+   "id": "G7",
+   "concepto": "Losa de entrepiso aligerada (casetón) o maciza, espesor 30 cm, completa: formaleta/obra falsa, acero, concreto y vaciado",
+   "unidad": "COP/m2",
+   "bajo": 300000,
+   "medio": 390000,
+   "alto": 520000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.25,
+   "incluye_iva": true,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "ICCU - Lista de precios 2025 (Cundinamarca)",
+     "url": "https://www.iccu.gov.co/wcm/connect/ICCU/8455ae14-62a2-4597-842a-57d66960e5df/LISTA+DE+PRECIOS+ICCU+2025.pdf?MOD=AJPERES&CVID=piU1ELe",
+     "fecha": "2025",
+     "valor_reportado": "Entrepisos casetón con vigas, 3500 PSI H=0.30 m (sin refuerzo): aprox. 181.855 a 187.872 por m²; acero figurado 60000 PSI 7.950/kg"
+    },
+    {
+     "nombre": "SED Bogotá - Precios de referencia contratos de obra colegios 2018",
+     "url": "https://www.educacionbogota.edu.co/intrased/sites/default/files/inline-files/Precios_de_referencia_contratos_de_obra_colegios_2018.pdf",
+     "fecha": "2018",
+     "valor_reportado": "Losa aligerada 30 cm concreto 3000 psi: 127.485,00 por m²"
+    },
+    {
+     "nombre": "CYPE Generador de precios Colombia - Losa aligerada",
+     "url": "http://www.colombia.generadordeprecios.info/obra_nueva/Estructuras/Concreto_armado/Losas_aligeradas/Losa_aligerada.html",
+     "valor_reportado": "Losa aligerada canto 30 cm (25+5), f'c=210 kg/cm², acero 15 kg/m²: $ 130.397,62 por m²"
+    },
+    {
+     "nombre": "Fidubogotá - Listado de precios unitarios",
+     "url": "https://fidubogota.com/repositorio/fidubogota/convocatorias/Listado-Precios-Unitarios.pdf",
+     "valor_reportado": "Losa aligerada concreto 3000 psi e=25 cm: 193.046,00 por m²"
+    }
+   ],
+   "nota": "Las listas públicas cotizan la losa SIN acero. APU propio Barranquilla 2026 para aligerada 30 cm: concreto 0,15 m³ x ~560.000 (con bombeo) = 84.000 + acero ~22 kg x 6.300 = 139.000 + formaleta y obra falsa ~50.000 + aligerante ~20.000 + vaciado/curado ~25.000 = ~320.000. Contraste: ICCU 2025 185.000 + 20 kg x 7.950 = ~345.000 (2025), ~365.000 en 2026. Medio 390.000 por voladizos de 1,2-1,6 m (más acero y concreto 4000 psi). Alto = losa maciza 30 cm (0,30 m³ concreto + ~35 kg/m² acero) ≈ 480.000-520.000. Costo directo sin AIU.",
+   "tema": "obra_gris"
+  },
+  "G8": {
+   "id": "G8",
+   "concepto": "Estructura completa de concreto (columnas, vigas, losas, escalera) para vivienda de 2 pisos, por m² construido, sin cimentación",
+   "unidad": "COP/m2 construido",
+   "bajo": 600000,
+   "medio": 800000,
+   "alto": 1050000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.3,
+   "incluye_iva": true,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate - Costos de construcción por m² Colombia 2026",
+     "url": "https://oneestimate.ai/es/blog/costos-construccion-por-m2-colombia-2026",
+     "fecha": "2026",
+     "valor_reportado": "Barranquilla $800.000 – $1.000.000 por m² en estructura para vivienda unifamiliar de acabado medio"
+    },
+    {
+     "nombre": "OneEstimate - Costos de construir vivienda en Colombia 2026 (ejemplo Bogotá estrato 4)",
+     "url": "https://oneestimate.ai/es/blog/costos-construccion-vivienda-colombia-2024",
+     "fecha": "2026",
+     "valor_reportado": "Casa 2 pisos 120 m²: cimentación ~COP 28.000.000; estructura (columnas, vigas, losas) ~COP 85.000.000 (23,2% del costo directo)"
+    },
+    {
+     "nombre": "Argos - ¿Cuánto cuesta construir una casa en Colombia en 2026?",
+     "url": "https://colombia.argos.co/autoconstructores/cuanto-cuesta-construir-tu-casa-en-colombia-este-2026/",
+     "fecha": "2026",
+     "valor_reportado": "Obra gris (cimientos y estructura) entre $1.850.000 y $2.250.000 por m²"
+    }
+   ],
+   "nota": "Ejemplo OneEstimate = ~708.000/m² de estructura y ~233.000/m² de cimentación. Argos da la obra gris completa (incluye cimentación, mampostería, pañetes y cubierta), por eso es mayor. Chequeo con APU propio para esta casa: ~280 m² de losa (entrepiso + cubiertas + voladizos) por 251 m² construidos = 1,1 m²/m² x 390.000 = ~430.000, más columnas, vigas de borde, escalera y doble altura (~120.000-200.000/m²) = ~550.000-650.000 en caso simple. Medio/alto suben por voladizos de 1,2-1,6 m, luces de la doble altura y concreto a la vista. No incluye cimentación (ver G11) ni sobrecosto de formaleta de tabla (G13).",
+   "tema": "obra_gris"
+  },
+  "G9": {
+   "id": "G9",
+   "concepto": "Excavación mecánica en material común (sin retiro de sobrantes)",
+   "unidad": "COP/m3",
+   "bajo": 15000,
+   "medio": 26000,
+   "alto": 38000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.15,
+   "incluye_iva": true,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Edubar (Barranquilla) presupuesto SA-07-2022",
+     "url": "https://admin.edubar.com.co/vistas/docs/SA-07-2022/18.pdf",
+     "fecha": "2022",
+     "valor_reportado": "Excavación mecánica en material común aprox. $22.656 por m³"
+    },
+    {
+     "nombre": "Findeter - Presupuesto estimado obra civil PAF-ATF-O-006-2020",
+     "url": "https://www.findeter.gov.co/system/files/convocatorias/PAF-ATF-O-006-2020/PAF-ATF-O-006-2020@paf-atf-o-006-2020_precios-fijos-anexo-no.-2-presupuesto-estimado-obra-civil.pdf",
+     "fecha": "2020",
+     "valor_reportado": "EXCAVACION MECANICA EN MATERIAL COMUN aprox. $11.142/m³ (rango $10.028-$12.256)"
+    },
+    {
+     "nombre": "DataCauca - APU",
+     "url": "https://datacauca.gov.co/apu/apu/apu/query?page=33",
+     "valor_reportado": "Excavación mecánica material común en seco prof. 0-2 m: $8.201/m³ (subregión Centro)"
+    },
+    {
+     "nombre": "Geztio - Excavación mecánica en material común",
+     "url": "https://geztio.co/upa/co/excavacion-mecanica-en-material-comun",
+     "valor_reportado": "$7,500.00 COP por m³ (retroexcavadora CAT 320)"
+    }
+   ],
+   "nota": "Medio = Edubar 2022 Barranquilla (22.656) ajustado ~+15-20% por ICOCED 2022-2026 (supuesto ~5%/año). Alto refleja volúmenes pequeños de lote residencial, movilización de la retroexcavadora y terreno en pendiente. NO incluye cargue, transporte y disposición en escombrera autorizada, que en lote urbano suma aprox. 35.000-50.000 COP/m³ adicionales (estimación propia, sin fuente publicada). Mayor parte del costo es equipo.",
+   "tema": "obra_gris"
+  },
+  "G10": {
+   "id": "G10",
+   "concepto": "Relleno con material seleccionado importado (zahorra/afirmado/recebo), extendido y compactado al 95% Proctor",
+   "unidad": "COP/m3",
+   "bajo": 80000,
+   "medio": 115000,
+   "alto": 150000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.25,
+   "incluye_iva": true,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "EMCALI - Lista de precios oficial 2025",
+     "url": "https://www.emcali.com.co/documents/d/guest/lista-de-precios-emcali-2025-oficial",
+     "fecha": "2025",
+     "valor_reportado": "Relleno con material importado al 95% del Proctor $113.516 por m3; relleno con material seleccionado de la excavación $17.251 por m3"
+    },
+    {
+     "nombre": "Edubar (Barranquilla) presupuesto SA-07-2022",
+     "url": "https://admin.edubar.com.co/vistas/docs/SA-07-2022/18.pdf",
+     "fecha": "2022",
+     "valor_reportado": "Relleno compactado de zanjas aprox. $23.053 por m³"
+    },
+    {
+     "nombre": "SED Bogotá - Listado de precios de referencia items de obra",
+     "url": "https://www.educacionbogota.edu.co/intrased/sites/default/files/2022-03/Listado-de-Precios-de-Referencia-Items-de-Obra-(1).pdf",
+     "fecha": "2022",
+     "valor_reportado": "RELLENO CON MATERIAL SELECCIONADO $14.105/m³; relleno en recebo común compactado $77.083/m³"
+    },
+    {
+     "nombre": "Fidubogotá - Listado precios unitarios Arauca (Casa Digna Vida Digna)",
+     "url": "https://www.fidubogota.com/repositorio/fidubogota/convocatorias/convocatoria-casa-digna-vida-digna/convocatoria-n-2019-o-017-arauca/7-Listado-Precios-Unitarios-Arauca.pdf",
+     "fecha": "2019-2021",
+     "valor_reportado": "Recebo B-400 suministrado, extendido, nivelado y compactado $200.769/m³"
+    }
+   ],
+   "nota": "Ojo: los ítems de ~14.000-23.000 COP/m³ usan material de la propia excavación (solo compactación). Con material importado, la referencia más reciente es EMCALI 2025 (113.516, ~120.000 en 2026). Barranquilla tiene canteras cercanas, por eso el bajo es menor que en el interior. Medio 115.000.",
+   "tema": "obra_gris"
+  },
+  "G11": {
+   "id": "G11",
+   "concepto": "Sobrecosto de cimentación por suelos expansivos (arcillas) en Barranquilla: mejoramiento, losa o pilotes cortos",
+   "unidad": "COP/m2 de huella",
+   "bajo": 90000,
+   "medio": 200000,
+   "alto": 450000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.3,
+   "incluye_iva": true,
+   "confianza": "baja",
+   "fuentes": [
+    {
+     "nombre": "Red Ingenieros - Pilotes en Colombia: cuándo son la solución y cuánto cuesta instalarlos en 2026",
+     "url": "https://redingenieros.com/2026/08/17/pilotes-en-colombia-cuando-son-la-solucion-y-cuanto-cuesta-instalarlos-en-2026/",
+     "fecha": "2026-08-17",
+     "valor_reportado": "costo por metro lineal de pilotes perforados entre ochocientos mil y un millón cuatrocientos mil pesos, sin incluir la viga de amarre"
+    },
+    {
+     "nombre": "ICCU - Lista de precios 2025",
+     "url": "https://www.iccu.gov.co/wcm/connect/ICCU/8455ae14-62a2-4597-842a-57d66960e5df/LISTA+DE+PRECIOS+ICCU+2025.pdf?MOD=AJPERES&CVID=piU1ELe",
+     "fecha": "2025",
+     "valor_reportado": "PILOTE PRE EXCAVADO D=40 CM, ML: valor 331,864 (tabla ambigua)"
+    },
+    {
+     "nombre": "CYPE Generador de precios Colombia - Pilote de extracción",
+     "url": "http://colombia.generadordeprecios.info/obra_nueva/Cimentaciones/Profundas/Pilotes__in_situ_/CPI040_Pilote_de_extraccion_con_entubacion.html",
+     "valor_reportado": "Pilote perforado 45 cm, concreto 21 MPa: $ 507.255,56 por metro"
+    },
+    {
+     "nombre": "Arroyos de Barranquilla - Suelos",
+     "url": "http://arroyosdebarranquilla.co/barranquilla-en-detalle/suelos",
+     "valor_reportado": "arcillas expansivas se destacan en el sector occidental, El Bosque, las Terrazas, Mequejo; en el norte las zonas de mayor capacidad no han requerido ningún tratamiento especial de cimentación (por ejemplo: pilotajes)"
+    }
+   ],
+   "nota": "Costo adicional sobre zapatas y vigas convencionales, por m² de huella (~160 m² sin piscina). Bajo: sustitución de 0,5-0,6 m de arcilla por material granular compactado + geotextil + control de aguas (excavación + retiro ~65.000 + relleno ~115.000 por m³ x 0,5 m). Medio: sustitución de ~1,0 m o losa de cimentación rígida en lugar de zapatas. Alto: pilas o pilotes cortos preexcavados de 5-8 m (≈18 pilas x 6 m ≈ 108 ml x 500.000-900.000 = 54-97 millones) con vigas aéreas separadas del suelo, menos las zapatas que se ahorran. No hay costo publicado específico para Barranquilla. El norte suele estar sobre terraza arrecifal y podría no necesitar nada; definirlo con estudio de suelos con ensayo de expansión (NSR-10 Título H). La pendiente del lote hacia el sur obliga a revisar el mapa U-10 de remoción en masa.",
+   "tema": "obra_gris"
+  },
+  "G12": {
+   "id": "G12",
+   "concepto": "Impermeabilización de cubierta plana con manto asfáltico o membrana líquida, suministro e instalación",
+   "unidad": "COP/m2",
+   "bajo": 60000,
+   "medio": 110000,
+   "alto": 165000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.35,
+   "incluye_iva": false,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Asmex - ¿Cuánto cuesta una impermeabilización por m² en Colombia? (Guía 2026)",
+     "url": "https://www.asmex.com.co/novedades/cuanto-cuesta-una-impermeabilizacion-en-colombia/",
+     "fecha": "2026",
+     "valor_reportado": "Promedio $45.000-$160.000 por m²; manto asfáltico 3 mm $85.000-$120.000; 4 mm $110.000-$160.000"
+    },
+    {
+     "nombre": "IMPEERCOL - ¿Cuánto cuesta impermeabilizar una terraza en Bogotá?",
+     "url": "https://impeercol.com.co/blog/cuanto-cuesta-impermeabilizar-una-terraza-en-bogota",
+     "valor_reportado": "$85.000 – $160.000 por m² para manto asfáltico de 3 mm o 4 mm; incluye materiales y mano de obra"
+    },
+    {
+     "nombre": "Sin-goteras - Impermeabilización de cubiertas y terrazas",
+     "url": "https://sin-goteras.com/impermeabilizacion-de-cubiertas-y-terrazas/",
+     "valor_reportado": "manto asfáltico desde $97.500 más IVA (Bogotá, Medellín y Cartagena)"
+    },
+    {
+     "nombre": "CYPE Generador de precios Colombia - Sustitución de capa de impermeabilización con manto asfáltico",
+     "url": "http://www.colombia.generadordeprecios.info/rehabilitacion/Cubiertas/Planas/Sustituciones/QAW060_Sustitucion_de_capa_de_impermeabili.html",
+     "valor_reportado": "$98.887,02 por m²"
+    }
+   ],
+   "nota": "Bajo = membrana líquida elastomérica reforzada (rango inferior de Asmex). Medio = manto asfáltico APP/SBS 3-4 mm instalado. Alto = manto 4 mm de doble capa o con foil, o poliurea, y manto antirraíz para los ~25 m² de cubierta verde. No se halló precio publicado en Barranquilla; los proveedores citan Bogotá, Medellín y Cartagena. Precios mayormente sin IVA.",
+   "tema": "obra_gris"
+  },
+  "G13": {
+   "id": "G13",
+   "concepto": "Sobrecosto de concreto a la vista con formaleta de tabla (board-formed) frente a concreto con formaleta normal",
+   "unidad": "COP/m2 de superficie vista",
+   "bajo": 70000,
+   "medio": 120000,
+   "alto": 200000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.5,
+   "incluye_iva": true,
+   "confianza": "baja",
+   "fuentes": [
+    {
+     "nombre": "HerramientasPro - APU precios unitarios Colombia 2026",
+     "url": "https://herramientaspro.com.co/ing-civil/apu-precios-unitarios/",
+     "fecha": "2026",
+     "valor_reportado": "Formaleta en madera de un uso para columnas y vigas: COP 35.000-55.000/m²; concreto 21 MPa en obra COP 480.000-580.000/m³"
+    },
+    {
+     "nombre": "OneEstimate - APU de muro de concreto armado 2026",
+     "url": "https://oneestimate.ai/en/blog/apu-muro-concreto-armado-guia-completa",
+     "fecha": "2026",
+     "valor_reportado": "Formaleta 25%-40% del costo del muro; amortización de formaleta COP 18.000/m²"
+    },
+    {
+     "nombre": "CYPE Generador de precios Colombia - Entablado visto de tablas de madera",
+     "url": "http://www.colombia.generadordeprecios.info/obra_nueva/Estructuras/Madera/Entablados/EMT020_Entablado_visto_de_tablas_de_madera.html",
+     "valor_reportado": "Entablado visto de tablas machihembradas: $49.883,09 por m²"
+    },
+    {
+     "nombre": "Findeter - Lista de precios fijos PAF-JU-O-050-2021",
+     "url": "https://www.findeter.gov.co/system/files/convocatorias/PAF-JU-O-050-2021/lista_de_precios_fijos.pdf",
+     "fecha": "2021",
+     "valor_reportado": "Resanes en muros de concreto a la vista: $21,885 a $67,000 por m2"
+    },
+    {
+     "nombre": "Homecenter - Formaleta dimensionada 0.25x2.44 m",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/298820/formaleta-dimensionada-025x244m/298820/",
+     "valor_reportado": "$33.900 und; $55.573,77 por m²"
+    }
+   ],
+   "nota": "No hay precio publicado del sobrecosto. Estimación propia. Formaleta normal reutilizada 3-5 veces ≈ 18.000-35.000/m². Formaleta de tabla rústica o cepillada con 1-2 usos, juntas selladas y alineación cuidadosa ≈ 60.000-100.000/m² (tabla ~50.000 según CYPE + armado). A eso se suman mezcla y vibrado cuidados, muestra de prueba, resanes de 20.000-65.000 (Findeter) e hidrofugante siloxano de ~15.000-25.000. Diferencia neta: bajo 70.000, medio 120.000, alto 200.000 (madera seleccionada, tabla de un solo uso, alto control de calidad). Aplica a la base de la fachada y a otros elementos vistos.",
+   "tema": "obra_gris"
+  },
+  "F1": {
+   "id": "F1",
+   "concepto": "Porcelanato símil mármol gran formato 120x120 o 60x120 para piso (solo material)",
+   "unidad": "COP/m²",
+   "bajo": 70000,
+   "medio": 155000,
+   "alto": 320000,
+   "alcance": "material",
+   "incluye_iva": true,
+   "pct_mano_obra": 0,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Homecenter Colombia: Corona Absolute 60x120, caja de 1,44 m²",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/3047648/piso-porcelanato-absolute-60x120-cm-caja-144-m2-corona/3047648/",
+     "valor_reportado": "$68.900 m² / $99.216 caja (marmolado)",
+     "fecha": "consultado oct-2026"
+    },
+    {
+     "nombre": "Homecenter Colombia: Corona Greco Blanco 60x120",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/726041/piso-porcelanato-greco-blanco-cd-60x120-cj144-m2/726041/",
+     "valor_reportado": "$84.900 m² / $122.256 caja (sin stock)",
+     "fecha": "consultado oct-2026"
+    },
+    {
+     "nombre": "Homecenter Colombia: Attmosferas Adhara Gold 60x120 brillante",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/608703/piso-porcelanato-adhara-gold-60x120-brillante-cj-x-144-m2/608703/",
+     "valor_reportado": "$142.900 m² / $205.776 caja",
+     "fecha": "consultado oct-2026"
+    },
+    {
+     "nombre": "Homecenter Colombia: Attmosferas Provenza Beige 60x120 mate rectificado",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/610423/piso-porcelanato-provenza-beige-60x120-mate-rectificado-cj-x-144-m2/610423/",
+     "valor_reportado": "$167.900 m² / $241.776 caja",
+     "fecha": "consultado oct-2026"
+    },
+    {
+     "nombre": "Homecenter Colombia: Alexa Grey 120x120 mate rectificado, caja de 2,88 m²",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/610452/piso-porcelanato-alexa-grey-120x120-mate-rectificado-cj-x-288-m2/610452/",
+     "valor_reportado": "$168.900 m² / $486.432 caja",
+     "fecha": "consultado oct-2026"
+    },
+    {
+     "nombre": "eBay Alemania/Reino Unido: Calacatta Gold pulido 120x120 (referencia de importado premium)",
+     "url": "https://www.ebay.de/itm/203105840618",
+     "valor_reportado": "£62/m² (sin flete ni arancel a Colombia)"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F2": {
+   "id": "F2",
+   "concepto": "Piso de madera de ingeniería de roble, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 235000,
+   "medio": 320000,
+   "alto": 480000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.13,
+   "confianza": "baja",
+   "fuentes": [
+    {
+     "nombre": "Homecenter Colombia: piso en madera natural, caja de 2,14 m² (especie no indicada)",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/411972/piso-en-madera-caja-214-m2-natural/411972/",
+     "valor_reportado": "$199.900 por m² (solo material)",
+     "fecha": "consultado oct-2026"
+    },
+    {
+     "nombre": "Homecenter Colombia: laminado Holztek roble claro 8 mm AC4 (no es ingeniería; piso de referencia)",
+     "url": "https://homecenter.com.co/homecenter-co/product/323999/Piso-Laminado-8mm-AC4-32-Caja-2.13-m2-Roble-Claro/323999",
+     "valor_reportado": "$24.836 m² / $52.900 caja",
+     "fecha": "consultado oct-2026"
+    },
+    {
+     "nombre": "Homecenter Colombia: laminado roble blanco Prestige 8 mm",
+     "url": "https://homecenter.com.co/homecenter-co/product/550491/piso-madera-laminada-roble-blanco-1205x197-8mm-caja-por-237m2/550491",
+     "valor_reportado": "$58.900 m²",
+     "fecha": "consultado oct-2026"
+    },
+    {
+     "nombre": "OneEstimate: mano de obra por m² en Colombia 2026 (instalación de piso, usada como sustituto)",
+     "url": "https://oneestimate.ai/en/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "enchape de piso a destajo $22.000 – $32.000/m² (otra página de la misma fuente: $22.000 – $38.000)",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F3": {
+   "id": "F3",
+   "concepto": "Microcemento en pisos y muros de baño, instalado (imprimación, malla, capas base y decorativas, sellador)",
+   "unidad": "COP/m²",
+   "bajo": 125000,
+   "medio": 175000,
+   "alto": 270000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": false,
+   "pct_mano_obra": 0.5,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "CYPE, Generador de Precios Colombia: piso continuo de microcemento de 3 mm",
+     "url": "http://www.colombia.generadordeprecios.info/espacios_urbanos/Firmes_y_pisos_urbanos/Pisos_urbanos/Continuos_de_microcemento/Piso_continuo_de_microcemento.html",
+     "valor_reportado": "$138.756,73 por m²"
+    },
+    {
+     "nombre": "CYPE, Generador de Precios Colombia: revestimiento de muro con microcemento",
+     "url": "http://www.colombia.generadordeprecios.info/obra_nueva/Revestimientos/RB_Morteros_industriales_para_rev/Morteros_de_microcemento/Revestimiento_con_microcemento.html",
+     "valor_reportado": "$94.717,51 por m² (sin la superficie soporte)"
+    },
+    {
+     "nombre": "Starhouse: precio de piso en microcemento en Colombia",
+     "url": "https://starhouse.com.co/precio-piso-microcemento-colombia/",
+     "valor_reportado": "$141.533,95 COP por m² (3 mm sobre superficie absorbente)",
+     "fecha": "aprox. may-2026"
+    },
+    {
+     "nombre": "Expobrill (España, referencia de sistema premium)",
+     "url": "https://expobrill.com/microcemento-precio/",
+     "valor_reportado": "60-120 €/m²"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F4": {
+   "id": "F4",
+   "concepto": "Enchape de fachada en piedra coralina, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 215000,
+   "medio": 270000,
+   "alto": 370000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.3,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "ExpoAreniscas: piedra coralina",
+     "url": "https://www.expoareniscas.com/producto/piedra-coralina/",
+     "valor_reportado": "$130.000 + IVA 19% por m² (solo material)"
+    },
+    {
+     "nombre": "ExpoAreniscas: piedra coralina tipo concha, 15 cm de ancho y largos libres, para muros",
+     "url": "https://www.expoareniscas.com/producto/concha-piedra-coralina/",
+     "valor_reportado": "$135.000 por m² + IVA 19% (solo material)"
+    },
+    {
+     "nombre": "Presupuestalo Colombia: enchape con piedra natural",
+     "url": "https://presupuestalo.com.co/precio/enchape/piedra",
+     "valor_reportado": "interior $180.000 - $220.000/m²; exterior $220.000 - $270.000/m² (suministro e instalación)"
+    },
+    {
+     "nombre": "Comando Construcciones: fachadas modernas en Colombia, costos 2026",
+     "url": "https://www.comandoconstrucciones.com/fachadas-casas-modernas-colombia/",
+     "valor_reportado": "piedra natural $180.000 – $400.000/m² (una tabla) y $1.500.000 – $3.500.000/m² (otra tabla del mismo sitio)",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Einforma: Piedras Coralina y Mármoles S.A.S. (Turbaco, Bolívar)",
+     "url": "https://directorio-empresas.einforma.co/informacion-empresa/piedras-coralina-marmoles-sas",
+     "valor_reportado": "proveedor regional de corte y acabado de piedra; sin precio publicado"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F5": {
+   "id": "F5",
+   "concepto": "Estuco y pintura vinilo interior a tres manos, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 22000,
+   "medio": 28000,
+   "alto": 38000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": false,
+   "pct_mano_obra": 0.55,
+   "confianza": "alta",
+   "fuentes": [
+    {
+     "nombre": "Gobernación de Boyacá, Anexo 1: APU 2025 (Res. 0050 del 5 de mayo de 2025)",
+     "url": "https://www.boyaca.gov.co/wp-content/uploads/2025/05/Anexo-1-Listado-de-APUS-resumido.pdf",
+     "valor_reportado": "estuco y vinilo a tres manos en muros $21.641,87/m²; bajo placa $32.105,27/m²; vinilo tipo I a tres manos $11.309,63/m²",
+     "fecha": "2025-05"
+    },
+    {
+     "nombre": "Geztio: APU de estuco y pintura en vinilo tipo 1 a 3 manos",
+     "url": "https://geztio.co/es-la/upa/co/estuco-y-pintura-en-vinilo-tipo-1-a-3-manos",
+     "valor_reportado": "$18.347,79 COP/m² (materiales, equipo y mano de obra)"
+    },
+    {
+     "nombre": "Presucosto: mano de obra de pintura por m² en Colombia 2026",
+     "url": "https://presucosto.com/blog/valor-m2-pintura-mano-de-obra-colombia-2026",
+     "valor_reportado": "estuco + pintura 2 manos $12.000 - $18.000/m² (solo mano de obra); pintura interior $8.000 - $12.000",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "HerramientasPro: APU Colombia 2026",
+     "url": "https://herramientaspro.com.co/ing-civil/apu-precios-unitarios/",
+     "valor_reportado": "pintura vinílica interior 2 manos $12.000 – $20.000/m² con materiales",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F6": {
+   "id": "F6",
+   "concepto": "Pintura elastomérica o impermeabilizante de fachada, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 32000,
+   "medio": 45000,
+   "alto": 65000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.55,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Homecenter Colombia: Koraza Impermeabilizante blanco, 1 galón (Pintuco)",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/725622/pintura-1-galon-koraza-impermeabilizante-blanco-pintuco/725622/",
+     "valor_reportado": "$137.900 (precio normal $152.900); oferta válida del 10/1/2026 al 11/4/2026; rendimiento 25 m² por galón por capa",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Ferreinox: Koraza Elastomérica blanco 2720, cuñete de 18,96 L",
+     "url": "https://www.ferreinox.co/es/pintura-koraza-elastomerica-blanco-2720-cunete-5-galones-de-la-seccion-pintuco-de-decorativo-paredes-exteriores-en-pereira-CP15276",
+     "valor_reportado": "desde $655.046 (5 galones)"
+    },
+    {
+     "nombre": "Pintuco: lista de precios Projects, vigente desde julio de 2025",
+     "url": "https://www.pintuco.com.co/wp-content/uploads/2025/07/lista-precios-projects.pdf",
+     "valor_reportado": "Koraza Elastomérica, cuñete de 5 gal ≈ $655.046 (coincide con Ferreinox)",
+     "fecha": "2025-07"
+    },
+    {
+     "nombre": "Presucosto: mano de obra de pintura 2026",
+     "url": "https://presucosto.com/blog/valor-m2-pintura-mano-de-obra-colombia-2026",
+     "valor_reportado": "elastomérica $18.000 a $25.000/m² solo mano de obra; +30% en fachadas en altura; rendimiento de 15-22 m²/día",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Comando Construcciones: fachadas 2026",
+     "url": "https://www.comandoconstrucciones.com/fachadas-casas-modernas-colombia/",
+     "valor_reportado": "estuco y pintura elastomérica $80.000 – $180.000/m²",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F7": {
+   "id": "F7",
+   "concepto": "Cielo raso en drywall con masilla y pintura, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 58000,
+   "medio": 80000,
+   "alto": 110000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.45,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Geztio: APU de cielo raso en drywall",
+     "url": "https://geztio.co/upa/co/cielo-raso-en-drywall",
+     "valor_reportado": "$53,235.62 COP/m² (cuadrilla de oficial y dos ayudantes; masilla y lija)",
+     "fecha": "aprox. nov-2025"
+    },
+    {
+     "nombre": "Estudios de Conexión: suministro e instalación de cielo raso plano en drywall",
+     "url": "https://estudiosdeconexion.com/producto/suministro-e-instalacion-de-cielo-raso-plano-en-drywall-por-m2/",
+     "valor_reportado": "$87.375/m² (estructura galvanizada cal. 26, lámina ST 1/2\", masillado y una mano de pintura base)",
+     "fecha": "aprox. mediados de 2025"
+    },
+    {
+     "nombre": "Construcciones y Reformas Bogotá: precios",
+     "url": "https://construccionesyreformasbogota.com/precios/",
+     "valor_reportado": "Cielos en Drywall $75.000, incluye materiales, por m²",
+     "fecha": "aprox. oct-2024"
+    },
+    {
+     "nombre": "CYPE, Generador de Precios Colombia: cielo raso continuo de placas de yeso laminado",
+     "url": "http://www.colombia.generadordeprecios.info/obra_nueva/Revestimientos/Cielos_rasos/RTC_Continuos__de_placas_de_yeso_l/RTC015_Cielo_raso_continuo_de_placas_de_ye.html",
+     "valor_reportado": "$35.317,72/m² (solo costo directo, sin utilidad ni IVA)"
+    },
+    {
+     "nombre": "OneEstimate: mano de obra de drywall por m², Colombia 2026",
+     "url": "https://oneestimate.ai/en/blog/precio-m2-drywall-mano-obra-colombia-2026",
+     "valor_reportado": "cielo raso plano 25.000-35.000 COP/m²; con curvas o niveles 40.000-65.000 (solo mano de obra)",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F8": {
+   "id": "F8",
+   "concepto": "Deck exterior en madera de teca (o ipé/abarco) sobre losa, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 350000,
+   "medio": 480000,
+   "alto": 680000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.3,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "Forandes: construcción de piso deck en madera de teca exterior, 16 m²",
+     "url": "https://forandes.com/producto/construccion-de-piso-deck-en-madera-teca-exterior/",
+     "valor_reportado": "$5.599.000 IVA incluido por 16 m² (≈ $349.938/m²); incluye estructura en madera y tornillos; excluye placa y preparación del terreno"
+    },
+    {
+     "nombre": "Pisos Laminados de Madera: deck en madera de teca",
+     "url": "https://www.pisoslaminadosdemadera.com/deck-en-madera-teca/",
+     "valor_reportado": "teca premium de 19-21 mm $380.000 – $450.000/m²; estándar $300.000 – $360.000; ECO $250.000 – $290.000; instalación profesional $180.000 – $250.000/m²",
+     "fecha": "aprox. mediados de 2025"
+    },
+    {
+     "nombre": "Mercado Libre Colombia: piso deck de teca",
+     "url": "https://listado.mercadolibre.com.co/piso-deck-teca-40-m2",
+     "valor_reportado": "$140.000 – $175.000/m² (solo material)"
+    },
+    {
+     "nombre": "Woodpecker: deck WPC (comparación)",
+     "url": "https://woodpecker.com.co/productos/pisos-deck/",
+     "valor_reportado": "residencial hueco ≈ $167.959/m²; comercial macizo ≈ $270.526/m² (precios vigentes hasta diciembre de 2026)",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "CYPE, Generador de Precios Colombia: tarima de composite (WPC) para exterior (comparación)",
+     "url": "http://www.colombia.generadordeprecios.info/obra_nueva/Revestimientos/Pisos/De_madera_tecnologica_WPC/Tarima_de_composite_(WPC)_para_exterior.html",
+     "valor_reportado": "$218.926,55/m² instalado (sin la losa soporte)"
+    },
+    {
+     "nombre": "Homecenter Colombia: deck WPC Teka de 2,5 cm (comparación)",
+     "url": "https://www.homecenter.com.co/homecenter-co/product/434880/piso-deck-wpc-en-madera-espesor-25cm-caja-039-m2-teka/434880/",
+     "valor_reportado": "$294.900/m² (solo material)",
+     "fecha": "consultado oct-2026"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F9": {
+   "id": "F9",
+   "concepto": "Travertino o piedra natural antideslizante para el deck de la piscina, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 210000,
+   "medio": 285000,
+   "alto": 420000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.3,
+   "confianza": "media",
+   "fuentes": [
+    {
+     "nombre": "MeUp Colombia: materiales para piscinas",
+     "url": "https://meup.co/categoria/piscinas",
+     "valor_reportado": "Travertino Ivory $135.000 m²; Travertino Clásico $169.000 m²; Travertino Macadamia $119.000 m² (solo material; formato y espesor no indicados)"
+    },
+    {
+     "nombre": "Presupuestalo Colombia: enchape con piedra natural",
+     "url": "https://presupuestalo.com.co/precio/enchape/piedra",
+     "valor_reportado": "exterior $220.000 - $270.000/m² (suministro e instalación)"
+    },
+    {
+     "nombre": "CYPE, Generador de Precios Colombia: borde de piscina (referencia del remate por metro lineal)",
+     "url": "http://www.colombia.generadordeprecios.info/obra_nueva/Urbanizacion_interior_del_terreno/Piscinas/Remates_prefabricados/Borde_de_piscina.html",
+     "valor_reportado": "$225.869,77 por metro (piezas prefabricadas de concreto antideslizantes de 40x100, con instalación)"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F10": {
+   "id": "F10",
+   "concepto": "Celosía o cielo en listones de madera (teca o similar) con bastidor, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 230000,
+   "medio": 340000,
+   "alto": 520000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.35,
+   "confianza": "baja",
+   "fuentes": [
+    {
+     "nombre": "Forandes: listón de deck en teca de 8 x 1,8 cm",
+     "url": "https://forandes.com/producto/liston-de-deck-en-teca-8-cm-x-1-8-cm-por-metro-cuadrado/",
+     "valor_reportado": "$130.900 IVA incluido (el título dice 'por metro cuadrado'; el extracto dice 'por metro lineal'); no incluye instalación"
+    },
+    {
+     "nombre": "Starhouse: guía de fachadas de casas modernas",
+     "url": "https://starhouse.com.co/fachadas-de-casas-modernas/",
+     "valor_reportado": "madera o WPC con estructura de soporte: $180.000 a $400.000 por m²"
+    },
+    {
+     "nombre": "Comando Construcciones: fachadas 2026",
+     "url": "https://www.comandoconstrucciones.com/fachadas-casas-modernas-colombia/",
+     "valor_reportado": "madera plástica (WPC) $120.000 – $250.000/m²",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F11": {
+   "id": "F11",
+   "concepto": "Pañete de muros (mortero 1:4 a 1:5, e = 1,5-2 cm), suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 27000,
+   "medio": 36500,
+   "alto": 46000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": false,
+   "pct_mano_obra": 0.45,
+   "confianza": "alta",
+   "fuentes": [
+    {
+     "nombre": "Gobernación de Boyacá, Anexo 1: APU 2025",
+     "url": "https://www.boyaca.gov.co/wp-content/uploads/2025/05/Anexo-1-Listado-de-APUS-resumido.pdf",
+     "valor_reportado": "pañete liso en muros 1:5 $34.835,27/m²; pañete bajo malla 1:5 $36.230,04/m²",
+     "fecha": "2025-05"
+    },
+    {
+     "nombre": "ICCU: lista de precios 2025",
+     "url": "https://www.iccu.gov.co/wcm/connect/ICCU/8455ae14-62a2-4597-842a-57d66960e5df/LISTA+DE+PRECIOS+ICCU+2025.pdf?MOD=AJPERES&CVID=piU1ELe",
+     "valor_reportado": "pañete rústico en muros 1:5, e = 1,5 cm, alrededor de $28.000/m² (varía por municipio)",
+     "fecha": "2025"
+    },
+    {
+     "nombre": "HerramientasPro: APU Colombia 2026",
+     "url": "https://herramientaspro.com.co/ing-civil/apu-precios-unitarios/",
+     "valor_reportado": "pañete interior 1:3 de 1,5 cm $25.000 – $38.000/m² con materiales",
+     "fecha": "2026"
+    },
+    {
+     "nombre": "Presucosto: mano de obra por m², Colombia 2026",
+     "url": "https://presucosto.com/blog/valor-m2-mano-obra-construccion-colombia-2026",
+     "valor_reportado": "pañete liso interior $12.000 - $15.000/m²; exterior $14.000 - $18.000/m² (solo mano de obra)",
+     "fecha": "2026"
+    }
+   ],
+   "tema": "acabados"
+  },
+  "F12": {
+   "id": "F12",
+   "concepto": "Cubierta verde extensiva (sedum o grama) sobre losa: membrana antirraíz, drenaje, geotextil, sustrato y vegetación, suministro e instalación",
+   "unidad": "COP/m²",
+   "bajo": 170000,
+   "medio": 240000,
+   "alto": 350000,
+   "alcance": "suministro_e_instalacion",
+   "incluye_iva": true,
+   "pct_mano_obra": 0.3,
+   "confianza": "baja",
+   "fuentes": [],
+   "tema": "acabados"
+  },
+  "W1": {
+   "id": "W1",
+   "concepto": "Ventanería de aluminio negro con vidrio laminado de control solar, corrediza de piso a techo, s&i",
+   "unidad": "COP/m²",
+   "bajo": 650000,
+   "medio": 900000,
+   "alto": 1300000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.2,
+   "confianza": "media",
+   "nota": "Las series básicas instaladas en Bogotá arrancan en $270.000/m² y la termoacústica en $800.000/m² más IVA. Esta casa usa hojas grandes de piso a techo, perfil pesado anodizado negro y vidrio laminado de control solar, por eso el rango arranca por encima de la serie 80-25 con IVA. Barranquilla tiene fabricantes de primer nivel (Tecnoglass), lo que ayuda a conseguir el valor bajo.",
+   "fuentes": [
+    {
+     "nombre": "Diseños y Estructuras JH, lista 2026 (Bogotá)",
+     "url": "https://disenosyestructurasjh.com/producto/ventana-corrediza/",
+     "valor_reportado": "corrediza instalada desde $270.000/m² (Serie 33), $315.000 (7-44), $490.000 (80-25), termoacústica desde $800.000/m², más IVA"
+    },
+    {
+     "nombre": "Vidrios x Metro",
+     "url": "https://vidriosxmetro.com/preguntas-frecuentes/cuanto-vale-el-vidrio-templado-por-m%C2%B2/",
+     "valor_reportado": "vidrio templado $150.000-350.000/m² (2025) sin instalación"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W2": {
+   "id": "W2",
+   "concepto": "Muro cortina / fachada flotante de doble altura",
+   "unidad": "COP/m²",
+   "bajo": 900000,
+   "medio": 1250000,
+   "alto": 1800000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.2,
+   "confianza": "baja",
+   "nota": "Sin precio publicado. Se estima un 35-40 % por encima de W1 por la perfilería estructural de 6 m, el anclaje a losa y el vidrio laminado de mayor espesor.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    },
+    {
+     "nombre": "Diseños y Estructuras JH, lista 2026 (Bogotá)",
+     "url": "https://disenosyestructurasjh.com/producto/ventana-corrediza/",
+     "valor_reportado": "corrediza instalada desde $270.000/m² (Serie 33), $315.000 (7-44), $490.000 (80-25), termoacústica desde $800.000/m², más IVA"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W3": {
+   "id": "W3",
+   "concepto": "Baranda de vidrio laminado templado 10+10 con perfil de piso",
+   "unidad": "COP/ml",
+   "bajo": 900000,
+   "medio": 1300000,
+   "alto": 1900000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.2,
+   "confianza": "baja",
+   "nota": "Sin precio publicado de 2026. 1,05 m² de vidrio laminado templado por ml (≈$400-600 mil) + perfil de aluminio empotrado + pasamanos de acero + instalación.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    },
+    {
+     "nombre": "Vidrios x Metro",
+     "url": "https://vidriosxmetro.com/preguntas-frecuentes/cuanto-vale-el-vidrio-templado-por-m%C2%B2/",
+     "valor_reportado": "vidrio templado $150.000-350.000/m² (2025) sin instalación"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W4": {
+   "id": "W4",
+   "concepto": "Puerta principal pivotante en teca maciza 1,40 × 3,00 m con pivote",
+   "unidad": "COP/und",
+   "bajo": 9000000,
+   "medio": 14000000,
+   "alto": 22000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.15,
+   "confianza": "baja",
+   "nota": "Sin precio publicado. 4,2 m² de hoja maciza en teca con alma estructural, pivote de piso de alta carga y cerradura de seguridad.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W5": {
+   "id": "W5",
+   "concepto": "Puerta de garaje seccional motorizada 2,35 × 2,40",
+   "unidad": "COP/und",
+   "bajo": 7000000,
+   "medio": 9500000,
+   "alto": 13000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.15,
+   "confianza": "baja",
+   "nota": "Sin precio publicado de 2026. Panel aislado de aluminio con acabado madera, motor con control y sensores.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W6": {
+   "id": "W6",
+   "concepto": "Cocina integral de alta gama (muebles, herrajes, sin mesón ni electrodomésticos)",
+   "unidad": "COP/ml",
+   "bajo": 2200000,
+   "medio": 3200000,
+   "alto": 5000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.25,
+   "confianza": "baja",
+   "nota": "Las guías de 2026 dan $0,8-1,2 millones por ml en madera maciza sin mesón; una cocina con torres de piso a techo, enchape de nogal, herrajes de cierre suave e isla con caídas suma bajo y alto por ml lineal de planta, así que se toma 2,5-4 veces ese valor.",
+   "fuentes": [
+    {
+     "nombre": "Roomix, renovar cocina 2026",
+     "url": "https://roomix.ai/blog/cuanto-cuesta-renovar-cocina-2026",
+     "valor_reportado": "muebles por ml sin mesón: melamina premium $400-600 mil, laqueado $600-900 mil, madera maciza $0,8-1,2 millones"
+    },
+    {
+     "nombre": "Cuánto me cuesta, cocina integral (abr-2026)",
+     "url": "https://cuantomecuesta.com/co/cocina-integral/",
+     "valor_reportado": "cocina mediana $25-35 millones con mano de obra; premium importada hasta $120 millones o más"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W7": {
+   "id": "W7",
+   "concepto": "Closet o vestier de piso a techo en madera",
+   "unidad": "COP/ml",
+   "bajo": 1100000,
+   "medio": 1600000,
+   "alto": 2400000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.25,
+   "confianza": "baja",
+   "nota": "Se toma 50 % del valor por ml de la cocina: misma carpintería, sin isla ni torres de electrodomésticos.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    },
+    {
+     "nombre": "Roomix, renovar cocina 2026",
+     "url": "https://roomix.ai/blog/cuanto-cuesta-renovar-cocina-2026",
+     "valor_reportado": "muebles por ml sin mesón: melamina premium $400-600 mil, laqueado $600-900 mil, madera maciza $0,8-1,2 millones"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W8": {
+   "id": "W8",
+   "concepto": "Puerta interior maciza con marco y herrajes, s&i",
+   "unidad": "COP/und",
+   "bajo": 900000,
+   "medio": 1300000,
+   "alto": 2000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.2,
+   "confianza": "baja",
+   "nota": "Sin precio publicado de 2026.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W9": {
+   "id": "W9",
+   "concepto": "Sanitario suspendido con tanque empotrado",
+   "unidad": "COP/und",
+   "bajo": 1600000,
+   "medio": 2400000,
+   "alto": 3600000,
+   "alcance": "material",
+   "pct_mano_obra": 0.15,
+   "confianza": "baja",
+   "nota": "Sin precio publicado. Incluye estructura empotrada y pulsador.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W10": {
+   "id": "W10",
+   "concepto": "Grifería de lavamanos de alta gama",
+   "unidad": "COP/und",
+   "bajo": 400000,
+   "medio": 750000,
+   "alto": 1400000,
+   "alcance": "material",
+   "pct_mano_obra": 0.1,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W11": {
+   "id": "W11",
+   "concepto": "Ducha completa con mezclador empotrado y regadera tipo lluvia",
+   "unidad": "COP/und",
+   "bajo": 1200000,
+   "medio": 2000000,
+   "alto": 3500000,
+   "alcance": "material",
+   "pct_mano_obra": 0.1,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W12": {
+   "id": "W12",
+   "concepto": "Bañera exenta de 1,70 m en solid surface",
+   "unidad": "COP/und",
+   "bajo": 4500000,
+   "medio": 7000000,
+   "alto": 12000000,
+   "alcance": "material",
+   "pct_mano_obra": 0.08,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W13": {
+   "id": "W13",
+   "concepto": "Lavamanos de sobreponer",
+   "unidad": "COP/und",
+   "bajo": 350000,
+   "medio": 600000,
+   "alto": 1100000,
+   "alcance": "material",
+   "pct_mano_obra": 0.1,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W14": {
+   "id": "W14",
+   "concepto": "Mueble de baño flotante",
+   "unidad": "COP/und",
+   "bajo": 1400000,
+   "medio": 2200000,
+   "alto": 3500000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.15,
+   "confianza": "baja",
+   "nota": "Promedio de un vanity doble y tres sencillos.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W15": {
+   "id": "W15",
+   "concepto": "Calentador de agua de paso a gas de alta capacidad",
+   "unidad": "COP/und",
+   "bajo": 2500000,
+   "medio": 4000000,
+   "alto": 7000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.1,
+   "confianza": "baja",
+   "nota": "El valor alto corresponde a bomba de calor.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "W16": {
+   "id": "W16",
+   "concepto": "Mesón en porcelánico Calacatta de 12 mm",
+   "unidad": "COP/ml",
+   "bajo": 900000,
+   "medio": 1300000,
+   "alto": 2000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.2,
+   "confianza": "baja",
+   "nota": "Sin precio publicado; incluye corte, cantos y caídas en cascada de la isla.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "carpinteria_ventanas"
+  },
+  "M1": {
+   "id": "M1",
+   "concepto": "Instalación eléctrica completa con tableros y RETIE",
+   "unidad": "COP/m²",
+   "bajo": 170000,
+   "medio": 230000,
+   "alto": 320000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.45,
+   "confianza": "baja",
+   "nota": "Las guías ubican las eléctricas en 5-8 % del costo directo; con un costo directo de $4-4,5 millones/m² eso da $200-360 mil/m². Coherente con unas 160 salidas a ~$84.000 más tableros, acometida interna y puesta a tierra.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate, APU instalaciones eléctricas",
+     "url": "https://oneestimate.ai/blog/apu-instalaciones-electricas-construccion",
+     "valor_reportado": "salida de iluminación $84.252 con AIU 18 %; eléctricas 5-8 % e hidrosanitarias 6-10 % del costo directo"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M2": {
+   "id": "M2",
+   "concepto": "Iluminación LED interior y exterior (luminarias)",
+   "unidad": "COP/m²",
+   "bajo": 60000,
+   "medio": 95000,
+   "alto": 150000,
+   "alcance": "material",
+   "pct_mano_obra": 0.2,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M3": {
+   "id": "M3",
+   "concepto": "Red hidrosanitaria completa (fría, caliente, desagües, aguas lluvias)",
+   "unidad": "COP/m²",
+   "bajo": 150000,
+   "medio": 210000,
+   "alto": 290000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.45,
+   "confianza": "baja",
+   "nota": "Las guías ubican las hidrosanitarias en 6-10 % del costo directo; con 4 baños, cocina, lavandería y aguas lluvias de cubierta se toma la parte baja de ese rango.",
+   "fuentes": [
+    {
+     "nombre": "OneEstimate, APU instalaciones eléctricas",
+     "url": "https://oneestimate.ai/blog/apu-instalaciones-electricas-construccion",
+     "valor_reportado": "salida de iluminación $84.252 con AIU 18 %; eléctricas 5-8 % e hidrosanitarias 6-10 % del costo directo"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M4": {
+   "id": "M4",
+   "concepto": "Red interna de gas natural",
+   "unidad": "COP/global",
+   "bajo": 2500000,
+   "medio": 3500000,
+   "alto": 5000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.5,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M5": {
+   "id": "M5",
+   "concepto": "Mini split inverter de 12.000 BTU instalado",
+   "unidad": "COP/und",
+   "bajo": 2800000,
+   "medio": 3600000,
+   "alto": 4800000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.2,
+   "confianza": "media",
+   "nota": "Una calculadora colombiana de 2026 da unos $5 millones para equipos de 12.000-24.000 BTU instalados; para 12.000 BTU se toma la parte baja.",
+   "fuentes": [
+    {
+     "nombre": "Cuánto me cuesta, aire acondicionado (abr-2026)",
+     "url": "https://cuantomecuesta.com/co/aire-acondicionado/",
+     "valor_reportado": "mini split inverter 12.000-24.000 BTU ≈ $5 millones instalado (rango $3-15 millones); instalación $0,3-4 millones"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M7": {
+   "id": "M7",
+   "concepto": "Mini split inverter de 24.000 BTU instalado",
+   "unidad": "COP/und",
+   "bajo": 4600000,
+   "medio": 6000000,
+   "alto": 8000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.2,
+   "confianza": "media",
+   "nota": "Misma fuente que M5, parte alta del rango.",
+   "fuentes": [
+    {
+     "nombre": "Cuánto me cuesta, aire acondicionado (abr-2026)",
+     "url": "https://cuantomecuesta.com/co/aire-acondicionado/",
+     "valor_reportado": "mini split inverter 12.000-24.000 BTU ≈ $5 millones instalado (rango $3-15 millones); instalación $0,3-4 millones"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M9": {
+   "id": "M9",
+   "concepto": "Sistema solar fotovoltaico conectado a red, instalado y legalizado",
+   "unidad": "COP/kWp",
+   "bajo": 3400000,
+   "medio": 4000000,
+   "alto": 4700000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.15,
+   "confianza": "media",
+   "nota": "Varias guías de 2026 coinciden en $3,5-5 millones por kWp con RETIE y trámites ante el operador de red. La exclusión de IVA de la Ley 1715 ya se refleja en esos precios de mercado.",
+   "fuentes": [
+    {
+     "nombre": "OPS Colombia, guía 2026",
+     "url": "https://www.opscolombia.com/blog/cuanto-cuesta-realmente-un-sistema-solar-en-colombia",
+     "valor_reportado": "$3,5-5 millones por kWp instalado, conectado a red sin baterías"
+    },
+    {
+     "nombre": "Voltiva, precios 2026",
+     "url": "https://www.voltiva.com.co/blog/cuanto-cuesta-instalar-paneles-solares-colombia",
+     "valor_reportado": "10 kWp: $32-45 millones; 5 kWp: $18-25 millones"
+    },
+    {
+     "nombre": "Solartech, precios 2026",
+     "url": "https://solartech.com.co/precios-paneles-solares-colombia/",
+     "valor_reportado": "8-10 kWp: $30-42 millones"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M10": {
+   "id": "M10",
+   "concepto": "Batería de litio (LFP) para respaldo",
+   "unidad": "COP/kWh",
+   "bajo": 1600000,
+   "medio": 2200000,
+   "alto": 3000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.05,
+   "confianza": "baja",
+   "nota": "Sin precio publicado de 2026 en pesos.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M11": {
+   "id": "M11",
+   "concepto": "Inversor híbrido de 10 kW",
+   "unidad": "COP/und",
+   "bajo": 9000000,
+   "medio": 12000000,
+   "alto": 16000000,
+   "alcance": "material",
+   "pct_mano_obra": 0.05,
+   "confianza": "baja",
+   "nota": "Sin precio publicado; en el presupuesto solo entra el 50 % como mayor valor frente al inversor de red.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M13": {
+   "id": "M13",
+   "concepto": "Acometida y conexión eléctrica con Air-e",
+   "unidad": "COP/global",
+   "bajo": 4000000,
+   "medio": 6000000,
+   "alto": 9000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.4,
+   "confianza": "baja",
+   "nota": "Sin precio publicado; incluye medidor bidireccional para el sistema solar.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M14": {
+   "id": "M14",
+   "concepto": "Acometida de acueducto y alcantarillado con Triple A",
+   "unidad": "COP/global",
+   "bajo": 2500000,
+   "medio": 4000000,
+   "alto": 6000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.4,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M15": {
+   "id": "M15",
+   "concepto": "Domótica básica (iluminación y escenas)",
+   "unidad": "COP/global",
+   "bajo": 6000000,
+   "medio": 12000000,
+   "alto": 25000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.3,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "M16": {
+   "id": "M16",
+   "concepto": "Red de datos, CCTV y citofonía",
+   "unidad": "COP/global",
+   "bajo": 4000000,
+   "medio": 7000000,
+   "alto": 12000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.3,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "instalaciones"
+  },
+  "P1": {
+   "id": "P1",
+   "concepto": "Piscina de borde infinito en concreto: vaso, impermeabilización, mosaico vítreo y canal de rebose",
+   "unidad": "COP/m²",
+   "bajo": 2200000,
+   "medio": 3000000,
+   "alto": 4200000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.35,
+   "confianza": "media",
+   "nota": "Las piscinas de concreto tradicionales cuestan $60-120 millones; una de 7 × 4 m, $50-80 millones, es decir $1,8-2,9 millones por m². El borde infinito agrega el canal de rebose, el tanque de compensación y un muro con tolerancia milimétrica, por eso el rango sube.",
+   "fuentes": [
+    {
+     "nombre": "Constructora J. Hernández, cotizador 2026",
+     "url": "https://cotizar2026.constructorajhdez.com/",
+     "valor_reportado": "piscina en concreto tradicional $60-120 millones"
+    },
+    {
+     "nombre": "Piscinas Bluespace",
+     "url": "https://piscinasbluespace.com/cuanto-cuesta-una-piscina-en-colombia/",
+     "valor_reportado": "7 × 4 m: $50-80 millones (Medellín)"
+    },
+    {
+     "nombre": "Mantenimiento de Albercas",
+     "url": "https://mantenimientoalbercas.com/cuanto-vale-la-construccion-de-una-piscina-en-colombia/",
+     "valor_reportado": "promedio $30-80 millones"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "P2": {
+   "id": "P2",
+   "concepto": "Equipo de filtración, bombeo y tanque de compensación",
+   "unidad": "COP/global",
+   "bajo": 12000000,
+   "medio": 18000000,
+   "alto": 28000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.15,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "P3": {
+   "id": "P3",
+   "concepto": "Iluminación LED subacuática",
+   "unidad": "COP/global",
+   "bajo": 3000000,
+   "medio": 5000000,
+   "alto": 8000000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.15,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "P5": {
+   "id": "P5",
+   "concepto": "Espejo de agua de 20 cm con fondo de piedra y recirculación",
+   "unidad": "COP/m²",
+   "bajo": 900000,
+   "medio": 1300000,
+   "alto": 1900000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.35,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "P6": {
+   "id": "P6",
+   "concepto": "Grama bermuda instalada",
+   "unidad": "COP/m²",
+   "bajo": 20000,
+   "medio": 28000,
+   "alto": 40000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.4,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "P7": {
+   "id": "P7",
+   "concepto": "Palma de 6 a 7 m sembrada",
+   "unidad": "COP/und",
+   "bajo": 1200000,
+   "medio": 2000000,
+   "alto": 3500000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.3,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "P8": {
+   "id": "P8",
+   "concepto": "Guayacán grande sembrado",
+   "unidad": "COP/und",
+   "bajo": 800000,
+   "medio": 1500000,
+   "alto": 2500000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.3,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "P9": {
+   "id": "P9",
+   "concepto": "Seto de swinglea sembrado",
+   "unidad": "COP/ml",
+   "bajo": 35000,
+   "medio": 55000,
+   "alto": 80000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.3,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "P10": {
+   "id": "P10",
+   "concepto": "Losetas de concreto con junta verde sobre base granular",
+   "unidad": "COP/m²",
+   "bajo": 60000,
+   "medio": 85000,
+   "alto": 120000,
+   "alcance": "suministro_e_instalacion",
+   "pct_mano_obra": 0.35,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "S1": {
+   "id": "S1",
+   "concepto": "Estudio de suelos con ensayos de expansión",
+   "unidad": "COP/global",
+   "bajo": 3000000,
+   "medio": 4500000,
+   "alto": 7000000,
+   "alcance": "otro",
+   "pct_mano_obra": null,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "S2": {
+   "id": "S2",
+   "concepto": "Diseño arquitectónico completo (anteproyecto, proyecto y planos de construcción)",
+   "unidad": "COP/m²",
+   "bajo": 45000,
+   "medio": 70000,
+   "alto": 110000,
+   "alcance": "otro",
+   "pct_mano_obra": null,
+   "confianza": "baja",
+   "nota": "Sin tarifa publicada de 2026; el reglamento de honorarios (Decreto 2090 de 1989) cobra un porcentaje del costo de obra. $70.000/m² equivale a cerca del 1,5-2 % del costo directo.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "S3": {
+   "id": "S3",
+   "concepto": "Diseño estructural NSR-10",
+   "unidad": "COP/m²",
+   "bajo": 12000,
+   "medio": 18000,
+   "alto": 28000,
+   "alcance": "otro",
+   "pct_mano_obra": null,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "S4": {
+   "id": "S4",
+   "concepto": "Diseños eléctrico RETIE, hidrosanitario y de gas",
+   "unidad": "COP/global",
+   "bajo": 5000000,
+   "medio": 8000000,
+   "alto": 12000000,
+   "alcance": "otro",
+   "pct_mano_obra": null,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "S5": {
+   "id": "S5",
+   "concepto": "Expensas de licencia de construcción en curaduría (251 m², estrato 6)",
+   "unidad": "COP/global",
+   "bajo": 9000000,
+   "medio": 9900000,
+   "alto": 11000000,
+   "alcance": "otro",
+   "pct_mano_obra": null,
+   "confianza": "media",
+   "nota": "Fórmula del Decreto 1077 de 2015: E = Cf·i·m + Cv·i·j·m, con Cf = 10,01 UVT ($524.264 en 2026), Cv ≈ $2.621.319, i = 2,5 (estrato 6), m ≈ 0,938 y j = 3,8/(0,12 + 800/251) = 1,15. Da $8,3 millones + IVA = $9,9 millones. El factor m de Barranquilla debe confirmarse con la curaduría.",
+   "fuentes": [
+    {
+     "nombre": "Curaduría 1 de Medellín, fórmula de expensas",
+     "url": "https://curaduria1medellin.com/descargas/expensas.pdf",
+     "valor_reportado": "Cf = 10,01 UVT; estrato 6: i = 2,5; m = 0,938"
+    },
+    {
+     "nombre": "Curaduría 1, tabla de expensas 2026 (Decreto 1890 de 2021)",
+     "url": "https://curaduria1.com.co/wp-content/uploads/2026/01/TABLA%20EXPENSAS%202026%20v2%20DECRETO%201890.pdf",
+     "valor_reportado": "UVT 2026 = $52.374; Cv estrato 6 ≈ $2.621.319"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "S6": {
+   "id": "S6",
+   "concepto": "Interventoría o supervisión técnica",
+   "unidad": "% del costo directo",
+   "bajo": 3,
+   "medio": 4,
+   "alto": 6,
+   "alcance": "porcentaje",
+   "pct_mano_obra": null,
+   "confianza": "baja",
+   "nota": "Sin tarifa publicada; práctica de mercado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "S7": {
+   "id": "S7",
+   "concepto": "Levantamiento topográfico",
+   "unidad": "COP/global",
+   "bajo": 1200000,
+   "medio": 1800000,
+   "alto": 2800000,
+   "alcance": "otro",
+   "pct_mano_obra": null,
+   "confianza": "baja",
+   "nota": "Sin precio publicado.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  },
+  "S8": {
+   "id": "S8",
+   "concepto": "Pólizas de cumplimiento y responsabilidad civil",
+   "unidad": "% del contrato",
+   "bajo": 0.6,
+   "medio": 0.9,
+   "alto": 1.3,
+   "alcance": "porcentaje",
+   "pct_mano_obra": null,
+   "confianza": "baja",
+   "nota": "Sin tarifa publicada.",
+   "fuentes": [
+    {
+     "nombre": "Estimación propia (sin precio publicado encontrado)",
+     "url": "",
+     "valor_reportado": "ver nota"
+    }
+   ],
+   "tema": "piscina_tramites"
+  }
+ },
+ "confirmados": []
+}

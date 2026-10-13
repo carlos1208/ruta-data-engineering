@@ -1,0 +1,634 @@
+{
+ "inicio": "2026-11-02",
+ "semanas": 70,
+ "fases": {
+  "pre": "Diseño y licencia",
+  "gris": "Obra gris",
+  "acab": "Acabados e instalaciones",
+  "ext": "Exteriores y entrega"
+ },
+ "actividades": [
+  {
+   "id": "A1",
+   "nombre": "Topografía y estudio de suelos",
+   "fase": "pre",
+   "dur": 3,
+   "es": 0,
+   "ef": 3,
+   "inicio": "2026-11-02",
+   "fin": "2026-11-20",
+   "holgura": 0,
+   "critica": true,
+   "pred": []
+  },
+  {
+   "id": "A2",
+   "nombre": "Diseños arquitectónico, estructural y técnicos",
+   "fase": "pre",
+   "dur": 10,
+   "es": 1,
+   "ef": 11,
+   "inicio": "2026-11-09",
+   "fin": "2027-01-15",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "A1:SS+1"
+   ]
+  },
+  {
+   "id": "A3",
+   "nombre": "Licencia de construcción en curaduría",
+   "fase": "pre",
+   "dur": 12,
+   "es": 11,
+   "ef": 23,
+   "inicio": "2027-01-18",
+   "fin": "2027-04-09",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "A2"
+   ]
+  },
+  {
+   "id": "A4",
+   "nombre": "Contratación y pedidos de largo plazo",
+   "fase": "pre",
+   "dur": 6,
+   "es": 13,
+   "ef": 19,
+   "inicio": "2027-02-01",
+   "fin": "2027-03-12",
+   "holgura": 32,
+   "critica": false,
+   "pred": [
+    "A2+2"
+   ]
+  },
+  {
+   "id": "B1",
+   "nombre": "Preliminares, cerramiento y replanteo",
+   "fase": "gris",
+   "dur": 2,
+   "es": 23,
+   "ef": 25,
+   "inicio": "2027-04-12",
+   "fin": "2027-04-23",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "A3"
+   ]
+  },
+  {
+   "id": "B2",
+   "nombre": "Excavación y mejoramiento del suelo",
+   "fase": "gris",
+   "dur": 3,
+   "es": 25,
+   "ef": 28,
+   "inicio": "2027-04-26",
+   "fin": "2027-05-14",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "B1"
+   ]
+  },
+  {
+   "id": "B3",
+   "nombre": "Cimentación y placa de contrapiso",
+   "fase": "gris",
+   "dur": 4,
+   "es": 28,
+   "ef": 32,
+   "inicio": "2027-05-17",
+   "fin": "2027-06-11",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "B2"
+   ]
+  },
+  {
+   "id": "B4",
+   "nombre": "Columnas de PB y losa de entrepiso",
+   "fase": "gris",
+   "dur": 6,
+   "es": 32,
+   "ef": 38,
+   "inicio": "2027-06-14",
+   "fin": "2027-07-23",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "B3"
+   ]
+  },
+  {
+   "id": "B5",
+   "nombre": "Columnas de PA y losa de cubierta",
+   "fase": "gris",
+   "dur": 6,
+   "es": 38,
+   "ef": 44,
+   "inicio": "2027-07-26",
+   "fin": "2027-09-03",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "B4"
+   ]
+  },
+  {
+   "id": "B6",
+   "nombre": "Muro de contención y vaso de la piscina",
+   "fase": "gris",
+   "dur": 7,
+   "es": 33,
+   "ef": 40,
+   "inicio": "2027-06-21",
+   "fin": "2027-08-06",
+   "holgura": 24,
+   "critica": false,
+   "pred": [
+    "B3+1"
+   ]
+  },
+  {
+   "id": "B7",
+   "nombre": "Mampostería",
+   "fase": "gris",
+   "dur": 7,
+   "es": 39,
+   "ef": 46,
+   "inicio": "2027-08-02",
+   "fin": "2027-09-17",
+   "holgura": 1,
+   "critica": false,
+   "pred": [
+    "B4+1"
+   ]
+  },
+  {
+   "id": "B8",
+   "nombre": "Redes hidrosanitarias, gas y eléctricas (tubería)",
+   "fase": "gris",
+   "dur": 9,
+   "es": 41,
+   "ef": 50,
+   "inicio": "2027-08-16",
+   "fin": "2027-10-15",
+   "holgura": 20,
+   "critica": false,
+   "pred": [
+    "B7:SS+2"
+   ]
+  },
+  {
+   "id": "B9",
+   "nombre": "Impermeabilización de cubierta y terrazas",
+   "fase": "gris",
+   "dur": 2,
+   "es": 46,
+   "ef": 48,
+   "inicio": "2027-09-20",
+   "fin": "2027-10-01",
+   "holgura": 22,
+   "critica": false,
+   "pred": [
+    "B5+2"
+   ]
+  },
+  {
+   "id": "C1",
+   "nombre": "Pañetes y cielos en drywall",
+   "fase": "acab",
+   "dur": 7,
+   "es": 44,
+   "ef": 51,
+   "inicio": "2027-09-06",
+   "fin": "2027-10-22",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "B7:SS+4",
+    "B5"
+   ]
+  },
+  {
+   "id": "C2",
+   "nombre": "Ventanería y muro cortina",
+   "fase": "acab",
+   "dur": 4,
+   "es": 47,
+   "ef": 51,
+   "inicio": "2027-09-27",
+   "fin": "2027-10-22",
+   "holgura": 16,
+   "critica": false,
+   "pred": [
+    "C1:SS+3",
+    "A4+12"
+   ]
+  },
+  {
+   "id": "C3",
+   "nombre": "Fachada en coralina, concreto visto y listones",
+   "fase": "acab",
+   "dur": 6,
+   "es": 46,
+   "ef": 52,
+   "inicio": "2027-09-20",
+   "fin": "2027-10-29",
+   "holgura": 18,
+   "critica": false,
+   "pred": [
+    "C1:SS+2"
+   ]
+  },
+  {
+   "id": "C4",
+   "nombre": "Pisos y enchapes (porcelanato, microcemento)",
+   "fase": "acab",
+   "dur": 7,
+   "es": 51,
+   "ef": 58,
+   "inicio": "2027-10-25",
+   "fin": "2027-12-10",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "C1+0"
+   ]
+  },
+  {
+   "id": "C5",
+   "nombre": "Aire acondicionado y sistema solar",
+   "fase": "acab",
+   "dur": 3,
+   "es": 51,
+   "ef": 54,
+   "inicio": "2027-10-25",
+   "fin": "2027-11-12",
+   "holgura": 16,
+   "critica": false,
+   "pred": [
+    "C2"
+   ]
+  },
+  {
+   "id": "C6",
+   "nombre": "Piso de roble y decks de teca",
+   "fase": "acab",
+   "dur": 3,
+   "es": 59,
+   "ef": 62,
+   "inicio": "2027-12-20",
+   "fin": "2028-01-07",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "C4+1"
+   ]
+  },
+  {
+   "id": "C7",
+   "nombre": "Carpintería: cocina, closets y puertas",
+   "fase": "acab",
+   "dur": 4,
+   "es": 60,
+   "ef": 64,
+   "inicio": "2027-12-27",
+   "fin": "2028-01-21",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "C6:SS+1"
+   ]
+  },
+  {
+   "id": "C8",
+   "nombre": "Estuco, pintura y barandas de vidrio",
+   "fase": "acab",
+   "dur": 4,
+   "es": 62,
+   "ef": 66,
+   "inicio": "2028-01-10",
+   "fin": "2028-02-04",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "C7:SS+2"
+   ]
+  },
+  {
+   "id": "C9",
+   "nombre": "Aparatos, griferías, iluminación y domótica",
+   "fase": "acab",
+   "dur": 3,
+   "es": 64,
+   "ef": 67,
+   "inicio": "2028-01-24",
+   "fin": "2028-02-11",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "C8:SS+2"
+   ]
+  },
+  {
+   "id": "D1",
+   "nombre": "Acabados y equipos de la piscina",
+   "fase": "ext",
+   "dur": 4,
+   "es": 53,
+   "ef": 57,
+   "inicio": "2027-11-08",
+   "fin": "2027-12-03",
+   "holgura": 11,
+   "critica": false,
+   "pred": [
+    "B6",
+    "C4:SS+2"
+   ]
+  },
+  {
+   "id": "D2",
+   "nombre": "Exteriores, travertino y paisajismo",
+   "fase": "ext",
+   "dur": 5,
+   "es": 63,
+   "ef": 68,
+   "inicio": "2028-01-17",
+   "fin": "2028-02-18",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "C8:SS+1"
+   ]
+  },
+  {
+   "id": "D3",
+   "nombre": "Acometidas definitivas, RETIE y pruebas",
+   "fase": "ext",
+   "dur": 3,
+   "es": 65,
+   "ef": 68,
+   "inicio": "2028-01-31",
+   "fin": "2028-02-18",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "C9:SS+1"
+   ]
+  },
+  {
+   "id": "D4",
+   "nombre": "Aseo, revisión y entrega",
+   "fase": "ext",
+   "dur": 2,
+   "es": 68,
+   "ef": 70,
+   "inicio": "2028-02-21",
+   "fin": "2028-03-03",
+   "holgura": 0,
+   "critica": true,
+   "pred": [
+    "D2",
+    "D3",
+    "D1",
+    "C9"
+   ]
+  }
+ ],
+ "hitos": [
+  {
+   "id": "M1",
+   "nombre": "Licencia aprobada",
+   "corto": "Licencia",
+   "semana": 23,
+   "fecha": "2027-04-09"
+  },
+  {
+   "id": "M2",
+   "nombre": "Estructura terminada",
+   "corto": "Estructura",
+   "semana": 44,
+   "fecha": "2027-09-03"
+  },
+  {
+   "id": "M3",
+   "nombre": "Casa cerrada (ventanería)",
+   "corto": "Casa cerrada",
+   "semana": 51,
+   "fecha": "2027-10-22"
+  },
+  {
+   "id": "M4",
+   "nombre": "Entrega",
+   "corto": "Entrega",
+   "semana": 70,
+   "fecha": "2028-03-03"
+  }
+ ],
+ "flujo_bajo": [
+  {
+   "mes": "2026-11",
+   "valor": 9412832
+  },
+  {
+   "mes": "2026-12",
+   "valor": 9412832
+  },
+  {
+   "mes": "2027-01",
+   "valor": 4706416
+  },
+  {
+   "mes": "2027-02",
+   "valor": 0
+  },
+  {
+   "mes": "2027-03",
+   "valor": 0
+  },
+  {
+   "mes": "2027-04",
+   "valor": 98326156
+  },
+  {
+   "mes": "2027-05",
+   "valor": 87750479
+  },
+  {
+   "mes": "2027-06",
+   "valor": 113777546
+  },
+  {
+   "mes": "2027-07",
+   "valor": 150793514
+  },
+  {
+   "mes": "2027-08",
+   "valor": 144472096
+  },
+  {
+   "mes": "2027-09",
+   "valor": 142088446
+  },
+  {
+   "mes": "2027-10",
+   "valor": 206500627
+  },
+  {
+   "mes": "2027-11",
+   "valor": 194037099
+  },
+  {
+   "mes": "2027-12",
+   "valor": 68675331
+  },
+  {
+   "mes": "2028-01",
+   "valor": 245093859
+  },
+  {
+   "mes": "2028-02",
+   "valor": 87202141
+  }
+ ],
+ "flujo_medio": [
+  {
+   "mes": "2026-11",
+   "valor": 14570688
+  },
+  {
+   "mes": "2026-12",
+   "valor": 14570688
+  },
+  {
+   "mes": "2027-01",
+   "valor": 7285344
+  },
+  {
+   "mes": "2027-02",
+   "valor": 0
+  },
+  {
+   "mes": "2027-03",
+   "valor": 0
+  },
+  {
+   "mes": "2027-04",
+   "valor": 141806662
+  },
+  {
+   "mes": "2027-05",
+   "valor": 130915322
+  },
+  {
+   "mes": "2027-06",
+   "valor": 162719761
+  },
+  {
+   "mes": "2027-07",
+   "valor": 212832613
+  },
+  {
+   "mes": "2027-08",
+   "valor": 209848486
+  },
+  {
+   "mes": "2027-09",
+   "valor": 212424647
+  },
+  {
+   "mes": "2027-10",
+   "valor": 295232788
+  },
+  {
+   "mes": "2027-11",
+   "valor": 280843736
+  },
+  {
+   "mes": "2027-12",
+   "valor": 111197879
+  },
+  {
+   "mes": "2028-01",
+   "valor": 368165592
+  },
+  {
+   "mes": "2028-02",
+   "valor": 137719452
+  }
+ ],
+ "flujo_alto": [
+  {
+   "mes": "2026-11",
+   "valor": 22599488
+  },
+  {
+   "mes": "2026-12",
+   "valor": 22599488
+  },
+  {
+   "mes": "2027-01",
+   "valor": 11299744
+  },
+  {
+   "mes": "2027-02",
+   "valor": 0
+  },
+  {
+   "mes": "2027-03",
+   "valor": 0
+  },
+  {
+   "mes": "2027-04",
+   "valor": 208291852
+  },
+  {
+   "mes": "2027-05",
+   "valor": 196574738
+  },
+  {
+   "mes": "2027-06",
+   "valor": 237710393
+  },
+  {
+   "mes": "2027-07",
+   "valor": 307788259
+  },
+  {
+   "mes": "2027-08",
+   "valor": 308606600
+  },
+  {
+   "mes": "2027-09",
+   "valor": 318903225
+  },
+  {
+   "mes": "2027-10",
+   "valor": 433966809
+  },
+  {
+   "mes": "2027-11",
+   "valor": 416719816
+  },
+  {
+   "mes": "2027-12",
+   "valor": 179285878
+  },
+  {
+   "mes": "2028-01",
+   "valor": 566046430
+  },
+  {
+   "mes": "2028-02",
+   "valor": 219669858
+  }
+ ]
+}
