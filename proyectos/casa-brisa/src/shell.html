@@ -1,0 +1,298 @@
+<title>Casa Brisa</title>
+<meta name="description" content="Recorrido 3D de una casa moderna de 250 m² en Barranquilla con piscina de borde infinito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: lienzo 3D a pantalla completa; paneles de vidrio ahumado en las esquinas, como fichas de plano sobre la obra. */
+:root{
+  --bg:#0c0e0e;
+  --ink:#f2eee6;
+  --ink-dim:rgba(242,238,230,.66);
+  --ink-faint:rgba(242,238,230,.38);
+  --glass:rgba(16,19,19,.66);
+  --glass-strong:rgba(12,14,14,.86);
+  --line:rgba(242,238,230,.14);
+  --teak:#d8a16a;
+  --pool:#79d4cc;
+  --warn:#f0c674;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:10px;
+  color-scheme:dark;
+}
+[hidden]{display:none!important}
+html,body{height:100%;background:var(--bg);color:var(--ink);overflow:hidden}
+body{font-family:var(--f-body);font-size:14px;-webkit-font-smoothing:antialiased;overscroll-behavior:none}
+#stage{position:fixed;inset:0;touch-action:none}
+#stage canvas{display:block;width:100%;height:100%;outline:none}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--teak);outline-offset:2px}
+
+.panel{background:var(--glass);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid var(--line);border-radius:var(--r)}
+#hud{position:fixed;inset:0;pointer-events:none;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(12px + env(safe-area-inset-bottom,0px))}
+#hud > *{pointer-events:auto}
+.eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* Marca */
+.brand{position:absolute;left:16px;top:calc(12px + env(safe-area-inset-top,0px));padding:12px 14px 12px;display:grid;gap:8px;max-width:min(360px,calc(100vw - 32px))}
+.brand h1{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:125%;font-size:20px;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.brand h1 span{color:var(--teak)}
+.brand .sub{margin:0;font-family:var(--f-mono);font-size:11px;color:var(--ink-dim);letter-spacing:.02em}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:rgba(0,0,0,.18)}
+.seg button{background:none;border:0;padding:6px 10px;font-size:12.5px;font-weight:500;color:var(--ink-dim);font-stretch:100%}
+.seg button + button{border-left:1px solid var(--line)}
+.seg button.on{background:var(--ink);color:#141616;font-weight:650}
+.seg button:hover:not(.on){color:var(--ink)}
+.chip{background:rgba(0,0,0,.2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:12.5px;color:var(--ink-dim)}
+.chip:hover{color:var(--ink);border-color:var(--ink-faint)}
+.chip.on{border-color:var(--teak);color:var(--teak)}
+
+/* Hora */
+.time{position:absolute;right:16px;top:calc(12px + env(safe-area-inset-top,0px));padding:12px 14px;display:grid;gap:9px;width:300px}
+.time .seg{width:100%}
+.time .seg button{flex:1;padding:7px 0;font-size:13px}
+.slider{display:flex;align-items:center;gap:10px}
+.slider span{font-family:var(--f-mono);font-size:18px;font-weight:500;min-width:52px;font-variant-numeric:tabular-nums}
+.slider input{flex:1;accent-color:var(--teak)}
+.sunline{display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:var(--f-mono);font-size:11px;color:var(--ink-dim);font-variant-numeric:tabular-nums}
+.sunline select{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:6px;padding:3px 4px;font-family:var(--f-mono);font-size:11px}
+
+/* Ir a */
+.goto{position:absolute;right:16px;top:calc(196px + env(safe-area-inset-top,0px));width:300px;padding:10px 12px 12px;display:grid;gap:8px;max-height:calc(100% - 420px);min-height:120px}
+.goto header{display:flex;justify-content:space-between;align-items:baseline}
+.goto.closed #places{display:none}
+.goto.closed{min-height:0}
+.goto h2{margin:0;font-size:12px;font-weight:600;font-stretch:112%;letter-spacing:.08em;text-transform:uppercase}
+#places{display:flex;flex-wrap:wrap;gap:5px;overflow:auto;padding-right:2px}
+#places button{font-size:12px;padding:5px 8px}
+#places .lvl{width:100%;margin:4px 0 0}
+
+/* Mapa */
+.mapbox{position:absolute;left:16px;bottom:calc(12px + env(safe-area-inset-bottom,0px));padding:8px;display:grid;gap:6px;width:236px}
+#map{width:220px;height:240px;display:block;border-radius:6px;cursor:crosshair;background:rgba(0,0,0,.25)}
+.where{display:grid;gap:1px;padding:0 4px 2px}
+.where strong{font-size:14px;font-weight:650;font-stretch:108%}
+
+/* Ficha de material */
+#matcard{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:10px 16px 11px;width:min(460px,calc(100vw - 32px - 520px));min-width:260px;display:grid;gap:3px;pointer-events:none}
+#matcard strong{font-size:15px;font-weight:650;font-stretch:105%}
+#matcard p{margin:0;color:var(--ink-dim);font-size:12.5px;line-height:1.45}
+#hint{position:absolute;left:50%;top:58%;transform:translateX(-50%);font-family:var(--f-mono);font-size:12px;background:var(--glass-strong);border:1px solid var(--line);border-radius:6px;padding:6px 10px;pointer-events:none}
+#hint kbd,.help kbd{font-family:var(--f-mono);font-size:11px;border:1px solid var(--ink-faint);border-radius:4px;padding:0 5px;margin-right:4px;color:var(--ink)}
+#cross{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:0 0 0 1.5px rgba(0,0,0,.35);pointer-events:none}
+
+/* Ayuda */
+.dock{position:absolute;right:16px;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:grid;gap:8px;justify-items:end}
+.help{padding:10px 12px;display:grid;gap:5px;font-size:12px;color:var(--ink-dim);width:236px}
+.help div{display:flex;justify-content:space-between;gap:8px}
+.dock .row{justify-content:flex-end}
+
+/* Intro */
+#intro{position:absolute;left:16px;top:calc(150px + env(safe-area-inset-top,0px));width:min(380px,calc(100vw - 32px));padding:18px 18px 16px;display:grid;gap:12px;background:var(--glass-strong)}
+#intro h2{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:118%;font-size:26px;line-height:1.05;text-wrap:balance}
+#intro p{margin:0;color:var(--ink-dim);line-height:1.5;font-size:13.5px}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.specs div{background:var(--glass-strong);padding:8px 10px;display:grid;gap:2px}
+.specs b{font-family:var(--f-mono);font-weight:500;font-size:15px;font-variant-numeric:tabular-nums}
+.specs span{font-size:11.5px;color:var(--ink-dim)}
+.cta{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border-radius:8px;padding:10px 14px;font-weight:650;font-size:13.5px;border:1px solid var(--line);background:rgba(0,0,0,.2)}
+.btn.primary{background:var(--teak);border-color:var(--teak);color:#1b1208}
+.btn:hover{filter:brightness(1.08)}
+
+/* Memoria */
+#memo{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.45);padding:16px}
+#memo .sheet{width:min(860px,100%);max-height:100%;overflow:auto;padding:22px 24px;background:var(--glass-strong);display:grid;gap:18px}
+#memo header{display:flex;justify-content:space-between;align-items:start;gap:16px}
+#memo h2{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:118%;font-size:24px}
+#memo h3{margin:0 0 8px;font-size:12px;font-weight:650;font-stretch:112%;letter-spacing:.08em;text-transform:uppercase;color:var(--teak)}
+#memo p, #memo li{color:var(--ink-dim);line-height:1.55;font-size:13.5px;max-width:68ch}
+#memo ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cols > *{min-width:0}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:5px 6px;border-bottom:1px solid var(--line)}
+td.n,th.n{text-align:right;font-family:var(--f-mono)}
+tr.sum td{color:var(--ink);font-weight:650;border-bottom:0}
+tr.sub td{color:var(--ink-faint);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;padding-top:12px}
+
+/* Joystick táctil */
+#joy{position:absolute;left:24px;bottom:calc(28px + env(safe-area-inset-bottom,0px));width:120px;height:120px;border-radius:50%;border:1px solid var(--line);background:rgba(10,12,12,.35);display:none;touch-action:none}
+#joy-knob{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(242,238,230,.75)}
+#act{display:none}
+
+/* Carga */
+#loading{position:fixed;inset:0;display:grid;place-items:center;background:var(--bg);z-index:5;transition:opacity .6s}
+#loading .box{width:min(320px,80vw);display:grid;gap:10px}
+#loading h1{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:125%;font-size:22px;letter-spacing:.06em;text-transform:uppercase}
+#loading .bar{height:2px;background:var(--line)}
+#load-bar{height:100%;width:0;background:var(--teak);transition:width .2s}
+#load-msg{font-family:var(--f-mono);font-size:11px;color:var(--ink-dim)}
+#err{color:var(--warn);font-size:13px;line-height:1.5}
+
+body.aerial #cross, body.aerial #matcard, body.aerial #hint{display:none}
+body:not(.aerial) #cut{display:none}
+body.intro .goto, body.intro .mapbox, body.intro .dock{visibility:hidden}
+
+@media (max-width: 1100px){
+  #matcard{width:min(420px,calc(100vw - 32px));bottom:calc(290px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width: 760px){
+  .brand{padding:9px 11px;gap:6px;max-width:calc(100vw - 32px - 136px)}
+  .brand h1{font-size:16px}
+  .brand .sub{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .seg button{padding:6px 8px;font-size:12px}
+  .mapbox{left:auto;right:16px;top:calc(12px + env(safe-area-inset-top,0px));bottom:auto;width:auto;padding:5px}
+  #map{width:116px;height:126px}
+  .where{display:none}
+  .goto{top:calc(162px + env(safe-area-inset-top,0px));left:16px;right:auto;width:min(320px,calc(100vw - 32px));max-height:42vh;min-height:0}
+  .time{top:auto;right:16px;left:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:min(300px,calc(100vw - 172px));padding:9px 10px;gap:6px}
+  .time .sunline{display:none}
+  .slider span{font-size:14px;min-width:40px}
+  .dock{top:auto;right:16px;bottom:calc(146px + env(safe-area-inset-bottom,0px))}
+  .help{display:none}
+  #matcard{bottom:calc(192px + env(safe-area-inset-bottom,0px));padding:8px 12px;min-width:0;width:calc(100vw - 32px)}
+  #matcard p{font-size:11.5px}
+  .cols{grid-template-columns:1fr}
+  #intro{top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .specs b{font-size:13px}
+  body.intro .time{visibility:hidden}
+}
+@media (pointer: coarse){
+  #joy{display:block}
+  body.aerial #joy{display:none}
+  #act{display:inline-block}
+  .goto.mapopen{display:none}
+}
+@media (prefers-reduced-motion: reduce){ #loading{transition:none} #load-bar{transition:none} }
+</style>
+
+<div id="stage"></div>
+
+<div id="hud">
+  <header class="brand panel">
+    <h1>Casa <span>Brisa</span></h1>
+    <p class="sub">Barranquilla · 10°58′ N 74°48′ O · fachada norte</p>
+    <div class="row">
+      <div class="seg" role="group" aria-label="Modo de vista">
+        <button id="m-walk" type="button">Recorrido</button><button id="m-aerial" type="button" class="on">Aérea</button>
+      </div>
+      <div class="seg" id="cut" role="group" aria-label="Corte del modelo">
+        <button type="button" data-cut="0" class="on">Completa</button><button type="button" data-cut="1">Sin cubierta</button><button type="button" data-cut="2">Planta baja</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="time panel" aria-label="Hora del día">
+    <div class="seg" id="tod">
+      <button type="button" data-t="10.5" class="on">Día</button><button type="button" data-t="17.08">Tarde</button><button type="button" data-t="19.75">Noche</button>
+    </div>
+    <label class="slider" for="hour"><span id="clock">10:30</span><input id="hour" type="range" min="5" max="23.5" step="0.0833" value="10.5" aria-label="Hora"></label>
+    <div class="sunline">
+      <span id="sunread">—</span>
+      <select id="date" aria-label="Fecha">
+        <option value="10-13" selected>13 oct (hoy)</option>
+        <option value="12-21">21 dic</option>
+        <option value="3-20">20 mar</option>
+        <option value="6-21">21 jun</option>
+      </select>
+    </div>
+    <div class="row"><button type="button" class="chip" id="lights">Luces: automáticas</button><button type="button" class="chip" id="quality">Calidad: alta</button></div>
+  </section>
+
+  <nav class="goto panel" id="goto" aria-label="Ir a un espacio">
+    <header><h2>Ir a</h2><button type="button" class="chip" id="goto-toggle">Ocultar</button></header>
+    <div id="places"></div>
+  </nav>
+
+  <div class="mapbox panel">
+    <canvas id="map" width="220" height="240" aria-label="Plano con tu posición"></canvas>
+    <div class="where"><span class="eyebrow" id="lvl">Planta baja</span><strong id="room">—</strong></div>
+  </div>
+
+  <div id="matcard" class="panel" hidden><span class="eyebrow">Material a la vista</span><strong id="matname"></strong><p id="matdesc"></p></div>
+  <div id="hint" hidden></div>
+  <div id="cross" hidden></div>
+
+  <div class="dock">
+    <div class="help panel" id="help">
+      <div><span><kbd>W A S D</kbd>caminar</span><span><kbd>Shift</kbd>correr</span></div>
+      <div><span><kbd>Ratón</kbd>mirar (clic para fijar)</span></div>
+      <div><span><kbd>E</kbd>abrir / cerrar puertas</span></div>
+      <div><span><kbd>1 2 3</kbd>día · tarde · noche</span><span><kbd>V</kbd>vista</span></div>
+    </div>
+    <div class="row"><button type="button" class="chip" id="act">Puerta</button><button type="button" class="chip" id="memo-btn">Memoria y áreas</button></div>
+  </div>
+
+  <div id="joy" aria-hidden="true"><div id="joy-knob"></div></div>
+
+  <section id="intro">
+    <span class="eyebrow">Proyecto de vivienda · 2 plantas</span>
+    <h2>Una casa abierta a la brisa del Caribe</h2>
+    <p>Fachada al norte para recibir los vientos alisios, volumen superior flotante en estuco blanco sobre una base de piedra coralina, y una piscina de borde infinito que se funde con el horizonte del sur.</p>
+    <div class="specs">
+      <div><b>249,8 m²</b><span>construidos</span></div>
+      <div><b>3 + 1</b><span>habitaciones con balcón</span></div>
+      <div><b>15 × 4 m</b><span>piscina de borde infinito</span></div>
+      <div><b>9,9 kWp</b><span>18 paneles solares</span></div>
+    </div>
+    <div class="cta"><button type="button" class="btn primary" id="go-walk">Entrar al recorrido</button><button type="button" class="btn" id="go-aerial">Explorar desde arriba</button></div>
+  </section>
+
+  <div id="memo" hidden>
+    <article class="sheet panel">
+      <header>
+        <div><span class="eyebrow">Memoria de diseño</span><h2>Casa Brisa</h2></div>
+        <button type="button" class="chip" id="memo-close">Cerrar</button>
+      </header>
+      <div class="cols">
+        <section>
+          <h3>Concepto</h3>
+          <p>Dos volúmenes. Abajo, una base pesada de piedra coralina y concreto a la vista que contiene garaje, servicio y la zona social abierta al jardín. Arriba, una caja blanca y ligera con las habitaciones, enmarcada al norte por un pórtico profundo que da sombra a los balcones. Entre ambos, el vestíbulo de doble altura: desde la puerta pivotante se ve en línea recta la sala, la terraza y el agua.</p>
+          <h3 style="margin-top:14px">Referencias</h3>
+          <ul>
+            <li>Marcio Kogan / Studio MK27: la caja flotante y las celosías de madera.</li>
+            <li>Tadao Ando: concreto de formaleta con pasadores y el espejo de agua de la entrada.</li>
+            <li>Isay Weinfeld y Kengo Kuma: madera cálida, luz filtrada, límites que se borran.</li>
+            <li>Rogelio Salmona y la arquitectura del Caribe colombiano: material local, sombra y brisa.</li>
+          </ul>
+          <h3 style="margin-top:14px">Clima de Barranquilla</h3>
+          <ul>
+            <li>Fachada principal al norte: recibe la brisa del noreste (dic–abr) y casi nada de sol directo en la tarde.</li>
+            <li>Ventilación cruzada norte–sur en cada habitación y este–oeste en el pasillo.</li>
+            <li>Aleros de 1,2 m al sur y celosías de teca al oriente y occidente.</li>
+            <li>18 paneles de 550 W a 10° hacia el sur (latitud 11° N): ≈ 1.250 kWh/mes estimados.</li>
+            <li>Cubierta verde sobre la planta baja y estuco reflectivo en la caja superior.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Cuadro de áreas</h3>
+          <div class="tbl"><table id="areas"></table></div>
+          <p style="font-size:12px;margin-top:10px">Áreas a ejes de muro. Balcones, terraza y piscina no suman área construida.</p>
+        </section>
+      </div>
+    </article>
+  </div>
+</div>
+
+<div id="loading">
+  <div class="box">
+    <h1>Casa Brisa</h1>
+    <div class="bar"><div id="load-bar"></div></div>
+    <span id="load-msg">Cargando motor 3D…</span>
+    <div id="err" hidden></div>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
