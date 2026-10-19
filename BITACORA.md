@@ -180,3 +180,31 @@ Formato: dónde estoy · qué hice · qué medí · qué sigue.
     objetivo muestra «Práctica ○/✓ · Comprobación ○/✓», y la pestaña marca
     «·» cuando va media.
 - **Pendiente:** el laboratorio y la sección 6.
+
+## Sesión 9 — Desvío: el bot de los $55
+- **Fase / semana:** F0 · semana 1 (fuera de calendario)
+- **Pedido suyo:** construir un sistema de trading como el de un post de
+  Threads («seis agentes de IA, $55 → $3,155») y, si hacía falta, usar REA.
+- **Hecho:** se construyó, con dinero ficticio, y se midió lo que el post no
+  muestra. Se convirtió en lección aparte, con las seis capas y los ocho
+  patrones (P6: un caso real encontrado por él).
+  - `scripts/simular_bots.py` — 10.000 bots idénticos en un mercado de
+    esperanza cero antes de costos; slippage y comisión como los del registro
+    del post. `--mejor` imprime el bot que «graba el video».
+  - `app/bot-de-los-55.html` — la réplica del tablero, operada escribiendo el
+    mismo comando del script; predicción antes de ver la multitud, tabla
+    «mismo bot, más gente», comprobación y párrafo final.
+  - Glosario: 13 términos nuevos (sesgo de supervivencia, tasa de acierto,
+    esperanza matemática, slippage, semilla, Monte Carlo, backtest,
+    sobreajuste, billetera, MCP, ingeniería inversa, streaming, marca de agua).
+- **REA:** no se usó. Es un servidor MCP para desarmar programas (binarios,
+  Electron, .NET, APK); aquí no había programa, solo un video, y el tablero se
+  reproduce sin desarmar nada.
+- **Medido (semilla 1, 200 operaciones):** tasa de acierto 70.9 %; ganaron 294
+  de 10.000 (2.9 %); mediana $1.45; promedio $10.33; el mejor, $5,258.21, pagó
+  $3,777.91 en costos. Sin costos: promedio $57.99, mediana $8.55. Los 4,553
+  bots que quebraron acertaron el 67.7 % de sus operaciones. Página y script
+  imprimen lo mismo, carácter por carácter, en 10 configuraciones.
+- **Pendiente:** el párrafo de la lección (P8). Y el pendiente de la ruta no se
+  movió: el laboratorio de bisect y la sección 6 de `traza-bisect.md`.
+

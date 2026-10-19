@@ -1,0 +1,1378 @@
+<meta charset="utf-8">
+<title>El bot de los $55</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='104' fill='%23131A29'/%3E%3Cpolyline points='90,360 170,330 230,350 300,250 360,280 420,150' fill='none' stroke='%234FBE94' stroke-width='34' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  /* Una sola columna de lectura; el instrumento (terminal + tablero) se ensancha
+     un poco porque se opera, no se lee. Paleta y tipografía: las del Módulo 1. */
+  :root {
+    --bg: #EDF0F6;
+    --surface: #FFFFFF;
+    --surface-2: #E2E7F1;
+    --panel: #131A29;
+    --panel-ink: #D8DFF0;
+    --panel-faint: #8C97B3;
+    --ink: #131A29;
+    --muted: #5A6482;
+    --faint: #8890A8;
+    --line: #D3D9E8;
+    --accent: #2F4DC4;
+    --accent-soft: #DFE5FA;
+    --on-accent: #FFFFFF;
+    --good: #14705A;
+    --good-soft: #D8EDE6;
+    --bad: #A6332A;
+    --bad-soft: #F6DFDC;
+    --skip: #8A6210;
+    --skip-soft: #F5E8CF;
+    --term-good: #6FD3A8;
+    --term-bad: #F0958C;
+    --term-acc: #9DB3FF;
+    --shadow: 0 1px 2px rgba(19,26,41,.06), 0 8px 24px rgba(19,26,41,.06);
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0B0F17; --surface: #141B28; --surface-2: #1C2433;
+      --panel: #080C14; --panel-ink: #C9D3E8; --panel-faint: #6F7A96;
+      --ink: #E7ECF6; --muted: #98A2BC; --faint: #6B7490; --line: #242D3F;
+      --accent: #7D9AFF; --accent-soft: #1A2440; --on-accent: #0B0F17;
+      --good: #4FBE94; --good-soft: #102A23;
+      --bad: #E28178; --bad-soft: #2E1614;
+      --skip: #D9A44B; --skip-soft: #2B2010;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.28);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0B0F17; --surface: #141B28; --surface-2: #1C2433;
+    --panel: #080C14; --panel-ink: #C9D3E8; --panel-faint: #6F7A96;
+    --ink: #E7ECF6; --muted: #98A2BC; --faint: #6B7490; --line: #242D3F;
+    --accent: #7D9AFF; --accent-soft: #1A2440; --on-accent: #0B0F17;
+    --good: #4FBE94; --good-soft: #102A23;
+    --bad: #E28178; --bad-soft: #2E1614;
+    --skip: #D9A44B; --skip-soft: #2B2010;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.28);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.6;
+    margin: 0;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  .ancho { max-width: 1040px; margin: 0 auto; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  code, kbd { font-family: var(--mono); font-size: .9em; background: var(--surface-2);
+    padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+  .num, .tnum { font-variant-numeric: tabular-nums; }
+
+  /* cabecera */
+  header.top { padding-block: 36px 8px; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+  h1 { font-size: clamp(30px, 7.5vw, 46px); font-weight: 700; letter-spacing: -.03em;
+    line-height: 1.05; margin: 0 0 14px; text-wrap: balance; }
+  .lede { color: var(--muted); margin: 0 0 16px; max-width: 64ch; font-size: 16.5px; }
+  .lede b { color: var(--ink); font-weight: 600; }
+  .aviso { display: inline-flex; gap: 8px; align-items: baseline; flex-wrap: wrap;
+    font-size: 13.5px; color: var(--skip); background: var(--skip-soft);
+    padding: 7px 12px; border-radius: 7px; margin: 0; }
+  .aviso b { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+
+  nav.capas { display: flex; flex-wrap: wrap; gap: 6px; margin: 26px 0 8px; }
+  nav.capas a { font-family: var(--mono); font-size: 12px; text-decoration: none; color: var(--muted);
+    border: 1px solid var(--line); padding: 4px 10px; border-radius: 999px; background: var(--surface); }
+  nav.capas a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* capas */
+  section.capa { padding-block: 34px 8px; border-top: 1px solid var(--line); margin-top: 26px; }
+  .capa-n { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--faint); margin: 0 0 6px; }
+  h2 { font-size: clamp(23px, 5vw, 29px); letter-spacing: -.02em; line-height: 1.15; margin: 0 0 14px; text-wrap: balance; }
+  h3 { font-size: 18px; letter-spacing: -.01em; margin: 30px 0 10px; text-wrap: balance; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  ul, ol { padding-left: 22px; margin: 0 0 16px; max-width: 66ch; }
+  li { margin-bottom: 8px; }
+  .nota { font-size: 14px; color: var(--muted); }
+
+  .idea { background: var(--accent-soft); border-radius: 12px; padding: 16px 18px; margin: 18px 0; }
+  .et { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .idea p { margin: 0; font-size: 17px; font-weight: 500; }
+
+  .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+  .dos > div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; min-width: 0; }
+  .dos > div.mal { border-color: var(--bad); }
+  .dos > div.mal .et { color: var(--bad); }
+  .dos ul { margin: 0; padding-left: 18px; }
+  .dos p { font-size: 15px; }
+  @media (max-width: 600px) { .dos { grid-template-columns: 1fr; } }
+
+  .creencia { background: var(--bad-soft); border-radius: 12px; padding: 14px 16px; margin: 0 0 18px; }
+  .creencia .et { color: var(--bad); }
+  .creencia p { margin: 0 0 8px; }
+  .creencia p:last-child { margin: 0; }
+
+  /* cierre de capa: una pregunta, no un resumen */
+  .pregunta { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 26px 0 8px; }
+  .pregunta .q { font-weight: 600; margin-bottom: 8px; }
+  details summary { cursor: pointer; color: var(--accent); font-size: 14.5px; font-weight: 500; }
+  details p { margin: 10px 0 0; color: var(--muted); }
+
+  /* tablas */
+  .tabla { overflow-x: auto; margin: 14px 0 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); font-weight: 500; background: var(--surface-2); white-space: nowrap; }
+  td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td code { white-space: nowrap; }
+  td.pos { color: var(--good); } td.neg { color: var(--bad); }
+
+  /* anatomía del comando */
+  .cmd-grande { display: block; font-family: var(--mono); font-size: 15px; background: var(--panel);
+    color: var(--panel-ink); padding: 12px 14px; border-radius: 9px; overflow-x: auto; white-space: nowrap; margin: 10px 0 0; }
+  .cmd-grande .p { color: var(--panel-faint); user-select: none; }
+
+  ol.pasos { counter-reset: paso; list-style: none; padding: 0; }
+  ol.pasos > li { counter-increment: paso; position: relative; padding-left: 40px; margin-bottom: 14px; }
+  ol.pasos > li::before { content: counter(paso); position: absolute; left: 0; top: 1px; width: 26px; height: 26px;
+    border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-family: var(--mono);
+    font-size: 13px; font-weight: 600; display: grid; place-items: center; }
+  ol.pasos > li.hecho::before { content: "✓"; background: var(--good-soft); color: var(--good); }
+
+  /* predicción */
+  .prediccion { background: var(--surface); border: 1px solid var(--accent); border-radius: 12px; padding: 16px; margin: 18px 0; }
+  .prediccion .q { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
+  .opciones { display: grid; gap: 8px; }
+  .opciones button { text-align: left; font: inherit; font-size: 15px; color: var(--ink); background: var(--surface-2);
+    border: 1px solid transparent; border-radius: 9px; padding: 10px 13px; cursor: pointer; }
+  .opciones button:hover { border-color: var(--accent); }
+  .opciones button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); font-weight: 500; }
+  .opciones button.ok { background: var(--good-soft); border-color: var(--good); }
+  .opciones button.no { background: var(--bad-soft); border-color: var(--bad); }
+  .opciones button:disabled { cursor: default; }
+  .fb { font-size: 14.5px; margin: 12px 0 0; padding: 10px 12px; border-radius: 8px; background: var(--surface-2); }
+  .fb.ok { background: var(--good-soft); }
+  .fb.no { background: var(--bad-soft); }
+
+  /* ======================= el instrumento ======================= */
+  .instrumento { margin: 22px auto 10px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+
+  .term { background: var(--panel); color: var(--panel-ink); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+  .term-bar { display: flex; align-items: center; gap: 7px; padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,.07);
+    font-family: var(--mono); font-size: 11.5px; color: var(--panel-faint); }
+  .term-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.14); display: inline-block; }
+  .term-bar span { margin-left: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #term-out { margin: 0; padding: 12px 14px 4px; font-family: var(--mono); font-size: 12.5px; line-height: 1.55;
+    max-height: 340px; min-height: 120px; overflow: auto; white-space: pre; }
+  #term-out .eco { color: #fff; }
+  #term-out .eco .p { color: var(--term-good); }
+  #term-out .err { color: var(--term-bad); }
+  #term-out .com { color: var(--panel-faint); }
+  #term-out .pausa { color: var(--term-acc); }
+  .term form { display: flex; align-items: center; gap: 8px; padding: 6px 14px 13px; }
+  .term label { font-family: var(--mono); font-size: 13px; color: var(--term-good); white-space: nowrap; }
+  #term-in { flex: 1; min-width: 0; background: transparent; border: 0; color: #fff; font-family: var(--mono);
+    font-size: 16px; padding: 4px 0; caret-color: var(--term-good); }
+  #term-in:focus { outline: none; }
+  .term:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .atajos { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12.5px; color: var(--muted); }
+  .atajos button { font-family: var(--mono); font-size: 12px; color: var(--accent); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; cursor: pointer; }
+  .atajos button:hover { border-color: var(--accent); }
+
+  /* tablero: la réplica del post */
+  .dash { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; box-shadow: var(--shadow); }
+  .dash-top { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 12px;
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+  .marca { font-weight: 600; color: var(--ink); letter-spacing: .12em; }
+  .marca i { font-style: normal; color: var(--faint); }
+  .pill { color: var(--skip); background: var(--skip-soft); padding: 2px 8px; border-radius: 999px; font-size: 10.5px; }
+  .pill.vivo { color: var(--good); background: var(--good-soft); }
+  .dash-top .meta { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  @media (max-width: 680px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .tile { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; min-width: 0; }
+  .tile .k { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .tile .v { font-family: var(--mono); font-size: clamp(17px, 3.6vw, 22px); font-weight: 600; margin: 3px 0 1px;
+    font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .tile .s { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .tile.pos .v { color: var(--good); } .tile.neg .v { color: var(--bad); }
+  .tile.pos { border-color: var(--good); }
+
+  .dash-mid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 10px; margin-top: 10px; }
+  @media (max-width: 760px) { .dash-mid { grid-template-columns: minmax(0, 1fr); } }
+  .caja { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; min-width: 0; position: relative; }
+  .caja .ph { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  #curva { display: block; width: 100%; height: auto; margin-top: 4px; }
+  #curva text { font-family: var(--mono); font-size: 11px; fill: var(--faint); }
+  #curva .eje { stroke: var(--line); stroke-width: 1; }
+  #curva .base { stroke: var(--faint); stroke-dasharray: 4 4; stroke-width: 1; }
+  #curva .linea { fill: none; stroke: var(--good); stroke-width: 2; stroke-linejoin: round; }
+  #curva .area { fill: var(--good-soft); }
+  #curva .punto { fill: var(--good); }
+  #curva .rotulo { fill: var(--good); font-weight: 600; font-size: 12px; }
+  #curva.abajo .linea { stroke: var(--bad); } #curva.abajo .area { fill: var(--bad-soft); }
+  #curva.abajo .punto, #curva.abajo .rotulo { fill: var(--bad); }
+  .vacio-curva { position: absolute; inset: 34px 12px 12px; display: grid; place-items: center; text-align: center;
+    font-size: 14px; color: var(--muted); padding: 10px; }
+  #log { list-style: none; margin: 6px 0 0; padding: 0; height: 236px; overflow: auto; font-family: var(--mono);
+    font-size: 11.5px; line-height: 1.6; max-width: none; }
+  #log li { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #log .tag { display: inline-block; min-width: 62px; }
+  #log .c .tag { color: var(--accent); } #log .v .tag { color: var(--muted); }
+  #log .pos { color: var(--good); } #log .neg { color: var(--bad); }
+  #log .vacio { color: var(--muted); white-space: normal; font-family: var(--sans); font-size: 14px; }
+
+  .agentes { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+  @media (max-width: 680px) { .agentes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .agente { border: 1px solid var(--line); border-radius: 10px; padding: 8px 9px; min-width: 0; transition: border-color .15s, background .15s; }
+  .agente.activo { border-color: var(--accent); background: var(--accent-soft); }
+  .agente b { display: block; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; }
+  .agente span { display: block; font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .agente .r { font-family: var(--mono); font-size: 12px; color: var(--ink); font-variant-numeric: tabular-nums; white-space: pre-line; }
+  .agente .r.pos { color: var(--good); } .agente .r.neg { color: var(--bad); }
+  .dash-ctl { display: flex; justify-content: flex-end; margin-top: 10px; min-height: 0; }
+  .btn { font: inherit; font-size: 13.5px; font-weight: 500; color: var(--accent); background: var(--surface);
+    border: 1px solid var(--accent); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  .btn:hover { background: var(--accent-soft); }
+
+  /* la multitud */
+  .multitud { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .vacio-m { text-align: center; color: var(--muted); font-size: 14.5px; padding: 26px 10px; border: 1px dashed var(--line); border-radius: 10px; }
+  .vacio-m b { display: block; color: var(--ink); font-size: 15.5px; margin-bottom: 4px; }
+  .m-tit { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 0 0 10px; overflow-wrap: anywhere; }
+  .histo { display: grid; gap: 7px; margin: 16px 0 6px; }
+  .fila-h { display: grid; grid-template-columns: minmax(0, 11.5em) minmax(0, 1fr) 4.4em; gap: 10px; align-items: center; font-size: 13.5px; }
+  .fila-h .n { font-family: var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
+  .barra { height: 16px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+  .barra i { display: block; height: 100%; min-width: 2px; background: var(--bad); border-radius: 4px; }
+  .fila-h.gana .barra i { background: var(--good); }
+  .fila-h .lab { overflow-wrap: anywhere; }
+  .m-nota { font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+
+  /* comprobación y párrafo */
+  .comp { display: grid; gap: 14px; margin: 16px 0; }
+  .comp .prediccion { margin: 0; border-color: var(--line); }
+  textarea { width: 100%; min-height: 170px; font: inherit; font-size: 15.5px; line-height: 1.55; color: var(--ink);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; resize: vertical; }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .contador { font-family: var(--mono); font-size: 12px; color: var(--faint); margin-top: 6px; }
+
+  footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+
+  /* glosario: término subrayado, tooltip y modal (como en el Módulo 1) */
+  dfn.g { font-style: inherit; border-bottom: 1px dashed var(--accent); cursor: help; padding-bottom: .5px; }
+  dfn.g.visto { border-bottom-style: dotted; border-bottom-color: var(--faint); }
+  dfn.g:hover, dfn.g:focus-visible { background: var(--accent-soft); border-bottom-style: solid; }
+  .glosa-tip { position: fixed; z-index: 60; max-width: 280px; background: var(--panel); color: var(--panel-ink);
+    font-size: 13px; line-height: 1.45; padding: 9px 11px; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,.28); pointer-events: none; }
+  .glosa-tip b { color: #fff; display: block; font-size: 12px; font-family: var(--mono); letter-spacing: .03em; margin-bottom: 3px; }
+  .glosa-tip .pista { display: block; margin-top: 6px; color: var(--panel-faint); font-size: 11.5px; }
+  .glosa { position: fixed; inset: 0; z-index: 70; background: rgba(8,12,20,.55); display: grid; place-items: center;
+    padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+  .glosa-caja { background: var(--surface); color: var(--ink); border-radius: 14px; max-width: 520px; width: 100%;
+    max-height: 82vh; overflow: auto; padding: 20px 20px 18px; box-shadow: var(--shadow); }
+  .glosa-caja h4 { margin: 0 0 4px; font-size: 19px; }
+  .glosa-caja .corta { color: var(--muted); margin: 0 0 12px; font-size: 14.5px; }
+  .glosa-caja p { font-size: 15px; }
+  .glosa-origen { display: block; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line);
+    font-family: var(--mono); font-size: 11px; letter-spacing: .05em; color: var(--faint); }
+  .glosa-x { float: right; font: inherit; font-size: 13px; background: var(--surface-2); color: var(--ink);
+    border: 0; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Lección aparte · fuera del calendario de la ruta</p>
+    <h1>El bot de los $55</h1>
+    <p class="lede">Un post en Threads dice que seis agentes de IA convirtieron <b>$55 en $3,155</b> y lo muestra con un terminal en vivo. Aquí está construido igual: el mismo tablero, los mismos seis agentes, el mismo tipo de operaciones. Después medimos lo que el post no enseña.</p>
+    <p class="aviso"><b>Dinero ficticio</b> Nada en esta página ni en su script se conecta a una billetera o a un mercado.</p>
+  </header>
+
+  <nav class="capas" aria-label="Capas de la lección">
+    <a href="#capa1">1 · Empieza aquí</a>
+    <a href="#capa2">2 · Cómo funciona</a>
+    <a href="#capa3">3 · Hazlo</a>
+    <a href="#capa4">4 · Vocabulario</a>
+    <a href="#capa5">5 · Nivel profesional</a>
+    <a href="#comprobacion">✓ Comprobación</a>
+  </nav>
+
+  <!-- ============================== CAPA 1 ============================== -->
+  <section class="capa" id="capa1">
+    <p class="capa-n">Capa 1 · Empieza aquí</p>
+    <h2>El mejor turno del mes</h2>
+    <p>Un proveedor quiere venderte el monitoreo de tu red. Como prueba, te enseña el informe de un turno: cero alarmas sin atender, todo resuelto en minutos. Se ve impecable.</p>
+    <p>No te dice que su gente cubrió 300 turnos ese mes y que eligió el mejor para enseñártelo. Ese turno existió de verdad. Y aun así no te dice nada de cómo trabajan.</p>
+    <p>El post hace lo mismo con un bot.</p>
+    <div class="idea">
+      <span class="et">La idea en una frase</span>
+      <p>Si 10.000 personas lanzan una moneda 13 veces, más o menos una saca 13 caras seguidas. No sabe lanzar monedas: le tocó. Y es la que graba el video.</p>
+    </div>
+
+    <h3>Tres cosas que están en la propia imagen</h3>
+    <ul>
+      <li><b>El tablero tiene un campo que dice «SUBSCRIPTION $200/mo · due».</b> Es un producto con mensualidad, y el video es su anuncio.</li>
+      <li><b>El post cierra pidiendo que lo guardes y sigas a la cuenta.</b> Lo que se cosecha ahí es tu atención.</li>
+      <li><b>No aparece la cuenta donde está el dinero.</b> En ese mercado cada compra y cada venta queda a la vista de cualquiera. Con el número de la cuenta se comprobaba en cinco minutos. Sin él, es una imagen.</li>
+    </ul>
+
+    <div class="pregunta">
+      <p class="q">Si en vez de 10.000 personas fueran 100.000, ¿la mejor racha que te enseñan sería más espectacular o menos? ¿Y la racha de una persona normal?</p>
+      <details><summary>Ver el razonamiento</summary>
+        <p>Más espectacular: entre más gente lanza la moneda, más larga sale la mejor racha. La racha de una persona normal no cambia, porque no depende de cuánta gente haya alrededor. En la capa 3 lo vas a medir.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============================== CAPA 2 ============================== -->
+  <section class="capa" id="capa2">
+    <p class="capa-n">Capa 2 · Cómo funciona</p>
+    <h2>Una moneda justa con disfraz</h2>
+    <p>Este bot tiene seis agentes, como el del post, y cada uno sigue un estilo distinto. Por dentro funcionan igual: <b>ganan poco muchas veces y pierden mucho pocas veces</b>. Las cuentas están hechas para que, si nadie cobrara nada, ninguno gane ni pierda a la larga. Es una moneda justa con disfraz.</p>
+    <p>Pero el mercado sí cobra. Cada compra y cada venta sale un poco peor que el precio que mostraba la pantalla, y la plataforma se queda una comisión. Sumado, <b>cada operación empieza perdiendo cerca de 3.5 %</b>. El registro del propio post lo deja ver: «slip 1.3%», «slip 2.1%».</p>
+    <p>Junta eso con la idea de la capa 1. Si diez mil personas encienden este bot, casi todas pierden, y unas pocas tienen una racha espectacular. Esas pocas son las únicas con algo que publicar.</p>
+
+    <div class="dos">
+      <div>
+        <span class="et">Lo que muestra el post</span>
+        <ul>
+          <li>Un terminal</li>
+          <li>Una curva que sube</li>
+          <li>71.9 % de operaciones ganadas</li>
+          <li>$55 → $3,155</li>
+        </ul>
+      </div>
+      <div class="mal">
+        <span class="et">Lo que no muestra</span>
+        <ul>
+          <li>Los otros miles de terminales iguales</li>
+          <li>Cuántos de ellos quebraron</li>
+          <li>Cuánto se gana cuando se gana, y cuánto se pierde cuando se pierde</li>
+          <li>La cuenta donde está el dinero</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">Los seis agentes tienen nombres y estilos distintos: uno sigue las menciones en X, otro el volumen, otro caza cohetes. ¿Cambia eso el resultado?</p>
+      <details><summary>Ver el razonamiento</summary>
+        <p>No. Si por dentro todos son la misma moneda justa con el mismo cobro, el disfraz no mueve nada. Lo que decide es cuánto ganan cuando ganan, cuánto pierden cuando pierden y cuánto cobra el mercado. Que lo decida una IA no cambia esas tres cosas.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============================== CAPA 3 ============================== -->
+  <section class="capa" id="capa3">
+    <p class="capa-n">Capa 3 · Hazlo</p>
+    <h2>Enciéndelo tú</h2>
+    <p>El simulador existe dos veces: como script en el repositorio (<code>scripts/simular_bots.py</code>) y como terminal en esta página. Los dos imprimen <b>exactamente los mismos números</b>. Si alguna vez no coinciden, uno de los dos tiene un defecto.</p>
+
+    <h3>El comando, pieza por pieza</h3>
+    <code class="cmd-grande"><span class="p">$ </span>python3 scripts/simular_bots.py --mejor</code>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Pieza</th><th>Qué hace</th><th>De dónde sale el valor</th></tr></thead>
+        <tbody>
+          <tr><td><code>python3</code></td><td>El programa que lee un archivo de Python y lo ejecuta.</td><td>Viene instalado. En Windows se escribe <code>py</code>.</td></tr>
+          <tr><td><code>scripts/simular_bots.py</code></td><td>El archivo que se ejecuta: carpeta <code>scripts</code>, archivo <code>simular_bots.py</code>.</td><td>Es la ruta desde la carpeta del repositorio. Si estás parado en otra carpeta, Python no lo encuentra.</td></tr>
+          <tr><td><code>--mejor</code></td><td>Bandera: muestra solo el mejor bot, como hace el post.</td><td>Sin ella, muestra a todos.</td></tr>
+          <tr><td><code>--sin-costos</code></td><td>Bandera: el mismo mercado sin cobrar deslizamiento ni comisión.</td><td>La usas en el paso 3.</td></tr>
+          <tr><td><code>--bots 10000</code></td><td>Cuántos bots idénticos correr.</td><td>Si no la escribes, vale 10000.</td></tr>
+          <tr><td><code>--operaciones 200</code></td><td>Cuántas operaciones hace cada bot.</td><td>Si no la escribes, vale 200.</td></tr>
+          <tr><td><code>--semilla 1</code></td><td>El número con el que arranca el azar. Mismo número, mismos resultados.</td><td>Si no la escribes, vale 1. Por eso tu computadora y esta página coinciden.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ol class="pasos" id="pasos">
+      <li id="paso1"><b>Lo que muestra el post.</b> Escribe <code>python3 scripts/simular_bots.py --mejor</code>. El tablero se enciende con el mejor de 10.000 bots idénticos.</li>
+      <li id="paso2"><b>Lo que no muestra.</b> Responde la predicción y escribe el mismo comando sin banderas: <code>python3 scripts/simular_bots.py</code>.</li>
+      <li id="paso3"><b>Para la capa 5.</b> <code>python3 scripts/simular_bots.py --sin-costos</code>: el mismo mercado, sin cobrar nada.</li>
+    </ol>
+    <p class="nota">En tu computadora: abre la terminal en la carpeta del repositorio y escribe lo mismo. Tarda unos cinco segundos; aquí, menos de uno.</p>
+
+    <div class="prediccion" id="pred">
+      <span class="et">Predicción · antes del paso 2</span>
+      <p class="q">El bot del paso 1 fue el mejor de 10.000 bots idénticos. ¿Cuántos de los 10.000 terminaron con más de los $55 con que empezaron?</p>
+      <div class="opciones" id="pred-op">
+        <button type="button" data-p="a">Unos 7.000. Aciertan 7 de cada 10 operaciones.</button>
+        <button type="button" data-p="b">Unos 5.000. Es una moneda justa: mitad y mitad.</button>
+        <button type="button" data-p="c">Unos 1.000.</button>
+        <button type="button" data-p="d">Menos de 500.</button>
+      </div>
+      <p class="fb" id="pred-anotada" hidden></p>
+    </div>
+  </section>
+  </div><!-- /wrap: el instrumento se ensancha -->
+
+  <div class="ancho instrumento" id="instrumento">
+    <div class="term" id="term">
+      <div class="term-bar"><i></i><i></i><i></i><span>carlos@ruta: ~/ruta-data-engineering</span></div>
+      <pre id="term-out" aria-live="polite"></pre>
+      <form id="term-form" autocomplete="off">
+        <label for="term-in">$</label>
+        <input id="term-in" type="text" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="Comando">
+      </form>
+    </div>
+    <div class="atajos">
+      <span>Atajos (rellenan el comando; lo ejecutas con Enter):</span>
+      <button type="button" data-cmd="python3 scripts/simular_bots.py --mejor">python3 scripts/simular_bots.py --mejor</button>
+      <button type="button" data-cmd="python3 scripts/simular_bots.py">python3 scripts/simular_bots.py</button>
+      <button type="button" data-cmd="python3 scripts/simular_bots.py --sin-costos">python3 scripts/simular_bots.py --sin-costos</button>
+      <button type="button" data-cmd="clear">clear</button>
+    </div>
+
+    <div class="dash" id="dash">
+      <div class="dash-top">
+        <span class="marca">Terminal <i>/</i> modo papel</span>
+        <span class="pill" id="d-estado">apagado</span>
+        <span class="meta" id="d-meta">—</span>
+      </div>
+      <div class="tiles">
+        <div class="tile" id="t-saldo"><div class="k">Saldo</div><div class="v" id="d-saldo">$55.00</div><div class="s">inicial $55.00</div></div>
+        <div class="tile" id="t-res"><div class="k">Resultado</div><div class="v" id="d-res">+$0.00</div><div class="s" id="d-res-s">+0.0 %</div></div>
+        <div class="tile"><div class="k">Aciertos</div><div class="v" id="d-acierto">—</div><div class="s" id="d-acierto-s">0 de 0</div></div>
+        <div class="tile"><div class="k">Costos pagados</div><div class="v" id="d-costos">$0.00</div><div class="s">deslizamiento + comisión</div></div>
+      </div>
+      <div class="dash-mid">
+        <div class="caja">
+          <span class="ph">// saldo por operación</span>
+          <svg id="curva" viewBox="0 0 600 260" role="img" aria-label="Curva de saldo del bot"></svg>
+          <div class="vacio-curva" id="vacio-curva">Apagado. Escribe el comando del paso 1 para encenderlo.</div>
+        </div>
+        <div class="caja">
+          <span class="ph">// registro</span>
+          <ol id="log"><li class="vacio">Aquí aparece cada compra y cada venta, la más reciente arriba.</li></ol>
+        </div>
+      </div>
+      <div class="agentes" id="agentes"></div>
+      <div class="dash-ctl"><button type="button" class="btn" id="saltar" hidden>Saltar al final</button></div>
+    </div>
+
+    <div class="multitud" id="multitud">
+      <div class="vacio-m" id="m-vacio"><b>La multitud</b>El paso 2 abre esta parte: los 10.000 bots, no solo el mejor.</div>
+      <div id="m-lleno" hidden>
+        <p class="m-tit" id="m-tit"></p>
+        <div class="tiles">
+          <div class="tile"><div class="k">Terminaron ganando</div><div class="v" id="m-gan">—</div><div class="s" id="m-gan-s"></div></div>
+          <div class="tile"><div class="k">Mediana</div><div class="v" id="m-med">—</div><div class="s">el bot típico</div></div>
+          <div class="tile"><div class="k">Promedio</div><div class="v" id="m-prom">—</div><div class="s">todos sumados ÷ bots</div></div>
+          <div class="tile pos"><div class="k">El mejor</div><div class="v" id="m-mejor">—</div><div class="s" id="m-mejor-s"></div></div>
+        </div>
+        <div class="histo" id="histo"></div>
+        <p class="m-nota" id="m-nota"></p>
+        <p class="fb" id="pred-fb" hidden></p>
+        <h3>Mismo bot, más gente</h3>
+        <div class="tabla">
+          <table>
+            <thead><tr><th>Bots corriendo</th><th class="r">Terminaron ganando</th><th class="r">Mediana</th><th class="r">El mejor</th></tr></thead>
+            <tbody id="tabla-n"></tbody>
+          </table>
+        </div>
+        <p class="nota">Cada fila usa los primeros bots de la misma corrida. El bot es el mismo en todas; solo cambia cuánta gente lo enciende.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="pregunta">
+      <p class="q">En la tabla «Mismo bot, más gente», ¿qué columna crece cuando hay más bots y cuál se queda quieta? ¿Por qué?</p>
+      <details><summary>Ver el razonamiento</summary>
+        <p>Crece «El mejor»: con más intentos, la racha más afortunada sale más larga. La mediana y el porcentaje que gana se quedan casi quietos, porque describen al bot típico y el bot típico no depende de cuántos haya. El post te enseña la columna que crece con la multitud.</p>
+      </details>
+    </div>
+
+  <!-- ============================== CAPA 4 ============================== -->
+  <section class="capa" id="capa4">
+    <p class="capa-n">Capa 4 · El vocabulario</p>
+    <h2>Los nombres de lo que acabas de hacer</h2>
+    <p>Desde aquí estas son las palabras normales de la lección. Cada una está amarrada a algo que ya viste en la capa 3.</p>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Término</th><th>Qué es</th><th>Dónde lo viste</th></tr></thead>
+        <tbody>
+          <tr><td>Simulación de Monte Carlo</td><td>Correr el mismo proceso con azar miles de veces y mirar la distribución completa de resultados.</td><td>El paso 2: 10.000 bots en vez de uno.</td></tr>
+          <tr><td>Semilla</td><td>El número con que arranca el generador de azar.</td><td><code>--semilla 1</code>: por eso tu terminal y la página imprimen lo mismo.</td></tr>
+          <tr><td>Sesgo de supervivencia</td><td>Concluir mirando solo los casos que pasaron un filtro.</td><td>El paso 1: el único bot con video es el que sobrevivió.</td></tr>
+          <tr><td>Tasa de acierto</td><td>Porcentaje de operaciones que terminaron en ganancia.</td><td>El 70.9 % del paso 2.</td></tr>
+          <tr><td>Esperanza matemática</td><td>Lo que deja en promedio una operación: cada resultado por su probabilidad, todo sumado.</td><td>Cero antes de costos, −3.5 % después. Está en la tabla de abajo.</td></tr>
+          <tr><td>Slippage</td><td>La diferencia entre el precio de la pantalla y el precio al que de verdad se operó.</td><td>Las columnas «slip» del registro, y el «slip 1.3%» del post.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Y dos que ya conoces del Módulo 1: la mediana y el promedio. En el paso 2 se separan muchísimo, y en la capa 5 se explica por qué.</p>
+
+    <h3>Los seis agentes, en números</h3>
+    <p>Cada agente es una lotería distinta con la misma esperanza matemática: cero antes de costos. La pérdida está calculada para que así sea.</p>
+    <div class="tabla">
+      <table class="num">
+        <thead><tr><th>Agente</th><th>Estilo</th><th class="r">Acierta</th><th class="r">Gana normal</th><th class="r">Cohete</th><th class="r">Cuando pierde</th><th class="r">Esperanza sin costos</th><th class="r">Con costos</th></tr></thead>
+        <tbody id="tabla-agentes"></tbody>
+      </table>
+    </div>
+    <p class="nota">Costos: deslizamiento entre 0.8 % y 2.2 % por lado (promedio 1.5 %) y comisión de 0.25 % por lado. Cada operación arriesga el 25 % del saldo.</p>
+
+    <h3>El par que se confunde</h3>
+    <div class="dos">
+      <div>
+        <span class="et">Tasa de acierto</span>
+        <p><b>Cuenta</b> cuántas veces ganaste.</p>
+        <p><b>Ignora</b> cuánto ganaste y cuánto perdiste.</p>
+        <p><b>En el bot:</b> 70.9 %. Alta, estable, y la misma en ganadores y quebrados.</p>
+      </div>
+      <div>
+        <span class="et">Esperanza matemática</span>
+        <p><b>Cuenta</b> cuánto deja cada operación en promedio, con su probabilidad.</p>
+        <p><b>Ignora</b> nada: cada resultado entra con su peso.</p>
+        <p><b>En el bot:</b> −3.5 % por operación. Es el número que decide.</p>
+      </div>
+    </div>
+    <div class="creencia">
+      <span class="et">La creencia equivocada</span>
+      <p><b>«Si acierta 7 de cada 10, gana dinero.»</b></p>
+      <p>Falso, y lo acabas de medir. Los 4,553 bots que quebraron acertaron, en promedio, el 67.7 % de sus operaciones. Ganaron dos de cada tres veces y aun así lo perdieron todo, porque cada acierto deja unos centavos y cada fallo se lleva una parte grande del saldo.</p>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">Un bot acierta el 95 % de sus operaciones. ¿Qué dos números le pedirías antes de creer que gana dinero?</p>
+      <details><summary>Ver el razonamiento</summary>
+        <p>Cuánto gana en promedio cuando acierta y cuánto pierde en promedio cuando falla, los dos después de costos. Con eso calculas su esperanza matemática: 0.95 × ganancia − 0.05 × pérdida. Si la pérdida es más de 19 veces la ganancia, el 95 % pierde dinero.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============================== CAPA 5 ============================== -->
+  <section class="capa" id="capa5">
+    <p class="capa-n">Capa 5 · Nivel profesional</p>
+    <h2>Lo que separa a un ingeniero de un espectador</h2>
+
+    <h3>Por qué la mediana se hunde aunque el juego sea justo</h3>
+    <p>El paso 3 quita todos los costos. La esperanza matemática queda en cero exacto. Compara:</p>
+    <div class="tabla">
+      <table class="num">
+        <thead><tr><th>10.000 bots · semilla 1</th><th class="r">Con costos</th><th class="r">Sin costos</th></tr></thead>
+        <tbody>
+          <tr><td>Terminaron ganando</td><td class="r">2.9 %</td><td class="r">15.1 %</td></tr>
+          <tr><td>Mediana</td><td class="r">$1.45</td><td class="r">$8.55</td></tr>
+          <tr><td>Promedio</td><td class="r">$10.33</td><td class="r">$57.99</td></tr>
+          <tr><td>El mejor</td><td class="r">$5,258.21</td><td class="r">$31,578.44</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Sin costos, el promedio queda en $57.99, cerca de los $55 de partida: el juego es justo. Pero la mediana cae a $8.55. El bot típico pierde el 84 % en un juego que no le quita nada. La razón es que <b>las ganancias y las pérdidas se multiplican, no se suman</b>:</p>
+    <div class="tabla">
+      <table class="num">
+        <thead><tr><th>Saldo</th><th>Movimiento</th><th class="r">Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>$100</td><td>sube 50 %</td><td class="r">$150</td></tr>
+          <tr><td>$150</td><td>baja 50 %</td><td class="r neg">$75</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Subir y bajar el mismo porcentaje te deja abajo. En el bot: cuando KADE pierde, se lleva el 19.7 % del saldo; recuperarlo exige ganar 24.6 %, y cada acierto de KADE suma 3.75 %. Hacen falta seis aciertos para tapar un fallo, y eso antes de pagar costos. El promedio lo sostienen unos pocos bots con rachas enormes; la mediana cuenta lo que le pasa al bot típico.</p>
+    <p>Es el mismo par de tu laboratorio de bisect con otro disfraz. Allá el defecto era reportar el MTTR con el promedio en vez de la mediana, y la cola larga hacía mentir al número. Aquí la cola larga son los ganadores, y el post ni siquiera te enseña el promedio: te enseña el máximo.</p>
+
+    <h3>El mismo truco, sin mala intención</h3>
+    <p>Quien prueba mil configuraciones de una estrategia contra datos históricos (un backtest) y se queda con la mejor está corriendo 10.000 bots y grabando el mejor, sin darse cuenta. Eso es sobreajuste. La defensa profesional es juzgar la estrategia elegida con datos que no se usaron para elegirla: datos fuera de muestra. Si ahí no se sostiene, no había ventaja; había suerte bien seleccionada.</p>
+    <p>En tu idioma de Six Sigma: el bot #3641 no es una causa especial. Es la cola de la variación por causa común de un proceso con media negativa. Una carta de control con los 10.000 bots no lo marcaría como señal; lo mostraría como el extremo esperable de un proceso que, en el centro, pierde dinero.</p>
+
+    <h3>Cómo se verifica un reclamo así</h3>
+    <ul>
+      <li><b>Pide la billetera.</b> En Solana cada operación es pública: con la dirección, un explorador como Solscan muestra cada compra y cada venta con fecha y monto. Revisa que las fechas coincidan con el video y que el saldo no venga de depósitos.</li>
+      <li><b>Un tablero no es evidencia.</b> Esta página es la prueba: muestra $55 convertidos en $5,258.21 y es HTML. Un tablero dibuja lo que se le pida.</li>
+      <li><b>Mira qué se vende.</b> El campo «SUBSCRIPTION $200/mo» está en el tablero del post. Quien de verdad multiplica su dinero por 57 no necesita tu mensualidad.</li>
+    </ul>
+
+    <h3>¿Y REA?</h3>
+    <p>REA (<i>Reverse Engineer Anything</i>, del autor morluto) es un servidor MCP y una línea de comandos que le dan a un agente de IA como Claude Code los instrumentos para desarmar programas sin su código fuente: binarios con Ghidra, IDA o Hopper, aplicaciones Electron y JavaScript, ensamblados .NET, APK de Android y el comportamiento de un sitio en el navegador. Llegó a GitHub Trending a mediados de octubre de 2026. Es una herramienta seria para otro problema.</p>
+    <p>Aquí no hace falta ingeniería inversa, por tres razones:</p>
+    <ol>
+      <li><b>No hay programa que desarmar.</b> Hay un video de una pantalla. La ingeniería inversa necesita el programa.</li>
+      <li><b>La pantalla ya se ve.</b> Reproducir un tablero no exige desarmarlo; esta página lo reproduce.</li>
+      <li><b>Lo único que valdría la pena copiar no está a la vista.</b> Una ventaja real para operar, si existiera, viviría en un servidor al que nadie llega. Y la propia documentación de REA aclara que no recupera el código fuente original.</li>
+    </ol>
+    <p>Una regla más, que aplica a REA igual que al post: una herramienta que ejecuta desensambladores en tu máquina, con semanas de vida y más de cien mil estrellas, se revisa antes de instalarla. Qué ejecuta, con qué permisos y quién la mantiene.</p>
+
+    <h3>Cómo sería un sistema de trading de verdad</h3>
+    <p>Con el vocabulario de la ruta, un sistema de trading es un pipeline como el de KPIs del NOC, con dinero en el último paso:</p>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Pieza</th><th>Lo que tiene que resolver</th><th>Dónde se aprende</th></tr></thead>
+        <tbody>
+          <tr><td>Datos de mercado en vivo</td><td>Precios que llegan tarde, duplicados o desordenados.</td><td>F4 · streaming y marcas de agua</td></tr>
+          <tr><td>Decisión</td><td>Una esperanza matemática positiva, medida fuera de muestra y después de costos.</td><td>Esta lección. El resto es estadística, no código.</td></tr>
+          <tr><td>Ejecución</td><td>Una orden reintentada por un corte de red no puede comprar dos veces.</td><td>F0 concepto, F4 código · idempotencia</td></tr>
+          <tr><td>Monitoreo</td><td>Enterarse en minutos de que algo se rompió, no en el extracto del mes.</td><td>F5 · tablero de 5 señales</td></tr>
+          <tr><td>Costos</td><td>Lo que cobra el mercado por operar y lo que cobra la nube por correr.</td><td>F1 · costos reales</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>El tablero es la parte fácil: cabe en una tarde. Lo difícil es la fila de «Decisión», y es la única que el post no muestra.</p>
+
+    <div class="pregunta">
+      <p class="q">Sin costos, el promedio de los 10.000 bots es $57.99. Si alguien te enseña solo ese número, ¿te está mintiendo?</p>
+      <details><summary>Ver el razonamiento</summary>
+        <p>No, pero te está contando lo que le pasa al grupo, no a ti. Con cola larga, el promedio lo sostienen unos pocos; lo esperable para un bot cualquiera es la mediana, $8.55. Es la misma razón por la que el MTTR se reporta con mediana.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============================ COMPROBACIÓN ============================ -->
+  <section class="capa" id="comprobacion">
+    <p class="capa-n">✓ Comprobación</p>
+    <h2>Sin buscar en la página</h2>
+    <p>Si fallas una, la respuesta te dice a qué capa volver.</p>
+    <div class="comp" id="comp"></div>
+  </section>
+
+  <!-- ============================== P8 ============================== -->
+  <section class="capa" id="parrafo-sec">
+    <p class="capa-n">Para cerrar · tu párrafo</p>
+    <h2>Explícalo con tus palabras</h2>
+    <p>Esta lección no se cierra con una salida de comando. Se cierra con un párrafo tuyo que explique el mecanismo: <b>por qué un video de un terminal que convierte $55 en $3,155 no demuestra que el bot gane dinero.</b> Usa al menos tres de estas palabras: multitud, sesgo de supervivencia, tasa de acierto, esperanza matemática, mediana.</p>
+    <label for="parrafo" class="nota">Tu párrafo se guarda en este navegador mientras escribes. No lo lee nadie más.</label>
+    <textarea id="parrafo" placeholder="El video muestra…"></textarea>
+    <div class="contador" id="contador">0 palabras</div>
+  </section>
+
+  <footer>
+    <p><b>Esto es un desvío.</b> El pendiente de la ruta sigue siendo el mismo: el laboratorio de bisect y la sección 6 de <code>traza-bisect.md</code>. La mediana contra el promedio de esta lección es el mismo defecto que vas a cazar ahí.</p>
+    <p>Script: <code>scripts/simular_bots.py</code>. Glosario compartido: <code>app/glosario.js</code>.</p>
+  </footer>
+</div>
+
+<div class="glosa" id="glosa" hidden role="dialog" aria-modal="true" aria-labelledby="glosa-t">
+  <div class="glosa-caja">
+    <button type="button" class="glosa-x" id="glosa-x">Cerrar</button>
+    <h4 id="glosa-t"></h4>
+    <p class="corta" id="glosa-c"></p>
+    <div id="glosa-d"></div>
+  </div>
+</div>
+<div class="glosa-tip" id="glosa-tip" hidden></div>
+
+<script src="glosario.js"></script>
+<script>
+"use strict";
+
+/* SIM:INICIO — idéntico a scripts/simular_bots.py; tests: misma salida, carácter por carácter */
+const SALDO_INICIAL = 55, FRACCION = 0.25, COMISION = 0.0025;
+const SLIP_MIN = 0.008, SLIP_RANGO = 0.014, QUEBRADO = 1;
+const AGENTES = [
+  ["NOVA",  "impulso",         0.78, 1.08, 0.02, 2.5],
+  ["ORION", "menciones en X",  0.74, 1.12, 0.03, 3.0],
+  ["VELA",  "volumen",         0.80, 1.06, 0.01, 2.0],
+  ["KADE",  "francotirador",   0.70, 1.15, 0.04, 3.5],
+  ["NYX",   "reversión",       0.76, 1.09, 0.02, 2.2],
+  ["ZARA",  "caza de cohetes", 0.30, 1.40, 0.05, 6.0]
+];
+const TOKENS = ["$WIFCAT", "$QUOKK", "$ZORP", "$SIGMA", "$NYAN", "$HODLR",
+                "$PEPO", "$DOGGO", "$BONKO", "$GLORP", "$MOONY", "$FROGE"];
+function xPierde(pg, xg, pc, xc) { return (1 - pg * xg - pc * xc) / (1 - pg - pc); }
+const TABLA = AGENTES.map(a => [a[2], a[3], a[2] + a[4], a[5], xPierde(a[2], a[3], a[4], a[5])]);
+
+function mulberry32(semilla) {
+  let a = semilla >>> 0;
+  return function () {
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = Math.imul(a ^ (a >>> 15), a | 1) >>> 0;
+    t = (((t + (Math.imul(t ^ (t >>> 7), t | 61) >>> 0)) >>> 0) ^ t) >>> 0;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function semillaBot(semilla, i) { return (semilla * 1000003 + i) >>> 0; }
+
+function correrBot(semilla, operaciones, costos, registro) {
+  const r = mulberry32(semilla);
+  let saldo = SALDO_INICIAL, ganadas = 0, hechas = 0;
+  for (let j = 0; j < operaciones; j++) {
+    if (saldo < QUEBRADO) break;
+    const k = Math.floor(r() * 6);
+    const [pg, xg, pgc, xc, xp] = TABLA[k];
+    const u = r();
+    const x = u < pg ? xg : (u < pgc ? xc : xp);
+    const s1 = SLIP_MIN + r() * SLIP_RANGO;
+    const s2 = SLIP_MIN + r() * SLIP_RANGO;
+    const neto = costos ? x * (1 - s1) * (1 - s2) * (1 - COMISION) * (1 - COMISION) : x;
+    const posicion = saldo * FRACCION;
+    const pnl = posicion * (neto - 1);
+    saldo += pnl;
+    hechas += 1;
+    if (pnl > 0) ganadas += 1;
+    if (registro) registro.push({ op: j + 1, k: k, token: TOKENS[(j * 5 + k * 7) % TOKENS.length],
+      posicion: posicion, s1: s1, x: x, s2: s2, pnl: pnl, saldo: saldo, costo: posicion * (x - neto) });
+  }
+  return { saldo: saldo, ganadas: ganadas, hechas: hechas };
+}
+
+/* toFixed redondea igual que Decimal(ROUND_HALF_UP) en el script */
+function fijo(x, d, miles) {
+  let s = x.toFixed(d);
+  if (miles) { const p = s.split("."); p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); s = p.join("."); }
+  return s;
+}
+function dinero(x) { return "$" + fijo(x, 2, true); }
+function conSigno(x, fmt) { return (x >= 0 ? "+" : "-") + (fmt || dinero)(Math.abs(x)); }
+function mediana(o) { const n = o.length, m = n >> 1; return n % 2 ? o[m] : (o[m - 1] + o[m]) / 2; }
+function izq(s, n) { return String(s).padEnd(n); }
+function der(s, n) { return String(s).padStart(n); }
+
+const TRAMOS = [["quebrado (< $1)", 0, 1], ["perdió más del 80 %", 1, 11], ["perdió algo", 11, 55],
+                ["ganó, hasta 10 veces", 55, 550], ["ganó más de 10 veces", 550, Infinity]];
+
+function correrMultitud(a) {
+  const finales = new Float64Array(a.bots);
+  let g = 0, h = 0;
+  for (let i = 0; i < a.bots; i++) {
+    const r = correrBot(semillaBot(a.semilla, i), a.operaciones, !a.sinCostos);
+    finales[i] = r.saldo; g += r.ganadas; h += r.hechas;
+  }
+  return { finales: finales, g: g, h: h };
+}
+function indiceMejor(f) { let b = 0; for (let i = 1; i < f.length; i++) if (f[i] > f[b]) b = i; return b; }
+function indicePeor(f) { let b = 0; for (let i = 1; i < f.length; i++) if (f[i] < f[b]) b = i; return b; }
+function encabezado(a) {
+  return a.bots + " bots · " + a.operaciones + " operaciones cada uno · semilla " + a.semilla +
+         " · " + (a.sinCostos ? "sin costos" : "con costos");
+}
+
+function textoMultitud(a) {
+  const m = correrMultitud(a), f = m.finales;
+  let suma = 0;
+  for (let i = 0; i < f.length; i++) suma += f[i];
+  const mejor = indiceMejor(f), peor = indicePeor(f);
+  const ord = Float64Array.from(f).sort();
+  let ganaron = 0;
+  for (let i = 0; i < f.length; i++) if (f[i] > SALDO_INICIAL) ganaron++;
+  const conteo = TRAMOS.map(([, lo, hi]) => { let n = 0; for (let i = 0; i < f.length; i++) if (lo <= f[i] && f[i] < hi) n++; return n; });
+  const L = [];
+  L.push(encabezado(a));
+  L.push("");
+  L.push("  tasa de acierto     " + fijo(100 * m.g / Math.max(m.h, 1), 1) + " %");
+  L.push("  terminaron ganando  " + ganaron + " de " + a.bots + " (" + fijo(100 * ganaron / a.bots, 1) + " %)");
+  L.push("  mediana             " + dinero(mediana(ord)));
+  L.push("  promedio            " + dinero(suma / a.bots));
+  L.push("  mejor               " + dinero(f[mejor]) + "  (bot #" + (mejor + 1) + ")");
+  L.push("  peor                " + dinero(f[peor]) + "  (bot #" + (peor + 1) + ")");
+  L.push("");
+  L.push("  saldo final                      bots");
+  TRAMOS.forEach(([nombre], i) => {
+    L.push("  " + izq(nombre, 26) + " " + der(conteo[i], 7) + "  " + "#".repeat(Math.floor(40 * conteo[i] / a.bots + 0.5)));
+  });
+  return { texto: L.join("\n"), finales: f, ord: ord, g: m.g, h: m.h, mejor: mejor, ganaron: ganaron,
+           mediana: mediana(ord), promedio: suma / a.bots, conteo: conteo };
+}
+
+function textoMejor(a) {
+  const f = correrMultitud(a).finales;
+  const mejor = indiceMejor(f);
+  const reg = [];
+  const r = correrBot(semillaBot(a.semilla, mejor), a.operaciones, !a.sinCostos, reg);
+  let pagado = 0;
+  for (const o of reg) pagado += o.costo;
+  const L = [];
+  L.push("bot #" + (mejor + 1) + " · el mejor de " + a.bots + " · semilla " + a.semilla +
+         " · " + (a.sinCostos ? "sin costos" : "con costos"));
+  L.push("");
+  L.push("  saldo        " + dinero(SALDO_INICIAL) + " -> " + dinero(r.saldo));
+  L.push("  resultado    " + conSigno(r.saldo - SALDO_INICIAL) +
+         " (" + conSigno(100 * (r.saldo / SALDO_INICIAL - 1), v => fijo(v, 1, true)) + " %)");
+  L.push("  aciertos     " + r.ganadas + " de " + r.hechas + " (" + fijo(100 * r.ganadas / Math.max(r.hechas, 1), 1) + " %)");
+  L.push("  costos       " + dinero(pagado) + " en deslizamiento y comisión");
+  L.push("");
+  L.push("  últimas 15 operaciones");
+  L.push("   op  agente token     entra con  slip  sale ×  slip    resultado        saldo");
+  for (const o of reg.slice(-15)) {
+    L.push("  " + der(o.op, 3) + "  " + izq(AGENTES[o.k][0], 6) + " " + izq(o.token, 8) + " " +
+           der(dinero(o.posicion), 10) + "  " + fijo(100 * o.s1, 1) + "%  " + der(fijo(o.x, 2), 6) + "  " +
+           fijo(100 * o.s2, 1) + "%  " + der(conSigno(o.pnl), 11) + "  " + der(dinero(o.saldo), 11));
+  }
+  return { texto: L.join("\n"), registro: reg, mejor: mejor, bots: a.bots, operaciones: a.operaciones };
+}
+/* SIM:FIN */
+
+/* ========================================================================
+   argumentos: lo que haría argparse con la misma línea
+   ===================================================================== */
+const USO = "usage: simular_bots.py [-h] [--bots BOTS] [--operaciones OPERACIONES]\n" +
+            "                       [--semilla SEMILLA] [--mejor] [--sin-costos]";
+const AYUDA = USO + "\n\nBots idénticos en un mercado sin ventaja. Dinero ficticio.\n\noptions:\n" +
+  "  -h, --help            show this help message and exit\n" +
+  "  --bots BOTS           cuántos bots iguales correr (1–100000)\n" +
+  "  --operaciones OPERACIONES\n" +
+  "                        operaciones por bot (1–5000)\n" +
+  "  --semilla SEMILLA     punto de partida del azar (0–999999)\n" +
+  "  --mejor               mostrar solo el mejor bot, como el post\n" +
+  "  --sin-costos          no cobrar deslizamiento ni comisión";
+
+function leerArgumentos(tokens) {
+  const a = { bots: 10000, operaciones: 200, semilla: 1, mejor: false, sinCostos: false };
+  const sobran = [];
+  const NUM = { "--bots": "bots", "--operaciones": "operaciones", "--semilla": "semilla" };
+  for (let i = 0; i < tokens.length; i++) {
+    let t = tokens[i], valor = null;
+    if (t.startsWith("--") && t.includes("=")) { valor = t.slice(t.indexOf("=") + 1); t = t.slice(0, t.indexOf("=")); }
+    if (t === "-h" || t === "--help") return { ayuda: true };
+    if (NUM[t]) {
+      if (valor === null) {
+        valor = tokens[i + 1];
+        if (valor === undefined || /^-[^\d]/.test(valor)) return { error: "argument " + t + ": expected one argument" };
+        i++;
+      }
+      if (!/^[-+]?\d+$/.test(valor)) return { error: "argument " + t + ": invalid int value: '" + valor + "'" };
+      a[NUM[t]] = parseInt(valor, 10);
+    } else if (t === "--mejor" && valor === null) a.mejor = true;
+    else if (t === "--sin-costos" && valor === null) a.sinCostos = true;
+    else sobran.push(tokens[i]);
+  }
+  if (sobran.length) return { error: "unrecognized arguments: " + sobran.join(" ") };
+  if (a.bots < 1 || a.bots > 100000) return { error: "--bots va de 1 a 100000" };
+  if (a.operaciones < 1 || a.operaciones > 5000) return { error: "--operaciones va de 1 a 5000" };
+  if (a.semilla < 0 || a.semilla > 999999) return { error: "--semilla va de 0 a 999999" };
+  return { args: a };
+}
+
+/* ========================================================================
+   terminal
+   ===================================================================== */
+const out = document.getElementById("term-out");
+const entrada = document.getElementById("term-in");
+const historial = [];
+let posHist = 0;
+const reducido = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function imprimir(texto, clase) {
+  const s = document.createElement("span");
+  if (clase) s.className = clase;
+  s.textContent = texto + "\n";
+  out.appendChild(s);
+  out.scrollTop = out.scrollHeight;
+}
+function eco(cmd) {
+  const s = document.createElement("span");
+  s.className = "eco";
+  const p = document.createElement("span"); p.className = "p"; p.textContent = "$ ";
+  s.appendChild(p); s.appendChild(document.createTextNode(cmd + "\n"));
+  out.appendChild(s);
+}
+function bienvenida() {
+  imprimir("# Terminal simulado. Escribe los comandos igual que en tu computadora.", "com");
+  imprimir("# Paso 1:  python3 scripts/simular_bots.py --mejor", "com");
+}
+
+const RUTA_OK = /^(\.[\\/])?scripts[\\/]simular_bots\.py$/;
+
+function ejecutar(linea) {
+  const cmd = linea.trim();
+  eco(cmd);
+  if (!cmd) return;
+  historial.push(cmd); posHist = historial.length;
+  const t = cmd.split(/\s+/);
+  const prog = t[0];
+
+  if (prog === "clear" || prog === "cls") { out.textContent = ""; return; }
+  if (prog === "ls") {
+    if (t[1] === "scripts" || t[1] === "scripts/") imprimir("README.md  simular_bots.py");
+    else imprimir("app  BITACORA.md  CLAUDE.md  docs  fases  hooks  infra  netlify  notebooks  README.md  scripts  src  tests");
+    return;
+  }
+  if (prog === "pwd") { imprimir("/home/carlos/ruta-data-engineering"); return; }
+  if (prog !== "python3" && prog !== "python" && prog !== "py") {
+    imprimir("bash: " + prog + ": command not found", "err");
+    imprimir("# Este terminal solo corre el simulador: python3 scripts/simular_bots.py", "com");
+    return;
+  }
+  if (!t[1]) { imprimir("# Falta el archivo. Prueba: " + prog + " scripts/simular_bots.py --mejor", "com"); return; }
+  if (!RUTA_OK.test(t[1])) {
+    imprimir(prog + ": can't open file '/home/carlos/ruta-data-engineering/" + t[1] + "': [Errno 2] No such file or directory", "err");
+    if (/simular_bots\.py$/.test(t[1])) imprimir("# El archivo vive en la carpeta scripts: " + prog + " scripts/simular_bots.py", "com");
+    return;
+  }
+
+  const r = leerArgumentos(t.slice(2));
+  if (r.ayuda) { imprimir(AYUDA); return; }
+  if (r.error) { imprimir(USO, "err"); imprimir("simular_bots.py: error: " + r.error, "err"); return; }
+  const a = r.args;
+
+  if (a.mejor) {
+    const res = textoMejor(a);
+    imprimir(res.texto);
+    marcarPaso("paso1");
+    encender(res);
+    return;
+  }
+  if (!prediccion) {
+    imprimir("# Pausa: antes de ver a los " + a.bots + " bots, responde la predicción de arriba.", "pausa");
+    document.getElementById("pred").scrollIntoView({ behavior: reducido ? "auto" : "smooth", block: "center" });
+    return;
+  }
+  const m = textoMultitud(a);
+  imprimir(m.texto);
+  marcarPaso(a.sinCostos ? "paso3" : "paso2");
+  pintarMultitud(m, a);
+}
+
+document.getElementById("term-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = entrada.value;
+  entrada.value = "";
+  ejecutar(v);
+});
+entrada.addEventListener("keydown", e => {
+  if (e.key === "ArrowUp" && historial.length) { posHist = Math.max(0, posHist - 1); entrada.value = historial[posHist]; e.preventDefault(); }
+  else if (e.key === "ArrowDown" && historial.length) {
+    posHist = Math.min(historial.length, posHist + 1);
+    entrada.value = historial[posHist] || ""; e.preventDefault();
+  }
+});
+document.querySelectorAll(".atajos button").forEach(b => b.addEventListener("click", () => {
+  entrada.value = b.dataset.cmd;
+  entrada.focus();
+}));
+function marcarPaso(id) { const li = document.getElementById(id); if (li) li.classList.add("hecho"); }
+
+/* ========================================================================
+   tablero: repite al mejor bot operación por operación
+   ===================================================================== */
+const $ = id => document.getElementById(id);
+const svg = $("curva");
+const NS = "http://www.w3.org/2000/svg";
+let anim = null, estado = null;
+
+function pintarAgentes() {
+  const caja = $("agentes");
+  caja.textContent = "";
+  AGENTES.forEach((a, k) => {
+    const d = document.createElement("div");
+    d.className = "agente"; d.id = "ag-" + k;
+    d.innerHTML = "<b>" + a[0] + "</b><span>" + a[1] + "</span><span class=\"r\" id=\"ag-r-" + k + "\">0 ops</span>";
+    caja.appendChild(d);
+  });
+}
+
+function pasoEje(max) {
+  const bruto = max / 4, p = Math.pow(10, Math.floor(Math.log10(bruto)));
+  for (const m of [1, 2, 2.5, 5, 10]) if (m * p >= bruto) return m * p;
+  return 10 * p;
+}
+function el(tag, attrs, texto) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (texto !== undefined) e.textContent = texto;
+  return e;
+}
+/* el viewBox sigue al ancho real, así las letras miden 11 px también en el teléfono */
+function dibujarCurva(saldos, total) {
+  const W = Math.max(280, Math.round(svg.clientWidth || 600)), H = W < 480 ? 210 : 260;
+  const ml = 58, mr = 12, mt = 16, mb = 26;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  const maxS = Math.max(SALDO_INICIAL * 1.2, ...saldos) * 1.08;
+  const paso = pasoEje(maxS), tope = Math.ceil(maxS / paso) * paso;
+  const X = i => ml + (W - ml - mr) * i / Math.max(total, 1);
+  const Y = v => mt + (H - mt - mb) * (1 - v / tope);
+  svg.textContent = "";
+  for (let v = 0; v <= tope + 1e-9; v += paso) {
+    svg.appendChild(el("line", { x1: ml, x2: W - mr, y1: Y(v), y2: Y(v), class: "eje" }));
+    svg.appendChild(el("text", { x: ml - 8, y: Y(v) + 4, "text-anchor": "end" }, "$" + fijo(v, 0, true)));
+  }
+  for (const q of [0, 0.25, 0.5, 0.75, 1]) {
+    const i = Math.round(total * q);
+    svg.appendChild(el("text", { x: X(i), y: H - 6, "text-anchor": q === 0 ? "start" : q === 1 ? "end" : "middle" }, String(i)));
+  }
+  svg.appendChild(el("line", { x1: ml, x2: W - mr, y1: Y(SALDO_INICIAL), y2: Y(SALDO_INICIAL), class: "base" }));
+  if (saldos.length < 2) return;
+  let d = "";
+  saldos.forEach((v, i) => { d += (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1); });
+  const n = saldos.length - 1;
+  svg.appendChild(el("path", { d: d + "L" + X(n).toFixed(1) + " " + Y(0) + "L" + X(0) + " " + Y(0) + "Z", class: "area" }));
+  svg.appendChild(el("path", { d: d, class: "linea" }));
+  const ult = saldos[n];
+  svg.appendChild(el("circle", { cx: X(n), cy: Y(ult), r: 4, class: "punto" }));
+  const izqRot = X(n) > W - 90;
+  svg.appendChild(el("text", { x: X(n) + (izqRot ? -8 : 8), y: Math.max(Y(ult) - 8, 14),
+    "text-anchor": izqRot ? "end" : "start", class: "rotulo" }, dinero(ult)));
+  svg.classList.toggle("abajo", ult < SALDO_INICIAL);
+}
+
+function reiniciarTablero(res) {
+  estado = { reg: res.registro, i: 0, saldos: [SALDO_INICIAL], gan: 0, costo: 0,
+             porAgente: AGENTES.map(() => ({ ops: 0, pnl: 0 })), total: res.operaciones, res: res };
+  $("vacio-curva").hidden = true;
+  $("log").textContent = "";
+  pintarAgentes();
+  $("d-estado").textContent = "en vivo"; $("d-estado").classList.add("vivo");
+  actualizarTiles();
+  dibujarCurva(estado.saldos, estado.total);
+}
+
+function lineaLog(clase, html) {
+  const li = document.createElement("li");
+  li.className = clase; li.innerHTML = html;
+  const log = $("log");
+  log.insertBefore(li, log.firstChild);
+  while (log.children.length > 80) log.removeChild(log.lastChild);
+}
+
+function aplicar(o) {
+  const e = estado;
+  e.saldos.push(o.saldo);
+  if (o.pnl > 0) e.gan++;
+  e.costo += o.costo;
+  e.porAgente[o.k].ops++; e.porAgente[o.k].pnl += o.pnl;
+  e.i++;
+  if (!e.rapido) {
+    const nom = AGENTES[o.k][0];
+    lineaLog("c", "<span class=\"tag\">[COMPRA]</span>" + nom + " " + o.token + " " + dinero(o.posicion) + " · slip " + fijo(100 * o.s1, 1) + "%");
+    lineaLog("v", "<span class=\"tag\">[VENTA]</span>" + nom + " " + o.token + " <span class=\"" + (o.pnl >= 0 ? "pos" : "neg") + "\">" +
+             conSigno(o.pnl) + "</span> · ×" + fijo(o.x, 2) + " · slip " + fijo(100 * o.s2, 1) + "%");
+    document.querySelectorAll(".agente.activo").forEach(a => a.classList.remove("activo"));
+    const card = $("ag-" + o.k); if (card) card.classList.add("activo");
+  }
+}
+
+function actualizarTiles() {
+  const e = estado, saldo = e.saldos[e.saldos.length - 1], res = saldo - SALDO_INICIAL;
+  $("d-saldo").textContent = dinero(saldo);
+  $("d-res").textContent = conSigno(res);
+  $("d-res-s").textContent = conSigno(100 * (saldo / SALDO_INICIAL - 1), v => fijo(v, 1, true)) + " %";
+  $("t-res").className = "tile " + (res > 0 ? "pos" : res < 0 ? "neg" : "");
+  $("d-acierto").textContent = e.i ? fijo(100 * e.gan / e.i, 1) + " %" : "—";
+  $("d-acierto-s").textContent = e.gan + " de " + e.i;
+  $("d-costos").textContent = dinero(e.costo);
+  $("d-meta").textContent = "bot #" + (e.res.mejor + 1) + " de " + e.res.bots + " · op " + e.i + "/" + e.total;
+  e.porAgente.forEach((p, k) => {
+    const r = $("ag-r-" + k);
+    if (!r) return;
+    r.textContent = p.ops + " ops\n" + conSigno(p.pnl);
+    r.className = "r " + (p.pnl > 0 ? "pos" : p.pnl < 0 ? "neg" : "");
+  });
+}
+
+function terminarTablero() {
+  clearInterval(anim); anim = null;
+  $("saltar").hidden = true;
+  $("d-estado").textContent = "terminado"; $("d-estado").classList.remove("vivo");
+  document.querySelectorAll(".agente.activo").forEach(a => a.classList.remove("activo"));
+}
+
+function saltarAlFinal() {
+  const e = estado;
+  if (!e) return;
+  const quedan = e.reg.slice(e.i);
+  const ultimos = Math.max(0, quedan.length - 20);
+  e.rapido = true;
+  quedan.slice(0, ultimos).forEach(aplicar);
+  e.rapido = false;
+  quedan.slice(ultimos).forEach(aplicar);
+  actualizarTiles();
+  dibujarCurva(e.saldos, e.total);
+  terminarTablero();
+}
+
+function encender(res) {
+  if (anim) clearInterval(anim);
+  reiniciarTablero(res);
+  $("dash").scrollIntoView({ behavior: reducido ? "auto" : "smooth", block: "start" });
+  if (reducido) { saltarAlFinal(); return; }
+  $("saltar").hidden = false;
+  const porTick = Math.max(1, Math.round(res.registro.length / 200));
+  anim = setInterval(() => {
+    for (let n = 0; n < porTick && estado.i < estado.reg.length; n++) aplicar(estado.reg[estado.i]);
+    actualizarTiles();
+    dibujarCurva(estado.saldos, estado.total);
+    if (estado.i >= estado.reg.length) terminarTablero();
+  }, 110);
+}
+$("saltar").addEventListener("click", saltarAlFinal);
+
+/* ========================================================================
+   la multitud
+   ===================================================================== */
+let prediccion = null;
+const PRED_FB = {
+  a: ["no", "Confundiste acertar con ganar: todos aciertan cerca del 70 % y casi todos pierden. Vuelve a la capa 4, al par que se confunde."],
+  b: ["no", "La moneda es justa antes de costos, pero el resultado no es mitad y mitad: perder un porcentaje cuesta más que ganarlo, y además el mercado cobra. Vuelve a la capa 5, primer bloque."],
+  c: ["no", "Más cerca, pero todavía alto. El cobro de 3.5 % por operación, repetido 200 veces, no deja a casi nadie arriba. Vuelve a la capa 2, segundo párrafo."],
+  d: ["ok", "Correcto. Ni la tasa de acierto ni el disfraz de los agentes cambian la cuenta: con esperanza negativa, casi todos pierden."]
+};
+
+document.querySelectorAll("#pred-op button").forEach(b => b.addEventListener("click", () => {
+  if (prediccion) return;
+  prediccion = b.dataset.p;
+  document.querySelectorAll("#pred-op button").forEach(x => { x.setAttribute("aria-pressed", x === b ? "true" : "false"); x.disabled = true; });
+  const p = $("pred-anotada");
+  p.hidden = false;
+  p.textContent = "Anotado. Ahora escribe el paso 2 en el terminal y compara con lo que pensaste.";
+}));
+
+function pintarMultitud(m, a) {
+  $("m-vacio").hidden = true; $("m-lleno").hidden = false;
+  $("m-tit").textContent = encabezado(a);
+  $("m-gan").textContent = m.ganaron.toLocaleString("en-US");
+  $("m-gan-s").textContent = "de " + a.bots.toLocaleString("en-US") + " · " + fijo(100 * m.ganaron / a.bots, 1) + " %";
+  $("m-med").textContent = dinero(m.mediana);
+  $("m-prom").textContent = dinero(m.promedio);
+  $("m-mejor").textContent = dinero(m.finales[m.mejor]);
+  $("m-mejor-s").textContent = "bot #" + (m.mejor + 1);
+
+  const h = $("histo"); h.textContent = "";
+  const maxN = Math.max(...m.conteo);
+  TRAMOS.forEach(([nombre, lo], i) => {
+    const fila = document.createElement("div");
+    fila.className = "fila-h" + (lo >= SALDO_INICIAL ? " gana" : "");
+    const pct = 100 * m.conteo[i] / a.bots;
+    fila.innerHTML = "<span class=\"lab\"></span><span class=\"barra\"><i></i></span><span class=\"n\"></span>";
+    fila.querySelector(".lab").textContent = nombre;
+    fila.querySelector("i").style.width = (m.conteo[i] ? Math.max(0.6, 100 * m.conteo[i] / maxN) : 0) + "%";
+    fila.querySelector(".n").textContent = m.conteo[i].toLocaleString("en-US");
+    fila.title = fijo(pct, 1) + " % de los bots";
+    h.appendChild(fila);
+  });
+  const arriba = m.conteo[4], mejorSaldo = m.finales[m.mejor];
+  $("m-nota").textContent = "Tasa de acierto de la multitud: " + fijo(100 * m.g / Math.max(m.h, 1), 1) + " %. " +
+    (mejorSaldo >= 550
+      ? "El mejor, el bot #" + (m.mejor + 1) + ", está en la última fila" + (arriba > 1 ? " junto a otros " + (arriba - 1) + "." : ".")
+      : "El mejor, el bot #" + (m.mejor + 1) + ", terminó con " + dinero(mejorSaldo) + ".") +
+    " Los " + (a.bots - m.ganaron).toLocaleString("en-US") + " que perdieron no grabaron video.";
+
+  if (prediccion && !a.sinCostos && a.bots === 10000) {
+    const [cl, txt] = PRED_FB[prediccion];
+    const fb = $("pred-fb"); fb.hidden = false; fb.className = "fb " + cl;
+    fb.textContent = "Tu predicción: " + document.querySelector("#pred-op button[data-p='" + prediccion + "']").textContent +
+      " Resultado: " + m.ganaron.toLocaleString("en-US") + ". " + txt;
+    document.querySelectorAll("#pred-op button").forEach(x => {
+      if (x.dataset.p === "d") x.classList.add("ok");
+      else if (x.dataset.p === prediccion) x.classList.add("no");
+    });
+  }
+
+  const tb = $("tabla-n"); tb.textContent = "";
+  [10, 100, 1000, 10000, 100000].filter(n => n <= a.bots).forEach(n => {
+    const sub = m.finales.subarray(0, n);
+    let gan = 0, mx = 0;
+    for (let i = 0; i < n; i++) { if (sub[i] > SALDO_INICIAL) gan++; if (sub[i] > mx) mx = sub[i]; }
+    const tr = document.createElement("tr");
+    tr.innerHTML = "<td class=\"r\"></td><td class=\"r\"></td><td class=\"r\"></td><td class=\"r pos\"></td>";
+    const td = tr.children;
+    td[0].textContent = n.toLocaleString("en-US");
+    td[1].textContent = fijo(100 * gan / n, 1) + " %";
+    td[2].textContent = dinero(mediana(Float64Array.from(sub).sort()));
+    td[3].textContent = dinero(mx);
+    tb.appendChild(tr);
+  });
+  $("multitud").scrollIntoView({ behavior: reducido ? "auto" : "smooth", block: "start" });
+}
+
+/* ========================================================================
+   capa 4: la tabla de agentes sale de los mismos parámetros del simulador
+   ===================================================================== */
+(function tablaAgentes() {
+  const costo = (1 - 0.015) * (1 - 0.015) * (1 - COMISION) * (1 - COMISION);   // deslizamiento medio de 1.5 % por lado
+  const tb = $("tabla-agentes");
+  AGENTES.forEach((a, k) => {
+    const [pg, xg, pgc, xc, xp] = TABLA[k];
+    const esperanza = pg * xg + (pgc - pg) * xc + (1 - pgc) * xp - 1;
+    const tr = document.createElement("tr");
+    const celdas = [a[0], a[1], fijo(100 * pgc, 0) + " %", "+" + fijo(100 * (xg - 1), 0) + " %",
+      "×" + fijo(xc, 1) + " (" + fijo(100 * (pgc - pg), 0) + " %)", fijo(100 * (xp - 1), 0) + " %",
+      fijo(Math.abs(100 * esperanza) < 0.05 ? 0 : 100 * esperanza, 1) + " %",
+      fijo(100 * ((1 + esperanza) * costo - 1), 1) + " %"];
+    celdas.forEach((c, i) => {
+      const td = document.createElement("td");
+      td.textContent = c.replace("-", "−");
+      if (i >= 2) td.className = "r";
+      if (i === 5 || i === 7) td.className = "r neg";
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+})();
+
+/* ========================================================================
+   comprobación: cada respuesta incorrecta devuelve a una capa concreta
+   ===================================================================== */
+const PREGUNTAS = [
+  { q: "Un amigo te enseña un bot que acertó el 80 % de 500 operaciones. ¿Qué te falta para saber si gana dinero?",
+    o: [["Nada: 80 % de 500 es una muestra grande.", "La tasa de acierto no dice cuánto se gana ni cuánto se pierde. Vuelve a la capa 4, al par que se confunde."],
+        ["Cuánto gana cuando acierta y cuánto pierde cuando falla, después de costos.", null],
+        ["Qué modelo de IA usa por dentro.", "El modelo es el disfraz; lo que decide es el reparto de ganancias y pérdidas. Vuelve a la capa 2, a la pregunta del cierre."]] },
+  { q: "Si 100.000 personas encienden el bot en vez de 10.000, ¿qué pasa con el mejor resultado y con la mediana?",
+    o: [["Los dos suben.", "La mediana describe al bot típico, y el bot típico no cambia con el tamaño de la multitud. Vuelve a la capa 3, a la tabla «Mismo bot, más gente»."],
+        ["El mejor sube; la mediana se queda casi igual.", null],
+        ["Los dos se quedan igual.", "Con más intentos, la racha más afortunada sale más larga. Vuelve a la capa 1, a la idea en una frase."]] },
+  { q: "Sin costos, el promedio de los 10.000 queda cerca de $55. ¿Por qué la mediana cae a $8.55?",
+    o: [["Porque el promedio está mal calculado.", "El promedio está bien: un juego justo conserva el promedio. Vuelve a la capa 5, primer bloque."],
+        ["Porque los bots que pierden son peores que los que ganan.", "Son el mismo bot con distinta suerte. Vuelve a la capa 2."],
+        ["Porque perder un porcentaje cuesta más de lo que devuelve ganar el mismo porcentaje: $100 → $150 → $75.", null]] }
+];
+(function comprobacion() {
+  const caja = $("comp");
+  PREGUNTAS.forEach((p, n) => {
+    const d = document.createElement("div");
+    d.className = "prediccion";
+    d.innerHTML = "<span class=\"et\">Pregunta " + (n + 1) + " de " + PREGUNTAS.length + "</span><p class=\"q\"></p><div class=\"opciones\"></div><p class=\"fb\" hidden></p>";
+    d.querySelector(".q").textContent = p.q;
+    const ops = d.querySelector(".opciones"), fb = d.querySelector(".fb");
+    p.o.forEach(([txt, error]) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.textContent = txt;
+      b.addEventListener("click", () => {
+        ops.querySelectorAll("button").forEach(x => x.classList.remove("ok", "no"));
+        b.classList.add(error ? "no" : "ok");
+        fb.hidden = false;
+        fb.className = "fb " + (error ? "no" : "ok");
+        fb.textContent = error || "Correcto.";
+      });
+      ops.appendChild(b);
+    });
+    caja.appendChild(d);
+  });
+})();
+
+/* ========================================================================
+   párrafo: borrador en este navegador
+   ===================================================================== */
+(function parrafo() {
+  const t = $("parrafo"), c = $("contador"), CLAVE_P = "bot55-parrafo";
+  try { t.value = localStorage.getItem(CLAVE_P) || ""; } catch (e) { /* sin almacenamiento: se escribe igual */ }
+  const contar = () => {
+    const n = (t.value.trim().match(/\S+/g) || []).length;
+    c.textContent = n + (n === 1 ? " palabra" : " palabras");
+  };
+  t.addEventListener("input", () => {
+    contar();
+    try { localStorage.setItem(CLAVE_P, t.value); } catch (e) { /* idem */ }
+  });
+  contar();
+})();
+
+/* ========================================================================
+   glosario — el compartido de la ruta (glosario.js)
+   ===================================================================== */
+const GL = (typeof GLOSARIO !== "undefined" && GLOSARIO) ? GLOSARIO : {};
+const DE_ESTA_LECCION = new Set(["simulación de Monte Carlo", "semilla", "sesgo de supervivencia", "tasa de acierto",
+  "esperanza matemática", "slippage", "backtest", "sobreajuste", "billetera", "MCP", "ingeniería inversa"]);
+const TERMINOS = [];
+Object.keys(GL).forEach(k => (GL[k].v || [k]).forEach(v => TERMINOS.push({ v: v, k: k })));
+TERMINOS.sort((x, y) => y.v.length - x.v.length);
+const RX_G = TERMINOS.length
+  ? new RegExp("(" + TERMINOS.map(t => t.v.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")", "gi") : null;
+const CLAVE = {};
+TERMINOS.forEach(t => { CLAVE[t.v.toLowerCase()] = t.k; });
+const SALTAR = new Set(["CODE", "PRE", "BUTTON", "DFN", "H1", "SCRIPT", "STYLE", "INPUT", "TEXTAREA", "LABEL", "TH", "SUMMARY"]);
+function limite(ch) { return !ch || !/[0-9A-Za-zÁÉÍÓÚÜÑáéíóúüñ_-]/.test(ch); }
+
+function marcarGlosario(raiz) {
+  if (!RX_G || !raiz) return;
+  const puestos = new Set();
+  const anda = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      if (!n.nodeValue || n.nodeValue.length < 2) return NodeFilter.FILTER_REJECT;
+      for (let e = n.parentElement; e && e !== raiz.parentElement; e = e.parentElement) {
+        if (SALTAR.has(e.tagName)) return NodeFilter.FILTER_REJECT;
+        if (e.classList && (e.classList.contains("et") || e.classList.contains("capa-n") || e.classList.contains("eyebrow"))) return NodeFilter.FILTER_REJECT;
+      }
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodos = [];
+  while (anda.nextNode()) nodos.push(anda.currentNode);
+  nodos.forEach(nodo => {
+    const txt = nodo.nodeValue;
+    RX_G.lastIndex = 0;
+    let m, piezas = null, ultimo = 0;
+    while ((m = RX_G.exec(txt)) !== null) {
+      const clave = CLAVE[m[0].toLowerCase()];
+      if (!limite(txt[m.index - 1]) || !limite(txt[m.index + m[0].length]) || !clave || puestos.has(clave)) continue;
+      puestos.add(clave);
+      piezas = piezas || document.createDocumentFragment();
+      if (m.index > ultimo) piezas.appendChild(document.createTextNode(txt.slice(ultimo, m.index)));
+      const d = document.createElement("dfn");
+      d.className = "g " + (DE_ESTA_LECCION.has(clave) ? "nuevo" : "visto");
+      d.dataset.g = clave; d.textContent = m[0];
+      d.tabIndex = 0; d.setAttribute("role", "button");
+      d.setAttribute("aria-label", m[0] + " — ver definición");
+      piezas.appendChild(d);
+      ultimo = m.index + m[0].length;
+    }
+    if (piezas) {
+      if (ultimo < txt.length) piezas.appendChild(document.createTextNode(txt.slice(ultimo)));
+      nodo.parentNode.replaceChild(piezas, nodo);
+    }
+  });
+}
+/* un término se marca una vez por bloque: cada capa es un bloque */
+document.querySelectorAll("header.top, section.capa, footer").forEach(marcarGlosario);
+
+const glosa = $("glosa"), glosaTip = $("glosa-tip");
+let devolverFoco = null;
+function abrirGlosa(clave) {
+  const e = GL[clave];
+  if (!e) return;
+  glosaTip.hidden = true;
+  $("glosa-t").textContent = e.t;
+  $("glosa-c").textContent = e.c;
+  const cuerpo = $("glosa-d");
+  cuerpo.innerHTML = e.d;
+  const origen = document.createElement("span");
+  origen.className = "glosa-origen";
+  origen.textContent = DE_ESTA_LECCION.has(clave) ? "Se enseña en esta lección" : "Viene del glosario de la ruta";
+  cuerpo.appendChild(origen);
+  glosa.hidden = false;
+  $("glosa-x").focus();
+}
+function cerrarGlosa() { glosa.hidden = true; if (devolverFoco) { devolverFoco.focus(); devolverFoco = null; } }
+$("glosa-x").addEventListener("click", cerrarGlosa);
+glosa.addEventListener("click", e => { if (e.target === glosa) cerrarGlosa(); });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && !glosa.hidden) cerrarGlosa();
+  const d = document.activeElement;
+  if (d && d.tagName === "DFN" && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); devolverFoco = d; abrirGlosa(d.dataset.g); }
+});
+document.addEventListener("click", e => {
+  const d = e.target.closest && e.target.closest("dfn.g");
+  if (!d) return;
+  devolverFoco = d;
+  abrirGlosa(d.dataset.g);
+});
+if (window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+  document.addEventListener("mouseover", e => {
+    const d = e.target.closest && e.target.closest("dfn.g");
+    if (!d) return;
+    const g = GL[d.dataset.g]; if (!g) return;
+    glosaTip.innerHTML = "<b></b><span></span><span class=\"pista\">Clic para la definición completa</span>";
+    glosaTip.querySelector("b").textContent = g.t;
+    glosaTip.querySelector("span").textContent = g.c;
+    glosaTip.hidden = false;
+    const r = d.getBoundingClientRect(), t = glosaTip.getBoundingClientRect();
+    let y = r.top - t.height - 8; if (y < 8) y = r.bottom + 8;
+    glosaTip.style.left = Math.min(Math.max(8, r.left), window.innerWidth - t.width - 8) + "px";
+    glosaTip.style.top = y + "px";
+  });
+  document.addEventListener("mouseout", e => { if (e.target.closest && e.target.closest("dfn.g")) glosaTip.hidden = true; });
+}
+
+/* arranque */
+pintarAgentes();
+dibujarCurva([SALDO_INICIAL], 200);
+window.addEventListener("resize", () => {
+  if (estado) dibujarCurva(estado.saldos, estado.total); else dibujarCurva([SALDO_INICIAL], 200);
+});
+bienvenida();
+</script>

@@ -297,5 +297,85 @@ const GLOSARIO = {
     c: "Archivo de texto con una fila por línea y columnas separadas por comas.",
     d: "<p>Un archivo de texto plano con <b>una fila por línea</b> y las columnas separadas por comas. Lo que exportas de casi cualquier sistema.</p><p>Su virtud es que lo abre todo; su defecto, que no guarda tipos de dato ni estadísticas, así que para leer una columna hay que recorrer el archivo entero. Eso es justo lo que resuelve Parquet, en la Fase 0 y la 2.</p>",
     v: ["CSV"]
+  },
+
+  /* Lección aparte: «El bot de los $55» (bot-de-los-55.html) */
+  "simulación de Monte Carlo": {
+    t: "Simulación de Monte Carlo",
+    c: "Repetir un proceso con azar miles de veces para ver todos los resultados posibles, no uno solo.",
+    d: "<p>Correr <b>el mismo proceso con azar miles de veces</b>, cada vez con una tirada distinta, y mirar la distribución completa de resultados en vez de un caso suelto.</p><p>Responde la pregunta que un caso aislado no puede responder: <i>¿esto es lo normal o es un extremo?</i></p><p><b>En la lección del bot:</b> correr 10.000 bots iguales es una simulación de Monte Carlo. El post muestra una sola corrida.</p>",
+    v: ["simulación de Monte Carlo", "Monte Carlo"]
+  },
+  "semilla": {
+    t: "Semilla",
+    c: "El número con el que arranca el azar de una simulación. Misma semilla, mismos resultados.",
+    d: "<p>El <b>punto de partida</b> de un generador de números al azar. La computadora no tira dados: calcula una secuencia que parece azar a partir de un número inicial.</p><p>Consecuencia práctica: <b>con la misma semilla, la secuencia sale idéntica</b>. Por eso un experimento con azar se puede repetir y auditar, y por eso el script y la página del bot imprimen los mismos números.</p><p>El laboratorio de bisect también usa una semilla fija: es lo que congela sus datos.</p>",
+    v: ["semilla", "semillas"]
+  },
+  "sesgo de supervivencia": {
+    t: "Sesgo de supervivencia",
+    c: "Sacar conclusiones mirando solo a los que pasaron un filtro, sin ver a los que quedaron fuera.",
+    d: "<p>Sacar conclusiones mirando <b>solo los casos que pasaron un filtro</b>, sin ver los que quedaron fuera.</p><p>El ejemplo de manual: en la Segunda Guerra Mundial se estudiaban los impactos de bala en los aviones que volvían, para reforzar esas zonas. Abraham Wald señaló lo contrario: había que reforzar donde <i>no</i> había impactos, porque los aviones tocados ahí no volvían.</p><p><b>En la lección del bot:</b> nadie publica el video del bot que quebró. Ves solo al que sobrevivió, y el filtro es invisible.</p>",
+    v: ["sesgo de supervivencia"]
+  },
+  "tasa de acierto": {
+    t: "Tasa de acierto",
+    c: "Qué porcentaje de operaciones terminó en ganancia. No dice cuánto se ganó ni cuánto se perdió.",
+    d: "<p>El <b>porcentaje de operaciones que terminaron en ganancia</b>, sin importar de cuánto.</p><p>Es el número favorito de quien vende un bot: suele ser alto y se entiende al instante. Su trampa es que cuenta igual una ganancia de $1 que una pérdida de $100. Un sistema puede acertar 9 de cada 10 y perder dinero, si la décima se lleva todo.</p><p>Se lee siempre junto a la <b>esperanza matemática</b>.</p>",
+    v: ["tasa de acierto", "win rate"]
+  },
+  "esperanza matemática": {
+    t: "Esperanza matemática",
+    c: "Lo que deja en promedio una operación: cada resultado posible por su probabilidad, todo sumado.",
+    d: "<p>Lo que <b>deja en promedio</b> una operación si se repitiera muchas veces: cada resultado posible multiplicado por su probabilidad, y todo sumado.</p><p>KADE, en la lección del bot: el 70 % de las veces gana 15 %, el 4 % sale ×3.5 y el 26 % restante pierde 79 %. La cuenta da <b>cero</b> antes de costos y −3.5 % después. Su tasa de acierto es 74 %; su esperanza, negativa.</p><p>Con esperanza negativa, más operaciones solo significan perder más rápido.</p>",
+    v: ["esperanza matemática"]
+  },
+  "slippage": {
+    t: "Slippage (deslizamiento)",
+    c: "La diferencia entre el precio que viste y el precio al que de verdad se compró o se vendió.",
+    d: "<p>La diferencia entre el precio que mostraba la pantalla y el precio al que <b>de verdad se ejecutó</b> la compra o la venta. En mercados con poco volumen, tu propia orden mueve el precio en tu contra.</p><p>Se paga dos veces por operación: al entrar y al salir. El registro del propio post muestra entre 1.2 % y 2.1 % por lado; sumado a la comisión, cada operación arranca perdiendo cerca de 3.5 %.</p>",
+    v: ["slippage", "deslizamiento"]
+  },
+  "backtest": {
+    t: "Backtest",
+    c: "Probar una estrategia contra datos del pasado para ver cómo le habría ido.",
+    d: "<p>Correr una estrategia <b>contra datos del pasado</b> para ver cómo le habría ido.</p><p>Útil y peligroso: si pruebas mil variantes sobre los mismos datos y te quedas con la mejor, encontraste la que mejor encaja con ese pasado en particular, no la que funciona. Es el truco de los 10.000 bots, hecho sin querer.</p>",
+    v: ["backtest", "backtests", "backtesting"]
+  },
+  "sobreajuste": {
+    t: "Sobreajuste",
+    c: "Una estrategia que aprendió el ruido de sus datos en vez del patrón: brilla en el pasado y falla después.",
+    d: "<p>Cuando un modelo o una estrategia <b>aprende el ruido de los datos con que se construyó</b> en vez del patrón real. Brilla en esos datos y falla en los nuevos.</p><p>La defensa profesional es separar datos que nunca se usaron para elegir —datos <i>fuera de muestra</i>— y juzgar solo con ellos.</p>",
+    v: ["sobreajuste", "fuera de muestra"]
+  },
+  "billetera": {
+    t: "Billetera (wallet)",
+    c: "La cuenta donde viven los fondos en una cadena de bloques. Sus movimientos son públicos.",
+    d: "<p>La <b>cuenta</b> donde viven los fondos en una cadena de bloques como Solana. Se identifica con una dirección pública: una cadena larga de letras y números.</p><p>Lo que importa aquí: <b>cada compra y cada venta queda registrada en público</b>, y cualquiera puede revisarla en un explorador como Solscan. Un reclamo de ganancias sin dirección no se puede verificar; uno con dirección, sí.</p>",
+    v: ["billetera", "billeteras", "wallet"]
+  },
+  "MCP": {
+    t: "MCP",
+    c: "Un protocolo estándar para conectar herramientas externas a un agente de IA.",
+    d: "<p><i>Model Context Protocol</i>: una forma estándar de <b>conectar herramientas a un agente de IA</b> como Claude Code. El agente no sabe manejar un desensamblador; un servidor MCP le da los controles para hacerlo.</p><p>REA es un servidor MCP: le da al agente instrumentos para desarmar programas ajenos.</p>",
+    v: ["MCP"]
+  },
+  "ingeniería inversa": {
+    t: "Ingeniería inversa",
+    c: "Deducir cómo funciona un programa a partir del programa terminado, sin su código fuente.",
+    d: "<p>Deducir <b>cómo funciona un programa a partir del programa ya terminado</b>, sin acceso a cómo se escribió: se desarma el ejecutable, se observa qué hace y se reconstruye la lógica.</p><p>Tiene una condición previa: <b>tener el programa</b>. Un video de una pantalla no es un programa, y la lógica de un servicio vive en un servidor al que no se llega.</p>",
+    v: ["ingeniería inversa"]
+  },
+  "streaming": {
+    t: "Streaming",
+    c: "Procesar los datos a medida que llegan, evento por evento, en vez de esperar al lote del día.",
+    d: "<p>Procesar los datos <b>a medida que llegan</b>, evento por evento, en vez de juntarlos y procesarlos de una vez al final del día (el lote).</p><p>Lo difícil no es la velocidad: es que los eventos llegan tarde y desordenados, y hay que decidir cuánto esperar antes de cerrar una cuenta. Eso es la <b>marca de agua</b>.</p><p><b>En esta ruta:</b> Fase 4.</p>",
+    v: ["streaming"]
+  },
+  "marca de agua": {
+    t: "Marca de agua",
+    c: "Cuánto espera un proceso en streaming por los eventos atrasados antes de cerrar una ventana de tiempo.",
+    d: "<p>La regla que dice <b>cuánto esperar por los eventos que llegan tarde</b> antes de dar por cerrada una ventana de tiempo y emitir su resultado.</p><p>Esperar poco deja datos fuera; esperar mucho retrasa todo. Es la misma decisión que tomas cuando cierras el informe del turno sabiendo que todavía pueden entrar tickets del turno anterior.</p><p><b>En esta ruta:</b> Fase 4.</p>",
+    v: ["marca de agua", "marcas de agua"]
   }
 };

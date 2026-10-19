@@ -3,9 +3,9 @@
  *   /api/*   siempre a la red — el progreso y el tutor nunca se sirven viejos
  *   el resto  caché primero, y en segundo plano se refresca
  */
-const CACHE = "ruta-cde-v1";
+const CACHE = "ruta-cde-v2";
 const BASICOS = [
-  "./", "index.html", "modulo-1.html",
+  "./", "index.html", "modulo-1.html", "bot-de-los-55.html",
   "glosario.js", "almacenamiento.js", "tutor.js", "manifest.webmanifest"
 ];
 
