@@ -205,6 +205,18 @@ Formato: dónde estoy · qué hice · qué medí · qué sigue.
   $3,777.91 en costos. Sin costos: promedio $57.99, mediana $8.55. Los 4,553
   bots que quebraron acertaron el 67.7 % de sus operaciones. Página y script
   imprimen lo mismo, carácter por carácter, en 10 configuraciones.
-- **Pendiente:** el párrafo de la lección (P8). Y el pendiente de la ruta no se
-  movió: el laboratorio de bisect y la sección 6 de `traza-bisect.md`.
+- **Seguimiento — la pregunta real:** no pedía la réplica, sino saber si el
+  sistema se puede construir. Investigación en
+  `docs/investigacion/2026-10-bot-trading-solana.md`. Resumen: el sistema sí se
+  puede construir; lo que promete, no. Solana no tiene mempool público (Jito
+  apagó el suyo en marzo de 2024), un LLM tarda más que un bloque, y leer
+  menciones en X cuesta $5,000 por millón de lecturas. Lo medido en el mercado
+  apunta en contra: el ≈0.4 % de las billeteras de pump.fun ganó más de $10k, y
+  4 de 6 LLMs perdieron con dinero real en Alpha Arena.
+- **Pendiente:**
+  - Decisión suya: construir la versión profesional en papel (datos reales,
+    sin dinero) como proyecto de la Fase 4, o cerrarlo aquí.
+  - El párrafo de la lección (P8).
+  - El de la ruta, que no se movió: el laboratorio de bisect y la sección 6 de
+    `traza-bisect.md`.
 
