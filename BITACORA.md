@@ -180,3 +180,22 @@ Formato: dónde estoy · qué hice · qué medí · qué sigue.
     objetivo muestra «Práctica ○/✓ · Comprobación ○/✓», y la pestaña marca
     «·» cuando va media.
 - **Pendiente:** el laboratorio y la sección 6.
+
+## Sesión 9 — Herramienta aparte: planificador de presupuesto
+- **Fase / semana:** fuera de la ruta (no avanza fase).
+- **Hecho:** `app/presupuesto.html`, publicado en
+  https://claude.ai/artifact/RzMp2Y1o4WEkAv4CPYKnPa. Ingresos y gastos con
+  edición y borrado (con «deshacer»), desglose por categoría con gráfico de
+  barras, meta de ahorro mensual y saldo restante en vivo
+  (ingresos − gastos − meta). Navega por meses.
+- **Dónde se guarda:** en el artefacto, en la base de datos de la página, con
+  una regla que deja leer y escribir **solo al dueño**. Comprobado: con nivel
+  de editor la colección sale vacía. En Netlify o abierto como archivo, cae a
+  `localStorage` de ese navegador.
+- **Decisión:** los montos se guardan en centésimas enteras (142.35 → 14235)
+  para que las sumas no arrastren error de coma flotante.
+- **Medido:** el mes de ejemplo cuadra a mano — 3,650.00 − 1,864.15 − 600.00 =
+  1,185.85.
+- **Pendiente:** borrar los 30 movimientos de ejemplo (botón «Borrar
+  ejemplos») y cargar el mes real. La ruta sigue donde quedó: el laboratorio y
+  la sección 6.

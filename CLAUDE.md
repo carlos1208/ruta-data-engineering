@@ -301,6 +301,7 @@ cuando aplica, y él puede explicar el mecanismo sin leer notas.
 ├── app/                   # el sitio: se publica como artefacto Y en Netlify
 │   ├── index.html            # índice de la ruta
 │   ├── modulo-1.html         # plataforma de la Fase 0
+│   ├── presupuesto.html      # herramienta aparte: planificador de presupuesto personal
 │   ├── glosario.js           # glosario compartido de toda la ruta
 │   ├── almacenamiento.js     # progreso: local / artefacto / nube
 │   └── tutor.js              # el botón «no entendí»
